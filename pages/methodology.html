@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology — Incident Lens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a href="../index.html" class="nav__brand">
+      <svg class="nav__mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#b8442b" stroke-width="1.8">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="3" fill="#b8442b" />
+        <line x1="12" y1="1" x2="12" y2="4" />
+        <line x1="12" y1="20" x2="12" y2="23" />
+        <line x1="1" y1="12" x2="4" y2="12" />
+        <line x1="20" y1="12" x2="23" y2="12" />
+      </svg>
+      <span>Incident Lens</span>
+    </a>
+    <nav class="nav__links">
+      <a href="../index.html">Index</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="methodology.html" class="is-active">Methodology</a>
+      <a href="team.html">Team</a>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <span class="page-header__label">Methodology</span>
+    <h1>How this was built.</h1>
+  </section>
+
+  <div class="method-wrap">
+
+    <section class="method-section">
+      <span class="method-section__label">Source</span>
+      <h2>The AI Incident Database</h2>
+      <p>
+        Our data comes from the AI Incident Database (AIID), maintained by the
+        Responsible AI Collaborative. AIID catalogues real-world failures and harms
+        caused by deployed AI systems — from autonomous-vehicle collisions to biased
+        hiring algorithms to disinformation campaigns. We work from the full export,
+        including <code>incidents.csv</code>, <code>reports.csv</code>, and the
+        CSET v1 classification annotations.
+      </p>
+    </section>
+
+    <section class="method-section">
+      <span class="method-section__label">Questions</span>
+      <h2>What we set out to ask</h2>
+      <p>
+        Three questions shaped the visualizations:
+      </p>
+      <ul>
+        <li>How has the rate of reported AI incidents changed over time, and what does the recent acceleration tell us?</li>
+        <li>Which organizations recur most often in the incident record, and in which sectors?</li>
+        <li>Who bears the cost when AI systems fail, and what categories of harm dominate?</li>
+      </ul>
+    </section>
+
+    <section class="method-section">
+      <span class="method-section__label">Approach</span>
+      <h2>From archive to lens</h2>
+      <p>
+        We treat each incident as a single record and aggregate along three axes —
+        time, organization, and harm category. The dashboard is built on a shared
+        data loader that parses the CSV once and exposes a filter API so all three
+        visualizations stay in sync as the user narrows the view.
+      </p>
+      <p>
+        Visualizations are rendered with D3.js. The site itself is plain
+        HTML/CSS/JavaScript — no framework, no build step.
+      </p>
+    </section>
+
+    <section class="method-section">
+      <span class="method-section__label">Sustainability</span>
+      <h2>Why this matters for sustainable AI</h2>
+      <p>
+        Sustainable AI is often framed in terms of compute and carbon. We argue
+        for a wider definition: a system is sustainable only if the institutions
+        deploying it can learn from its failures. The incident record is the
+        feedback signal that closes that loop — what gets catalogued, gets
+        addressed.
+      </p>
+      <p>
+        Making that record visible and queryable is, in our view, a piece of the
+        long-term infrastructure responsible AI development depends on.
+      </p>
+    </section>
+
+    <section class="method-section">
+      <span class="method-section__label">Tools</span>
+      <h2>Stack</h2>
+      <p>
+        D3.js v7 for visualizations · vanilla JavaScript ES2015+ for state and
+        filtering · CSS custom properties for theming · Fraunces, Inter, and JetBrains
+        Mono via Google Fonts · deployed on Vercel from a GitHub repository.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer__brand">Incident Lens · A visualization of the AI Incident Database</div>
+    <div class="footer__links">
+      <a href="https://incidentdatabase.ai/" target="_blank" rel="noopener">Source data</a>
+    </div>
+  </footer>
+
+</body>
+</html>
