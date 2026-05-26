@@ -35,8 +35,8 @@
     <span class="dash-header__label">Dashboard</span>
     <h1>1,457 incidents, four decades, one lens.</h1>
     <p class="dash-header__sub">
-      Filter, hover, and explore documented AI failures across the AI Incident
-      Database. Each visualization responds to the controls below.
+      Filter by year and category, then hover to explore documented AI failures.
+      Each visualization responds to the controls below.
     </p>
   </section>
 
@@ -50,18 +50,12 @@
         <option value="2015">2015 — present</option>
       </select>
     </label>
-    <label>
-      Search
-      <input type="text" id="filter-search" placeholder="e.g. facial recognition" />
-    </label>
-    <label>
-      Sort by
-      <select id="filter-sort">
-        <option value="date">Date</option>
-        <option value="reports">Report count</option>
-      </select>
-    </label>
+    <div class="filterbar__categories">
+      <span class="filterbar__categories-label">Category</span>
+      <div class="filterbar__chips" id="filter-categories" role="group" aria-label="Incident category"></div>
+    </div>
   </div>
+  <div class="category-legend" id="category-legend" aria-hidden="true"></div>
 
   <section class="viz" id="timeline">
     <div class="viz__head">
@@ -129,6 +123,7 @@
   <div class="tooltip" id="tooltip"></div>
 
   <script src="../js/lib/d3.min.js"></script>
+  <script src="../js/categories.js"></script>
   <script src="../js/data-loader.js"></script>
   <script src="../js/viz-timeline.js"></script>
   <script src="../js/viz-deployers.js"></script>

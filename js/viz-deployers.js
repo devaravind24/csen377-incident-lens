@@ -1,14 +1,14 @@
 /* ===================================================================
    viz-deployers.js — Top organizations named in the record
-   Horizontal animated bar chart, filter-reactive.
+   Horizontal stacked bar chart by category.
    =================================================================== */
 
 (function () {
   const container = document.getElementById('chart-deployers');
   if (!container) return;
   const tooltip = document.getElementById('tooltip');
+  const Cat = window.IncidentCategories;
 
-  // Pretty-print deployer keys: "openai" -> "OpenAI", "x-ai" -> "xAI"
   const NAME_OVERRIDES = {
     'openai': 'OpenAI',
     'xai': 'xAI',
@@ -17,6 +17,7 @@
     'us-government': 'U.S. Government',
     'uk-government': 'U.K. Government',
   };
+
   function prettify(key) {
     if (NAME_OVERRIDES[key]) return NAME_OVERRIDES[key];
     return key.split('-')
@@ -24,30 +25,63 @@
       .join(' ');
   }
 
+  function collectDeployerRows(filtered) {
+    const rows = [];
+    filtered.forEach(inc => {
+      const category = Cat.getCategory(inc);
+      (inc['Alleged deployer of AI system'] || []).forEach(raw => {
+        if (!raw || String(raw).startsWith('unknown')) return;
+        rows.push({
+          deployerKey: raw,
+          deployer: prettify(raw),
+          category,
+        });
+      });
+    });
+    return rows;
+  }
+
   function render(data) {
     container.innerHTML = '';
     const filtered = window.DataLoader.applyFilters(data);
+    const categoryFilter = window.DataLoader.filters.category;
+    const keys = categoryFilter ? [categoryFilter] : Cat.ORDER;
 
-    // Aggregate counts, filtering out "unknown-*" buckets to surface real organizations.
-    const all = filtered.flatMap(d => d['Alleged deployer of AI system'] || []);
-    const counts = d3.rollups(
-      all.filter(name => name && !name.startsWith('unknown')),
-      v => v.length,
-      d => d
-    )
-      .map(([name, count]) => ({ name: prettify(name), count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 12);
-
-    if (counts.length === 0) {
+    const deployerRows = collectDeployerRows(filtered);
+    if (deployerRows.length === 0) {
       container.innerHTML = '<div class="loading">No deployers match current filters.</div>';
       return;
     }
 
+    const totals = d3.rollup(
+      deployerRows,
+      v => v.length,
+      d => d.deployer
+    );
+    const topNames = [...totals.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 12)
+      .map(([name]) => name);
+
+    const byDeployerCat = d3.rollup(
+      deployerRows.filter(d => topNames.includes(d.deployer)),
+      v => v.length,
+      d => d.deployer,
+      d => d.category
+    );
+
+    const chartData = topNames.map(name => {
+      const row = { name, total: totals.get(name) || 0 };
+      keys.forEach(k => {
+        row[k] = (byDeployerCat.get(name) && byDeployerCat.get(name).get(k)) || 0;
+      });
+      return row;
+    });
+
     const margin = { top: 20, right: 56, bottom: 30, left: 130 };
     const W = container.clientWidth;
     const rowH = 28;
-    const height = counts.length * rowH;
+    const height = chartData.length * rowH;
     const width = W - margin.left - margin.right;
     const totalH = height + margin.top + margin.bottom;
 
@@ -61,15 +95,17 @@
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
     const x = d3.scaleLinear()
-      .domain([0, d3.max(counts, d => d.count)])
+      .domain([0, d3.max(chartData, d => d.total)])
       .range([0, width]);
 
     const y = d3.scaleBand()
-      .domain(counts.map(d => d.name))
+      .domain(chartData.map(d => d.name))
       .range([0, height])
       .padding(0.28);
 
-    // Vertical gridlines (subtle, behind bars)
+    const stack = d3.stack().keys(keys);
+    const layers = stack(chartData);
+
     const ticks = x.ticks(4).slice(1);
     g.append('g')
       .selectAll('line')
@@ -81,7 +117,6 @@
       .attr('stroke', '#ddd6c1')
       .attr('stroke-width', 0.5);
 
-    // Tick labels at top
     g.append('g')
       .attr('class', 'tick-labels')
       .selectAll('text')
@@ -95,9 +130,8 @@
       .style('fill', '#8a877c')
       .text(d => d);
 
-    // Bar background (light track so empty space is intentional)
     g.selectAll('.bar-bg')
-      .data(counts)
+      .data(chartData)
       .enter()
       .append('rect')
       .attr('class', 'bar-bg')
@@ -105,44 +139,48 @@
       .attr('width', width).attr('height', y.bandwidth())
       .attr('fill', '#ebe5d4').attr('opacity', 0.5);
 
-    // Bars
-    const bars = g.selectAll('.bar')
-      .data(counts)
+    const layerGroups = g.selectAll('.stack-row')
+      .data(layers)
+      .enter()
+      .append('g')
+      .attr('class', 'stack-row')
+      .attr('fill', d => Cat.getColor(d.key));
+
+    layerGroups.selectAll('rect')
+      .data(d => d)
       .enter()
       .append('rect')
-      .attr('class', 'bar-deployer')
-      .attr('x', 0).attr('y', d => y(d.name))
+      .attr('y', d => y(d.data.name))
+      .attr('x', d => x(d[0]))
+      .attr('width', d => Math.max(0, x(d[1]) - x(d[0])))
       .attr('height', y.bandwidth())
-      .attr('width', 0)
-      .attr('fill', '#b8442b');
-
-    bars.transition()
-      .duration(900)
-      .delay((d, i) => i * 50)
-      .ease(d3.easeCubicOut)
-      .attr('width', d => x(d.count));
-
-    // Hover handlers on full row (so the user can mouse over the label too)
-    g.selectAll('.row-hit')
-      .data(counts)
-      .enter()
-      .append('rect')
-      .attr('x', -margin.left).attr('y', d => y(d.name))
-      .attr('width', W).attr('height', y.bandwidth())
-      .attr('fill', 'transparent')
-      .style('cursor', 'default')
+      .attr('opacity', 0.88)
       .on('mousemove', function (event, d) {
+        const cat = d3.select(this.parentNode).datum().key;
+        const count = d.data[cat];
+        if (!count) return;
         tooltip.classList.add('is-visible');
-        const pct = ((d.count / counts.reduce((s, x) => s + x.count, 0)) * 100).toFixed(1);
-        tooltip.innerHTML = `<strong>${d.name}</strong><br>${d.count} incidents · ${pct}% of top 12`;
+        const pct = ((count / d.data.total) * 100).toFixed(1);
+        tooltip.innerHTML =
+          `<strong>${d.data.name}</strong><br>` +
+          `${Cat.getLabel(cat)}: ${count}<br>` +
+          `${pct}% of bar · ${d.data.total} total`;
         tooltip.style.left = (event.pageX + 14) + 'px';
         tooltip.style.top = (event.pageY - 28) + 'px';
       })
       .on('mouseleave', () => tooltip.classList.remove('is-visible'));
 
-    // Deployer name labels (left)
+    g.selectAll('.row-hit')
+      .data(chartData)
+      .enter()
+      .append('rect')
+      .attr('x', -margin.left).attr('y', d => y(d.name))
+      .attr('width', W).attr('height', y.bandwidth())
+      .attr('fill', 'transparent')
+      .style('pointer-events', 'none');
+
     g.selectAll('.name')
-      .data(counts)
+      .data(chartData)
       .enter()
       .append('text')
       .attr('x', -10).attr('y', d => y(d.name) + y.bandwidth() / 2)
@@ -153,23 +191,17 @@
       .style('fill', '#1c1b18')
       .text(d => d.name);
 
-    // Count labels (right of bar)
     g.selectAll('.count')
-      .data(counts)
+      .data(chartData)
       .enter()
       .append('text')
-      .attr('x', d => x(d.count) + 8)
+      .attr('x', d => x(d.total) + 8)
       .attr('y', d => y(d.name) + y.bandwidth() / 2)
       .attr('dy', '0.32em')
       .style('font-family', 'JetBrains Mono, monospace')
       .style('font-size', '11px')
       .style('fill', '#5a574e')
-      .style('opacity', 0)
-      .text(d => d.count)
-      .transition()
-      .delay((d, i) => 600 + i * 50)
-      .duration(300)
-      .style('opacity', 1);
+      .text(d => d.total);
   }
 
   window.DataLoader.load()

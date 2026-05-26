@@ -7,6 +7,7 @@ window.DataLoader = (function () {
   let pending = null;
 
   const INCIDENTS_PATH = '../data/incidents.csv';
+  const CATEGORIES_PATH = '../data/incident-categories.json';
 
   function parseIncident(d) {
     d.date = d.date ? new Date(d.date) : null;
@@ -28,13 +29,38 @@ window.DataLoader = (function () {
     return d;
   }
 
+  function mergeCategories(data, categoryMap) {
+    const map = categoryMap || {};
+    let warned = false;
+    data.forEach(d => {
+      const id = String(d.incident_id || '');
+      const cat = map[id];
+      if (cat && window.IncidentCategories.ORDER.includes(cat)) {
+        d.category = cat;
+      } else {
+        if (!warned && Object.keys(map).length === 0) {
+          console.warn('[Incident Lens] incident-categories.json missing or empty; defaulting to "other".');
+          warned = true;
+        }
+        d.category = 'other';
+      }
+    });
+    return data;
+  }
+
   function load() {
     if (cache) return Promise.resolve(cache);
     if (pending) return pending;
 
-    pending = d3.csv(INCIDENTS_PATH, parseIncident)
-      .then(data => {
+    pending = Promise.all([
+      d3.csv(INCIDENTS_PATH, parseIncident),
+      fetch(CATEGORIES_PATH)
+        .then(r => (r.ok ? r.json() : {}))
+        .catch(() => ({})),
+    ])
+      .then(([data, categoryMap]) => {
         cache = data.filter(d => d.date && !isNaN(d.date));
+        mergeCategories(cache, categoryMap);
         console.log(`[Incident Lens] Loaded ${cache.length} incidents`);
         return cache;
       });
@@ -42,7 +68,7 @@ window.DataLoader = (function () {
     return pending;
   }
 
-  const filters = { yearMin: null, search: '', sortBy: 'date' };
+  const filters = { yearMin: null, category: null };
   const listeners = [];
 
   function setFilter(key, value) {
@@ -55,15 +81,22 @@ window.DataLoader = (function () {
   function applyFilters(data) {
     let out = data;
     if (filters.yearMin) out = out.filter(d => d.year >= filters.yearMin);
-    if (filters.search) {
-      const q = filters.search.toLowerCase();
-      out = out.filter(d =>
-        (d.title || '').toLowerCase().includes(q) ||
-        (d.description || '').toLowerCase().includes(q)
-      );
+    if (filters.category) {
+      out = out.filter(d => d.category === filters.category);
     }
     return out;
   }
 
-  return { load, filters, setFilter, onFilterChange, applyFilters };
+  function isCategoryFiltered() {
+    return Boolean(filters.category);
+  }
+
+  return {
+    load,
+    filters,
+    setFilter,
+    onFilterChange,
+    applyFilters,
+    isCategoryFiltered,
+  };
 })();
