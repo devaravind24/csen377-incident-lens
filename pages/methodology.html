@@ -68,28 +68,27 @@
       <span class="method-section__label">Categories</span>
       <h2>How incidents are classified</h2>
       <p>
-        The AI Incident Database export does not include a single “category” column.
-        We assign each incident one primary label from a fixed taxonomy of seven
-        themes, stored in <code>data/incident-categories.json</code> and loaded by
-        the dashboard:
+        The AI Incident Database export does not include a single harm-category column.
+        We assign each incident one primary label from seven harm-oriented categories,
+        stored in <code>data/incident-categories.json</code>:
       </p>
       <ul>
-        <li><strong>Bias &amp; discrimination</strong> — unfair or disparate treatment by protected characteristics</li>
-        <li><strong>Autonomous systems</strong> — self-driving vehicles, robotics, and automated physical systems</li>
-        <li><strong>Misinformation &amp; media</strong> — deepfakes, synthetic media, and information manipulation</li>
-        <li><strong>Privacy &amp; surveillance</strong> — biometrics, facial recognition, and privacy harms</li>
-        <li><strong>Healthcare &amp; welfare</strong> — clinical, diagnostic, and welfare-determination systems</li>
-        <li><strong>Content moderation &amp; safety</strong> — platform moderation, hate speech, and harmful content</li>
-        <li><strong>Other</strong> — incidents that do not fit the above</li>
+        <li><strong>Discrimination &amp; fairness</strong> — bias, disparate impact, protected characteristics</li>
+        <li><strong>Privacy &amp; surveillance</strong> — biometrics, facial recognition, privacy violations</li>
+        <li><strong>Misinformation &amp; media</strong> — deepfakes, disinformation, synthetic deception</li>
+        <li><strong>Safety &amp; autonomous systems</strong> — physical harm, AVs, robotics, clinical safety failures</li>
+        <li><strong>Economic &amp; social systems</strong> — employment, welfare, lending, criminal-justice scoring</li>
+        <li><strong>Harmful content &amp; platforms</strong> — moderation failures, hate speech, toxic amplification</li>
+        <li><strong>Malicious &amp; intentional misuse</strong> — deliberate weaponization or scam-oriented deployment</li>
       </ul>
       <p>
-        For the ~208 incidents with CSET v1 classifications, the batch script
-        includes annotation fields (sector, AI task, harm notes) in its input.
-        All other incidents are classified from title and description. By default
-        we use keyword rules (<code>python3 scripts/classify-incidents.py</code>);
-        optional OpenAI batch mode (<code>--openai</code>, requires
-        <code>OPENAI_API_KEY</code>) can refine labels. The browser never calls
-        an API — it only reads the committed JSON file.
+        Classification runs offline via <code>scripts/classify-incidents.py</code>.
+        <strong>CSET v1 annotations are applied first</strong> (~200 incidents) using
+        a decision tree on rights violations, tangible harm, sector, AI task, and
+        annotator notes. Remaining incidents are labeled with
+        <code>--openai</code> (recommended; requires <code>OPENAI_API_KEY</code>)
+        or a rubric-aligned text fallback. The dashboard only reads the committed
+        JSON file — no API calls in the browser.
       </p>
     </section>
 

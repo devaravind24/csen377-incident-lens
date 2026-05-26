@@ -1,65 +1,68 @@
 /* ===================================================================
-   categories.js — shared incident category taxonomy
+   categories.js — Incident Lens harm taxonomy (7 categories)
    =================================================================== */
 
 window.IncidentCategories = (function () {
   const TAXONOMY = {
-    bias: {
-      label: 'Bias & discrimination',
+    discrimination: {
+      label: 'Discrimination & fairness',
       color: '#c45c3a',
-    },
-    autonomy: {
-      label: 'Autonomous systems',
-      color: '#5a7a8c',
-    },
-    misinformation: {
-      label: 'Misinformation & media',
-      color: '#8b6b4a',
     },
     privacy: {
       label: 'Privacy & surveillance',
       color: '#6b5b8a',
     },
-    healthcare: {
-      label: 'Healthcare & welfare',
-      color: '#4a7a5c',
+    misinformation: {
+      label: 'Misinformation & media',
+      color: '#8b6b4a',
     },
-    moderation: {
-      label: 'Content moderation & safety',
+    safety: {
+      label: 'Safety & autonomous systems',
+      color: '#5a7a8c',
+    },
+    economic: {
+      label: 'Economic & social systems',
+      color: '#7a6b4a',
+    },
+    harmful_content: {
+      label: 'Harmful content & platforms',
       color: '#9a6b3a',
     },
-    other: {
-      label: 'Other',
-      color: '#8a877c',
+    malicious: {
+      label: 'Malicious & intentional misuse',
+      color: '#8a2e1c',
     },
   };
 
   const ORDER = [
-    'bias',
-    'autonomy',
-    'misinformation',
+    'discrimination',
     'privacy',
-    'healthcare',
-    'moderation',
-    'other',
+    'misinformation',
+    'safety',
+    'economic',
+    'harmful_content',
+    'malicious',
   ];
+
+  const DEFAULT_ID = 'economic';
 
   function getCategory(incident) {
     const id = incident && incident.category;
-    return ORDER.includes(id) ? id : 'other';
+    return ORDER.includes(id) ? id : DEFAULT_ID;
   }
 
   function getLabel(id) {
-    return (TAXONOMY[id] || TAXONOMY.other).label;
+    return (TAXONOMY[id] || TAXONOMY[DEFAULT_ID]).label;
   }
 
   function getColor(id) {
-    return (TAXONOMY[id] || TAXONOMY.other).color;
+    return (TAXONOMY[id] || TAXONOMY[DEFAULT_ID]).color;
   }
 
   return {
     TAXONOMY,
     ORDER,
+    DEFAULT_ID,
     getCategory,
     getLabel,
     getColor,
