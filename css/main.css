@@ -849,3 +849,57 @@ button { font: inherit; cursor: pointer; }
   .nav__links { gap: 1.25rem; font-size: 0.7rem; }
   .filterbar { top: 56px; }
 }
+
+/* ===================================================================
+   VIZ 03 additions — map toggle + map chart container
+   Appended on the merge so Josephine's rules above stay untouched.
+   =================================================================== */
+
+.viz__chart--map {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.viz__hint {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+.viz__hint strong { color: var(--ink-soft); font-weight: 500; }
+
+.map-toggle {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  background: rgba(244, 239, 228, 0.92);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 3px;
+  z-index: 10;
+  box-shadow: 0 1px 4px rgba(28, 27, 24, 0.06);
+}
+.map-toggle__btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.42rem 0.85rem;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.map-toggle__btn:hover { color: var(--ink); }
+.map-toggle__btn.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}

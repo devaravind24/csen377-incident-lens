@@ -23,6 +23,11 @@ Open http://localhost:8000/pages/dashboard.html (not `file://`).
 - Chart notes (ChatGPT, 2025 peak) only when **All** categories selected
 - New files: `data/incident-categories.json`, `scripts/classify-incidents.py`, `js/categories.js`
 
+### Added in merge (Aravind, VIZ 03)
+- **`js/viz-harms.js`** — world choropleth answering the Zoom-meeting request for a map of people affected. Toggle pill in the top-left switches between **People affected** (country of harmed parties, from CSETv1) and **Developer / deployer** (company → HQ country). Reacts to the existing year-range + category filters.
+- **`data/world-countries.geojson`** — Natural Earth world boundaries (ISO-3 ids).
+- CSS for `.map-toggle` and `.viz__chart--map` is **appended** to `css/main.css`; none of Josephine's existing rules were modified.
+
 ---
 
 ## Did the data change?

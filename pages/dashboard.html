@@ -91,27 +91,26 @@
 
   <!--
     ====================================================================
-    VIZ 03 — Categories of harm
-    Uncomment this section when js/viz-harms.js is ready.
+    VIZ 03 — Who is harmed, and where (choropleth + toggle)
     ====================================================================
-
+  -->
   <section class="viz" id="harms">
     <div class="viz__head">
       <div>
         <span class="viz__num">03</span>
-        <h2 class="viz__title">Who is harmed, and how</h2>
+        <h2 class="viz__title">Who is harmed, and where</h2>
       </div>
-      <span class="viz__meta">Source: classifications_CSETv1.csv</span>
+      <span class="viz__meta">Toggle: affected vs. developer / deployer</span>
     </div>
-    <div class="viz__chart" id="chart-harms">
-      <div class="loading">Loading…</div>
+    <div class="viz__chart viz__chart--map" id="chart-harms">
+      <div class="loading">Loading map…</div>
     </div>
+    <p class="viz__hint">
+      <strong>People affected</strong> uses the country of the harmed parties
+      (from CSETv1 classifications). <strong>Developer / deployer</strong>
+      maps the named organization to its country of origin.
+    </p>
   </section>
-  -->
-
-  <div class="in-progress">
-    A third visualization on harm categories is <span>in development</span>
-  </div>
 
   <footer class="footer">
     <div class="footer__brand">Incident Lens · A visualization of the AI Incident Database</div>
@@ -128,8 +127,7 @@
   <script src="../js/data-loader.js"></script>
   <script src="../js/viz-timeline.js"></script>
   <script src="../js/viz-deployers.js"></script>
-  <!-- Teammates: uncomment when viz-harms.js is ready -->
-  <!-- <script src="../js/viz-harms.js"></script> -->
+  <script src="../js/viz-harms.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
