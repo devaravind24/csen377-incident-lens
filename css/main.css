@@ -903,3 +903,18 @@ button { font: inherit; cursor: pointer; }
   background: var(--ink);
   color: var(--paper);
 }
+
+/* === Logo + brand wordmark (Burberry-style) ================ */
+.nav__brand span {
+  font-family: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.nav__mark { display: block; }
+
+.nav__mark { width: 40px !important; height: 40px !important; }
+.nav__brand { gap: 0.8rem; }
+.nav__brand span { font-size: 1.05rem; }
