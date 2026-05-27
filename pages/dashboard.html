@@ -35,27 +35,28 @@
     <span class="dash-header__label">Dashboard</span>
     <h1>1,457 incidents, four decades, one lens.</h1>
     <p class="dash-header__sub">
-      Filter by year and category, then hover to explore documented AI failures.
+      Filter by year and category (select multiple), then hover to explore documented AI failures.
       Each visualization responds to the controls below.
     </p>
   </section>
 
   <div class="filterbar">
-    <label>
-      Year range
-      <select id="filter-year">
-        <option value="all">All years</option>
-        <option value="2024">2024 — present</option>
-        <option value="2020">2020 — present</option>
-        <option value="2015">2015 — present</option>
-      </select>
-    </label>
+    <div class="filterbar__years">
+      <div class="year-range-control" role="group" aria-label="Year range">
+        <span class="year-range__title">Year</span>
+        <span class="year-range__value" id="year-from-val">2010</span>
+        <input type="range" id="filter-year-from" class="year-range" min="1983" max="2026" step="1" value="2010" aria-label="Start year" />
+        <span class="year-range__sep" aria-hidden="true">–</span>
+        <input type="range" id="filter-year-to" class="year-range" min="1983" max="2026" step="1" value="2026" aria-label="End year" />
+        <span class="year-range__value" id="year-to-val">2026</span>
+      </div>
+      <button type="button" class="year-reset-btn" id="filter-year-reset" title="Show all years">All</button>
+    </div>
     <div class="filterbar__categories">
       <span class="filterbar__categories-label">Category</span>
       <div class="filterbar__chips" id="filter-categories" role="group" aria-label="Incident category"></div>
     </div>
   </div>
-  <div class="category-legend" id="category-legend" aria-hidden="true"></div>
 
   <section class="viz" id="timeline">
     <div class="viz__head">

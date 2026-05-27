@@ -44,8 +44,7 @@
   function render(data) {
     container.innerHTML = '';
     const filtered = window.DataLoader.applyFilters(data);
-    const categoryFilter = window.DataLoader.filters.category;
-    const keys = categoryFilter ? [categoryFilter] : Cat.ORDER;
+    const keys = window.DataLoader.getStackCategories();
 
     const deployerRows = collectDeployerRows(filtered);
     if (deployerRows.length === 0) {
@@ -162,9 +161,10 @@
         tooltip.classList.add('is-visible');
         const pct = ((count / d.data.total) * 100).toFixed(1);
         tooltip.innerHTML =
-          `<strong>${d.data.name}</strong><br>` +
-          `${Cat.getLabel(cat)}: ${count}<br>` +
-          `${pct}% of bar · ${d.data.total} total`;
+          `<strong>${d.data.name}</strong>` +
+          `<div class="tooltip__row">` +
+          `<span>${Cat.getTooltipLabel(cat)}</span><span>${count}</span></div>` +
+          `<em>${pct}% of bar · ${d.data.total} total</em>`;
         tooltip.style.left = (event.pageX + 14) + 'px';
         tooltip.style.top = (event.pageY - 28) + 'px';
       })
@@ -204,17 +204,20 @@
       .text(d => d.total);
   }
 
-  window.DataLoader.load()
-    .then(data => {
-      render(data);
-      window.DataLoader.onFilterChange(() => render(data));
-      let resizeTimer;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => render(data), 150);
-      });
-    })
-    .catch(() => {
+  let chartData = null;
+  window.DataLoader.onFilterChange(() => {
+    if (chartData) render(chartData);
+  });
+  window.DataLoader.onReady(data => {
+    chartData = data;
+    render(data);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => render(chartData), 150);
+    });
+  });
+  window.DataLoader.load().catch(() => {
       container.innerHTML = `
         <div class="loading">Could not load data.</div>`;
     });

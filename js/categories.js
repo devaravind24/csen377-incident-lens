@@ -3,34 +3,42 @@
    =================================================================== */
 
 window.IncidentCategories = (function () {
+  /* Hues spread for stacked-chart legibility on --paper (#f4efe4) */
   const TAXONOMY = {
     discrimination: {
       label: 'Discrimination & fairness',
-      color: '#c45c3a',
+      tooltipLabel: 'Discrimination',
+      color: '#c94a36',
     },
     privacy: {
       label: 'Privacy & surveillance',
-      color: '#6b5b8a',
+      tooltipLabel: 'Privacy',
+      color: '#6a5c9e',
     },
     misinformation: {
       label: 'Misinformation & media',
-      color: '#8b6b4a',
+      tooltipLabel: 'Misinformation',
+      color: '#b8922a',
     },
     safety: {
       label: 'Safety & autonomous systems',
-      color: '#5a7a8c',
+      tooltipLabel: 'Safety & autonomy',
+      color: '#2f7d7d',
     },
     economic: {
       label: 'Economic & social systems',
-      color: '#7a6b4a',
+      tooltipLabel: 'Economic & social',
+      color: '#4a8c58',
     },
     harmful_content: {
       label: 'Harmful content & platforms',
-      color: '#9a6b3a',
+      tooltipLabel: 'Harmful content',
+      color: '#d47b2c',
     },
     malicious: {
       label: 'Malicious & intentional misuse',
-      color: '#8a2e1c',
+      tooltipLabel: 'Malicious misuse',
+      color: '#5c3548',
     },
   };
 
@@ -55,6 +63,11 @@ window.IncidentCategories = (function () {
     return (TAXONOMY[id] || TAXONOMY[DEFAULT_ID]).label;
   }
 
+  function getTooltipLabel(id) {
+    const t = TAXONOMY[id] || TAXONOMY[DEFAULT_ID];
+    return t.tooltipLabel || t.label;
+  }
+
   function getColor(id) {
     return (TAXONOMY[id] || TAXONOMY[DEFAULT_ID]).color;
   }
@@ -65,6 +78,7 @@ window.IncidentCategories = (function () {
     DEFAULT_ID,
     getCategory,
     getLabel,
+    getTooltipLabel,
     getColor,
   };
 })();
