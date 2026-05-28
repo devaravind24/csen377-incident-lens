@@ -1,46 +1,47 @@
 /* ===================================================================
    viz-timeline.js — Incidents reported per year
-   Area chart with gradient fill, annotations, and interactive crosshair.
+   Stacked area by category (always uses category colors).
    =================================================================== */
 
 (function () {
   const container = document.getElementById('chart-timeline');
   if (!container) return;
   const tooltip = document.getElementById('tooltip');
+  const Cat = window.IncidentCategories;
 
-  // Annotations: hand-picked inflection points in the historical record.
   const ANNOTATIONS = [
-    { year: 1983, label: 'Soviet nuclear false alarm', align: 'right' },
     { year: 2022, label: 'ChatGPT released', align: 'left' },
     { year: 2025, label: 'Peak: 399 incidents', align: 'left' },
   ];
 
-  function render(data) {
-    container.innerHTML = '';
-    const filtered = window.DataLoader.applyFilters(data);
+  function buildYearSeries(filtered, keys) {
+    const years = filtered.filter(d => d.year).map(d => d.year);
+    if (years.length === 0 || !keys.length) return null;
 
-    const byYear = d3.rollups(
-      filtered.filter(d => d.year),
+    const minYear = Math.min(...years);
+    const maxYear = Math.max(...years);
+    const byYearCat = d3.rollup(
+      filtered,
       v => v.length,
-      d => d.year
-    )
-      .map(([year, count]) => ({ year, count }))
-      .sort((a, b) => a.year - b.year);
+      d => d.year,
+      d => Cat.getCategory(d)
+    );
 
-    if (byYear.length === 0) {
-      container.innerHTML = '<div class="loading">No incidents match current filters.</div>';
-      return;
-    }
-
-    // Fill in missing years with zero so the area doesn't have visual gaps
-    const minYear = byYear[0].year;
-    const maxYear = byYear[byYear.length - 1].year;
-    const yearMap = new Map(byYear.map(d => [d.year, d.count]));
-    const series = [];
+    const rows = [];
     for (let y = minYear; y <= maxYear; y++) {
-      series.push({ year: y, count: yearMap.get(y) || 0 });
+      const row = { year: y };
+      keys.forEach(k => {
+        row[k] = (byYearCat.get(y) && byYearCat.get(y).get(k)) || 0;
+      });
+      row.total = keys.reduce((s, k) => s + row[k], 0);
+      rows.push(row);
     }
 
+    return { minYear, maxYear, rows, keys };
+  }
+
+  function renderStacked(meta) {
+    const { minYear, maxYear, rows, keys } = meta;
     const margin = { top: 30, right: 28, bottom: 50, left: 50 };
     const W = container.clientWidth;
     const width = W - margin.left - margin.right;
@@ -52,28 +53,168 @@
       .attr('height', 420)
       .attr('viewBox', `0 0 ${W} 420`);
 
-    const defs = svg.append('defs');
-    const grad = defs.append('linearGradient')
-      .attr('id', 'timeline-gradient')
-      .attr('x1', '0%').attr('y1', '0%')
-      .attr('x2', '0%').attr('y2', '100%');
-    grad.append('stop').attr('offset', '0%')
-      .attr('stop-color', '#b8442b').attr('stop-opacity', 0.55);
-    grad.append('stop').attr('offset', '100%')
-      .attr('stop-color', '#b8442b').attr('stop-opacity', 0.04);
-
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const x = d3.scaleLinear()
-      .domain([minYear, maxYear])
-      .range([0, width]);
+    g.insert('rect', ':first-child')
+      .attr('class', 'chart-hit')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('fill', 'transparent');
 
+    const x = d3.scaleLinear().domain([minYear, maxYear]).range([0, width]);
     const y = d3.scaleLinear()
-      .domain([0, d3.max(series, d => d.count) * 1.15])
+      .domain([0, d3.max(rows, d => d.total) * 1.15])
       .nice()
       .range([height, 0]);
 
+    const stack = d3.stack().keys(keys);
+    const layers = stack(rows);
+
+    drawGrid(g, x, y, width, height);
+
+    const area = d3.area()
+      .x(d => x(d.data.year))
+      .y0(d => y(d[0]))
+      .y1(d => y(d[1]))
+      .curve(d3.curveMonotoneX);
+
+    const stackLayer = g.selectAll('.stack-layer')
+      .data(layers)
+      .enter()
+      .append('path')
+      .attr('class', 'stack-layer')
+      .attr('fill', d => Cat.getColor(d.key))
+      .attr('fill-opacity', 0.88)
+      .attr('stroke', '#f4efe4')
+      .attr('stroke-width', 0.75)
+      .attr('cursor', 'pointer')
+      .attr('d', area);
+
+    const totalSeries = rows.map(d => ({ year: d.year, count: d.total }));
+    const line = d3.line()
+      .x(d => x(d.year))
+      .y(d => y(d.count))
+      .curve(d3.curveMonotoneX);
+
+    g.append('path')
+      .datum(totalSeries)
+      .attr('fill', 'none')
+      .attr('stroke', '#1c1b18')
+      .attr('stroke-width', 1)
+      .attr('opacity', 0.35)
+      .attr('d', line);
+
+    drawAxes(g, x, y, width, height, rows.length);
+    if (window.DataLoader.filters.categories.length === 0) {
+      drawAnnotations(g, totalSeries, x, y);
+    }
+
+    attachStackedInteraction(g, stackLayer, totalSeries, rows, keys, x, y, width, height);
+  }
+
+  function positionTooltip(event) {
+    tooltip.style.left = (event.pageX + 14) + 'px';
+    tooltip.style.top = (event.pageY - 28) + 'px';
+  }
+
+  function layerTooltipHtml(key, seg) {
+    return (
+      `<div class="tooltip__cat">` +
+      `<span class="tooltip__swatch" style="background:${Cat.getColor(key)}"></span>` +
+      `<strong>${Cat.getLabel(key)}</strong>` +
+      `<em>${seg.year} · ${seg.count} incident${seg.count === 1 ? '' : 's'}</em></div>`
+    );
+  }
+
+  function setLayerHighlight(g, activeKey) {
+    g.selectAll('.stack-layer').attr('fill-opacity', function () {
+      return d3.select(this).datum().key === activeKey ? 0.95 : 0.4;
+    });
+  }
+
+  function clearLayerHighlight(g) {
+    g.selectAll('.stack-layer').attr('fill-opacity', 0.88);
+  }
+
+  function segmentForYear(layerData, year) {
+    const pt = layerData.find(p => p.data.year === year);
+    if (!pt || pt[1] <= pt[0]) return null;
+    return { year, count: Math.round(pt[1] - pt[0]) };
+  }
+
+  function attachStackedInteraction(g, stackLayer, totalSeries, rows, keys, x, y, width, height) {
+    const focus = g.append('g').attr('class', 'crosshair').style('display', 'none');
+    focus.append('line')
+      .attr('y1', 0).attr('y2', height)
+      .attr('stroke', '#1c1b18').attr('stroke-width', 0.6)
+      .attr('stroke-dasharray', '2,3');
+    const focusDot = focus.append('circle')
+      .attr('r', 4).attr('fill', '#1c1b18');
+
+    stackLayer
+      .on('mouseenter', function (event, layerData) {
+        const key = layerData.key;
+        setLayerHighlight(g, key);
+        const year = Math.round(x.invert(d3.pointer(event, g.node())[0]));
+        const seg = segmentForYear(layerData, year);
+        if (!seg) return;
+        tooltip.classList.add('is-visible');
+        tooltip.innerHTML = layerTooltipHtml(key, seg);
+        positionTooltip(event);
+      })
+      .on('mousemove', function (event, layerData) {
+        const key = layerData.key;
+        const year = Math.round(x.invert(d3.pointer(event, g.node())[0]));
+        const seg = segmentForYear(layerData, year);
+        if (!seg) return;
+        focus.style('display', 'none');
+        tooltip.classList.add('is-visible');
+        tooltip.innerHTML = layerTooltipHtml(key, seg);
+        positionTooltip(event);
+      })
+      .on('mouseleave', () => {
+        clearLayerHighlight(g);
+      });
+
+    g.on('mousemove', function (event) {
+      if (event.target.classList.contains('stack-layer')) return;
+
+      clearLayerHighlight(g);
+      const [mx] = d3.pointer(event, this);
+      const year = Math.round(x.invert(mx));
+      const point = totalSeries.find(d => d.year === year);
+      if (!point) return;
+
+      const cx = x(point.year);
+      const cy = y(point.count);
+      focus.style('display', null);
+      focus.select('line').attr('x1', cx).attr('x2', cx);
+      focusDot.attr('cx', cx).attr('cy', cy);
+
+      const row = rows.find(r => r.year === year);
+      if (!row) return;
+      const parts = keys
+        .filter(k => row[k] > 0)
+        .map(
+          k =>
+            `<div class="tooltip__row">` +
+            `<span>${Cat.getTooltipLabel(k)}</span>` +
+            `<span>${row[k]}</span></div>`
+        )
+        .join('');
+      tooltip.classList.add('is-visible');
+      tooltip.innerHTML = `<strong>${row.year}</strong>${parts}<em>Total: ${row.total}</em>`;
+      positionTooltip(event);
+    })
+    .on('mouseleave', () => {
+      focus.style('display', 'none');
+      tooltip.classList.remove('is-visible');
+      clearLayerHighlight(g);
+    });
+  }
+
+  function drawGrid(g, x, y, width, height) {
     g.append('g')
       .attr('class', 'gridlines')
       .selectAll('line')
@@ -84,47 +225,13 @@
       .attr('y1', d => y(d)).attr('y2', d => y(d))
       .attr('stroke', '#ddd6c1')
       .attr('stroke-width', 0.5);
+  }
 
-    const area = d3.area()
-      .x(d => x(d.year))
-      .y0(height)
-      .y1(d => y(d.count))
-      .curve(d3.curveMonotoneX);
-
-    const line = d3.line()
-      .x(d => x(d.year))
-      .y(d => y(d.count))
-      .curve(d3.curveMonotoneX);
-
-    const clipId = 'timeline-clip-' + Math.random().toString(36).slice(2, 8);
-    defs.append('clipPath')
-      .attr('id', clipId)
-      .append('rect')
-      .attr('width', 0)
-      .attr('height', height)
-      .transition()
-      .duration(900)
-      .ease(d3.easeCubicOut)
-      .attr('width', width);
-
-    g.append('path')
-      .datum(series)
-      .attr('clip-path', `url(#${clipId})`)
-      .attr('fill', 'url(#timeline-gradient)')
-      .attr('d', area);
-
-    g.append('path')
-      .datum(series)
-      .attr('clip-path', `url(#${clipId})`)
-      .attr('fill', 'none')
-      .attr('stroke', '#8a2e1c')
-      .attr('stroke-width', 1.5)
-      .attr('d', line);
-
+  function drawAxes(g, x, y, width, height, tickCount) {
     g.append('g')
       .attr('class', 'axis-x')
       .attr('transform', `translate(0,${height})`)
-      .call(d3.axisBottom(x).tickFormat(d3.format('d')).ticks(Math.min(12, series.length)));
+      .call(d3.axisBottom(x).tickFormat(d3.format('d')).ticks(Math.min(12, tickCount)));
 
     g.append('g')
       .attr('class', 'axis-y')
@@ -145,9 +252,11 @@
       .style('font-size', '10px').style('text-transform', 'uppercase')
       .style('letter-spacing', '0.08em').style('fill', '#8a877c')
       .text('Incidents');
+  }
 
+  function drawAnnotations(g, series, x, y) {
     const annotLayer = g.append('g').attr('class', 'annotations').style('opacity', 0);
-    annotLayer.transition().delay(900).duration(400).style('opacity', 1);
+    annotLayer.transition().delay(400).duration(400).style('opacity', 1);
 
     ANNOTATIONS.forEach(a => {
       const point = series.find(d => d.year === a.year);
@@ -183,50 +292,36 @@
         .style('fill', '#1c1b18')
         .text(a.label);
     });
-
-    const focus = g.append('g').style('display', 'none');
-    focus.append('line')
-      .attr('y1', 0).attr('y2', height)
-      .attr('stroke', '#1c1b18').attr('stroke-width', 0.6)
-      .attr('stroke-dasharray', '2,3');
-    const focusDot = focus.append('circle')
-      .attr('r', 4).attr('fill', '#1c1b18');
-
-    g.append('rect')
-      .attr('width', width).attr('height', height)
-      .attr('fill', 'transparent')
-      .on('mouseover', () => focus.style('display', null))
-      .on('mouseout', () => {
-        focus.style('display', 'none');
-        tooltip.classList.remove('is-visible');
-      })
-      .on('mousemove', function (event) {
-        const [mx] = d3.pointer(event, this);
-        const year = Math.round(x.invert(mx));
-        const point = series.find(d => d.year === year);
-        if (!point) return;
-        const cx = x(point.year);
-        const cy = y(point.count);
-        focus.select('line').attr('x1', cx).attr('x2', cx);
-        focusDot.attr('cx', cx).attr('cy', cy);
-        tooltip.classList.add('is-visible');
-        tooltip.innerHTML = `<strong>${point.year}</strong><br>${point.count} incident${point.count === 1 ? '' : 's'}`;
-        tooltip.style.left = (event.pageX + 14) + 'px';
-        tooltip.style.top = (event.pageY - 28) + 'px';
-      });
   }
 
-  window.DataLoader.load()
-    .then(data => {
-      render(data);
-      window.DataLoader.onFilterChange(() => render(data));
-      let resizeTimer;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => render(data), 150);
-      });
-    })
-    .catch(() => {
+  function render(data) {
+    container.innerHTML = '';
+    const filtered = window.DataLoader.applyFilters(data);
+    const keys = window.DataLoader.getStackCategories();
+    const meta = buildYearSeries(filtered, keys);
+
+    if (!meta) {
+      container.innerHTML = '<div class="loading">No incidents match current filters.</div>';
+      return;
+    }
+
+    renderStacked(meta);
+  }
+
+  let chartData = null;
+  window.DataLoader.onFilterChange(() => {
+    if (chartData) render(chartData);
+  });
+  window.DataLoader.onReady(data => {
+    chartData = data;
+    render(data);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => render(chartData), 150);
+    });
+  });
+  window.DataLoader.load().catch(() => {
       container.innerHTML = `
         <div class="loading">
           Could not load data. Please run a local server

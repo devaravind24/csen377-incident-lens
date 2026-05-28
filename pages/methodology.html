@@ -6,22 +6,15 @@
   <title>Methodology — Incident Lens</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
 
   <header class="nav">
     <a href="../index.html" class="nav__brand">
-      <svg class="nav__mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#b8442b" stroke-width="1.8">
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="3" fill="#b8442b" />
-        <line x1="12" y1="1" x2="12" y2="4" />
-        <line x1="12" y1="20" x2="12" y2="23" />
-        <line x1="1" y1="12" x2="4" y2="12" />
-        <line x1="20" y1="12" x2="23" y2="12" />
-      </svg>
-      <span>Incident Lens</span>
+      <img class="nav__mark" src="../assets/logo/incident-lens-logo.svg" alt="Incident Lens" />
+      <span>INCIDENT LENS</span>
     </a>
     <nav class="nav__links">
       <a href="../index.html">Index</a>
@@ -62,6 +55,57 @@
         <li>Which organizations recur most often in the incident record, and in which sectors?</li>
         <li>Who bears the cost when AI systems fail, and what categories of harm dominate?</li>
       </ul>
+    </section>
+
+    <section class="method-section">
+      <span class="method-section__label">Categories</span>
+      <h2>How incidents are classified</h2>
+      <p>
+        The AI Incident Database export does not include a single harm-category column.
+        We assign each incident one primary label from seven harm-oriented categories,
+        stored in <code>data/incident-categories.json</code>:
+      </p>
+      <ul>
+        <li><strong>Discrimination &amp; fairness</strong> — bias, disparate impact, protected characteristics</li>
+        <li><strong>Privacy &amp; surveillance</strong> — biometrics, facial recognition, privacy violations</li>
+        <li><strong>Misinformation &amp; media</strong> — deepfakes, disinformation, synthetic deception</li>
+        <li><strong>Safety &amp; autonomous systems</strong> — physical harm, AVs, robotics, clinical safety failures</li>
+        <li><strong>Economic &amp; social systems</strong> — employment, welfare, lending, criminal-justice scoring</li>
+        <li><strong>Harmful content &amp; platforms</strong> — moderation failures, hate speech, toxic amplification</li>
+        <li><strong>Malicious &amp; intentional misuse</strong> — deliberate weaponization or scam-oriented deployment</li>
+      </ul>
+      <p>
+        Classification runs offline via <code>scripts/classify-incidents.py</code>.
+        <strong>CSET v1 annotations are applied first</strong> (~200 incidents) using
+        a decision tree on rights violations, tangible harm, sector, AI task, and
+        annotator notes. Remaining incidents are labeled with
+        <code>--openai</code> (recommended; requires <code>OPENAI_API_KEY</code>)
+        or a rubric-aligned text fallback. The dashboard only reads the committed
+        JSON file — no API calls in the browser.
+      </p>
+    </section>
+
+    <section class="method-section">
+      <span class="method-section__label">Geography</span>
+      <h2>Locating harm on the map</h2>
+      <p>
+        VIZ 03 needs a country per incident, but the AIID export only carries
+        location for the subset annotated by CSET (~140 with a usable country
+        code). To extend coverage we derive a country offline via
+        <code>scripts/geo-label-incidents.py</code>, written to
+        <code>data/incident-countries.json</code>. The script trusts the CSET
+        location first, then scans each incident's title and description for, in
+        priority order, explicit country names, demonyms, major cities, and US
+        state names — labeling only on a clear signal and leaving the rest blank
+        rather than guessing. This lifts <em>affected</em> coverage to roughly
+        55% of incidents. A separate <em>developer / deployer</em> view maps the
+        named organization to its country of origin.
+      </p>
+      <p>
+        The rule-based pass is transparent and reproducible; an LLM labeling
+        pass can refine it further, with a manual sweep for residual errors. As
+        with categories, the browser reads only the committed JSON.
+      </p>
     </section>
 
     <section class="method-section">

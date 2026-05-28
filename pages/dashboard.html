@@ -6,22 +6,15 @@
   <title>Dashboard — Incident Lens</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
 
   <header class="nav">
     <a href="../index.html" class="nav__brand">
-      <svg class="nav__mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#b8442b" stroke-width="1.8">
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="3" fill="#b8442b" />
-        <line x1="12" y1="1" x2="12" y2="4" />
-        <line x1="12" y1="20" x2="12" y2="23" />
-        <line x1="1" y1="12" x2="4" y2="12" />
-        <line x1="20" y1="12" x2="23" y2="12" />
-      </svg>
-      <span>Incident Lens</span>
+      <img class="nav__mark" src="../assets/logo/incident-lens-logo.svg" alt="Incident Lens" />
+      <span>INCIDENT LENS</span>
     </a>
     <nav class="nav__links">
       <a href="../index.html">Index</a>
@@ -35,32 +28,27 @@
     <span class="dash-header__label">Dashboard</span>
     <h1>1,457 incidents, four decades, one lens.</h1>
     <p class="dash-header__sub">
-      Filter, hover, and explore documented AI failures across the AI Incident
-      Database. Each visualization responds to the controls below.
+      Filter by year and category (select multiple), then hover to explore documented AI failures.
+      Each visualization responds to the controls below.
     </p>
   </section>
 
   <div class="filterbar">
-    <label>
-      Year range
-      <select id="filter-year">
-        <option value="all">All years</option>
-        <option value="2024">2024 — present</option>
-        <option value="2020">2020 — present</option>
-        <option value="2015">2015 — present</option>
-      </select>
-    </label>
-    <label>
-      Search
-      <input type="text" id="filter-search" placeholder="e.g. facial recognition" />
-    </label>
-    <label>
-      Sort by
-      <select id="filter-sort">
-        <option value="date">Date</option>
-        <option value="reports">Report count</option>
-      </select>
-    </label>
+    <div class="filterbar__years">
+      <div class="year-range-control" role="group" aria-label="Year range">
+        <span class="year-range__title">Year</span>
+        <span class="year-range__value" id="year-from-val">2010</span>
+        <input type="range" id="filter-year-from" class="year-range" min="1983" max="2026" step="1" value="2010" aria-label="Start year" />
+        <span class="year-range__sep" aria-hidden="true">–</span>
+        <input type="range" id="filter-year-to" class="year-range" min="1983" max="2026" step="1" value="2026" aria-label="End year" />
+        <span class="year-range__value" id="year-to-val">2026</span>
+      </div>
+      <button type="button" class="year-reset-btn" id="filter-year-reset" title="Show all years">All</button>
+    </div>
+    <div class="filterbar__categories">
+      <span class="filterbar__categories-label">Category</span>
+      <div class="filterbar__chips" id="filter-categories" role="group" aria-label="Incident category"></div>
+    </div>
   </div>
 
   <section class="viz" id="timeline">
@@ -96,27 +84,26 @@
 
   <!--
     ====================================================================
-    VIZ 03 — Categories of harm
-    Uncomment this section when js/viz-harms.js is ready.
+    VIZ 03 — Who is harmed, and where (choropleth + toggle)
     ====================================================================
-
+  -->
   <section class="viz" id="harms">
     <div class="viz__head">
       <div>
         <span class="viz__num">03</span>
-        <h2 class="viz__title">Who is harmed, and how</h2>
+        <h2 class="viz__title">Who is harmed, and where</h2>
       </div>
-      <span class="viz__meta">Source: classifications_CSETv1.csv</span>
+      <span class="viz__meta">Toggle: affected vs. developer / deployer</span>
     </div>
-    <div class="viz__chart" id="chart-harms">
-      <div class="loading">Loading…</div>
+    <div class="viz__chart viz__chart--map" id="chart-harms">
+      <div class="loading">Loading map…</div>
     </div>
+    <p class="viz__hint">
+      <strong>People affected</strong> uses the country of the harmed parties
+      (from CSETv1 classifications). <strong>Developer / deployer</strong>
+      maps the named organization to its country of origin.
+    </p>
   </section>
-  -->
-
-  <div class="in-progress">
-    A third visualization on harm categories is <span>in development</span>
-  </div>
 
   <footer class="footer">
     <div class="footer__brand">Incident Lens · A visualization of the AI Incident Database</div>
@@ -129,11 +116,11 @@
   <div class="tooltip" id="tooltip"></div>
 
   <script src="../js/lib/d3.min.js"></script>
+  <script src="../js/categories.js"></script>
   <script src="../js/data-loader.js"></script>
   <script src="../js/viz-timeline.js"></script>
   <script src="../js/viz-deployers.js"></script>
-  <!-- Teammates: uncomment when viz-harms.js is ready -->
-  <!-- <script src="../js/viz-harms.js"></script> -->
+  <script src="../js/viz-harms.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
