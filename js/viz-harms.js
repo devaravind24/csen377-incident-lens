@@ -21,6 +21,7 @@
 
   const WORLD_PATH = '../data/world-countries.geojson';
   const CLASSIFICATIONS_PATH = '../data/classifications_CSETv1.csv';
+  const COUNTRIES_PATH = '../data/incident-countries.json';
 
   // ---- ISO-2 → ISO-3 (covers everything in CSETv1) -------------------
   const ISO2_TO_ISO3 = {
@@ -110,7 +111,8 @@
   // ---- Module state -------------------------------------------------
   let MAP_MODE = 'affected';                 // local, not on DataLoader
   let WORLD_GJ = null;                       // GeoJSON FeatureCollection
-  let AFFECTED_BY_ID = new Map();            // incident_id → ISO3
+  let AFFECTED_BY_ID = new Map();            // incident_id → ISO3 (affected)
+  let DEVELOPER_BY_ID = new Map();           // incident_id → ISO3 (developer)
   let DATA_REF = null;                       // cached incidents array
 
   // ---- Color ramps per mode ----------------------------------------
@@ -131,7 +133,7 @@
     filtered.forEach(d => {
       const code = MAP_MODE === 'affected'
         ? AFFECTED_BY_ID.get(String(d.incident_id))
-        : pickDeveloperCountry(d);
+        : DEVELOPER_BY_ID.get(String(d.incident_id));
       if (code) counts.set(code, (counts.get(code) || 0) + 1);
     });
 
@@ -256,23 +258,53 @@
     return null;
   }
 
-  // ---- Bootstrap: world + classifications, then hook up --------------
+  // ---- Bootstrap: world geometry + country labels, then hook up ------
+  // Preferred source: data/incident-countries.json (richer, ~55% affected
+  // coverage from scripts/geo-label-incidents.py). Falls back to the CSET
+  // CSV + in-JS company map if that file is missing, so the map never
+  // breaks regardless of which data is committed.
   Promise.all([
     d3.json(WORLD_PATH),
+    d3.json(COUNTRIES_PATH).catch(() => null),
     d3.csv(CLASSIFICATIONS_PATH).catch(() => []),
   ])
-    .then(([world, classifications]) => {
+    .then(([world, countries, classifications]) => {
       WORLD_GJ = world;
-      classifications.forEach(row => {
-        const id = row['Incident ID'];
-        const iso2 = (row['Location Country (two letters)'] || '').trim();
-        if (id && iso2 && iso2.length === 2) {
-          const iso3 = iso2to3(iso2);
-          if (iso3) AFFECTED_BY_ID.set(String(id), iso3);
-        }
-      });
+
+      if (countries) {
+        // Rich pre-computed labels: { incident_id: {affected, developer} }
+        Object.keys(countries).forEach(id => {
+          const rec = countries[id] || {};
+          if (rec.affected)  AFFECTED_BY_ID.set(String(id), rec.affected);
+          if (rec.developer) DEVELOPER_BY_ID.set(String(id), rec.developer);
+        });
+        console.log(`[viz-harms] loaded country labels: ` +
+          `${AFFECTED_BY_ID.size} affected · ${DEVELOPER_BY_ID.size} developer`);
+      } else {
+        // Fallback path — CSET CSV for affected, company map for developer.
+        classifications.forEach(row => {
+          const id = row['Incident ID'];
+          const iso2 = (row['Location Country (two letters)'] || '').trim();
+          if (id && iso2 && iso2.length === 2) {
+            const iso3 = iso2to3(iso2);
+            if (iso3) AFFECTED_BY_ID.set(String(id), iso3);
+          }
+        });
+        // developer fallback is computed per-incident in render via the map
+        DEVELOPER_BY_ID = null;
+        console.warn('[viz-harms] incident-countries.json missing — using CSET fallback');
+      }
+
       window.DataLoader.onReady(data => {
         DATA_REF = data;
+        // If developer labels weren't pre-computed, derive them now.
+        if (DEVELOPER_BY_ID === null) {
+          DEVELOPER_BY_ID = new Map();
+          data.forEach(d => {
+            const c = pickDeveloperCountry(d);
+            if (c) DEVELOPER_BY_ID.set(String(d.incident_id), c);
+          });
+        }
         render();
       });
       window.DataLoader.onFilterChange(() => render());

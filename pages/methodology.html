@@ -86,6 +86,29 @@
     </section>
 
     <section class="method-section">
+      <span class="method-section__label">Geography</span>
+      <h2>Locating harm on the map</h2>
+      <p>
+        VIZ 03 needs a country per incident, but the AIID export only carries
+        location for the subset annotated by CSET (~140 with a usable country
+        code). To extend coverage we derive a country offline via
+        <code>scripts/geo-label-incidents.py</code>, written to
+        <code>data/incident-countries.json</code>. The script trusts the CSET
+        location first, then scans each incident's title and description for, in
+        priority order, explicit country names, demonyms, major cities, and US
+        state names — labeling only on a clear signal and leaving the rest blank
+        rather than guessing. This lifts <em>affected</em> coverage to roughly
+        55% of incidents. A separate <em>developer / deployer</em> view maps the
+        named organization to its country of origin.
+      </p>
+      <p>
+        The rule-based pass is transparent and reproducible; an LLM labeling
+        pass can refine it further, with a manual sweep for residual errors. As
+        with categories, the browser reads only the committed JSON.
+      </p>
+    </section>
+
+    <section class="method-section">
       <span class="method-section__label">Approach</span>
       <h2>From archive to lens</h2>
       <p>
