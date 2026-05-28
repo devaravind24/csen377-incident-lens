@@ -1,0 +1,1474 @@
+incident_id,date,title,victim_country
+23,2017-11-08,Las Vegas Self-Driving Bus Involved in Accident,USA
+4,2018-03-18,Uber AV Killed Pedestrian in Arizona,USA
+1,2015-05-19,Googles YouTube Kids App Presents Inappropriate Content,worldwide
+18,2015-04-04,Gender Biases of Google Image Search,worldwide
+12,2016-07-21,Common Biases of Vector Embeddings,worldwide
+15,2008-05-23,Amazon Censors Gay Books,worldwide
+7,2017-02-24,Wikipedia Vandalism Prevention Bot Loop,worldwide
+5,2015-07-13,Collection of Robotic Surgery Malfunctions,worldwide
+6,2016-03-24,"Microsofts TayBot Allegedly Posts Racist, Sexist, and Anti-Semitic Content to Twitter",worldwide
+10,2014-08-14,Kronos Scheduling Algorithm Allegedly Caused Financial Issues for Starbucks Employees,worldwide
+11,2016-05-23,Northpointe Risk Models,USA
+20,2016-06-30,A Collection of Tesla Autopilot-Involved Crashes,worldwide
+24,2014-07-15,Robot kills worker at German Volkswagen plant,DEU
+14,2017-10-26,Biased Sentiment Analysis,worldwide
+16,2015-06-03,Images of Black People Labeled as Gorillas,worldwide
+3,2018-10-27,Crashes with Maneuvering Characteristics Augmentation System (MCAS),worldwide
+2,2018-12-05,Warehouse robot ruptures can of bear spray and injures workers,USA
+19,2013-01-23,Sexist and Racist Google Adsense Advertisements,worldwide
+9,2012-02-25,NY City School Teacher Evaluation Algorithm Contested,USA
+8,2014-08-15,Uber Autonomous Cars Running Red Lights,USA
+13,2017-02-27,High-Toxicity Assessed on Text Involving Women and Minority Groups,worldwide
+21,2016-07-14,Tougher Turing Test Exposes Chatbots Stupidity (migrated to Issue),worldwide
+17,2015-11-03,Inappropriate Gmail Smart Reply Suggestions,worldwide
+22,2017-12-06,Waze Navigates Motorists into Wildfires,USA
+25,2015-06-23,"Google and Delphi Self-Driving Prototypes Allegedly Involved in Near-Miss on San Antonio Road, Palo Alto",USA
+37,2016-08-10,Amazons Experimental Hiring Tool Allegedly Displayed Gender Bias in Candidate Rankings,worldwide
+31,2017-12-03,Driverless Train in Delhi Crashes due to Braking Failure,IND
+34,2015-12-05,Amazon Alexa Responding to Environmental Inputs,worldwide
+27,1983-09-26,Nuclear False Alarm,worldwide
+29,2011-09-20,Image Classification of Battle Tanks,USA
+32,2017-09-13,Identical Twins Can Open Apple FaceID Protected Devices,worldwide
+44,2008-07-01,Machine Personal Assistants Failed to Maintain Social Norms,USA
+35,2014-10-18,Employee Automatically Terminated by Computer Program,worldwide
+47,2016-09-06,LinkedIn Search Prefers Male Names,USA
+48,2016-12-07,Passport checker Detects Asian mans Eyes as Closed,NZL
+28,2010-05-08,2010 Market Flash Crash,worldwide
+43,1998-03-05,Racist AI behaviour is not a new problem,worldwide
+26,2017-09-13,Hackers Break Apple Face ID,worldwide
+33,2017-11-09,Amazon Alexa Plays Loud Music when Owner is Away,worldwide
+46,2014-01-21,Nest Smoke Alarm Erroneously Stops Alarming,worldwide
+39,2017-07-01,Deepfake Obama Introduction of Deepfakes,JOR
+30,2016-10-08,Poor Performance of Tesla Factory Robots,worldwide
+36,2018-11-06,Picture of Woman on Side of Bus Shamed for Jaywalking,CHN
+41,2018-04-02,All Image Captions Produced are Violent,worldwide
+42,1996-04-03,Inefficiencies in the United States Resident Matching Program,USA
+45,2011-04-05,Defamation via AutoComplete,worldwide
+38,2016-06-02,Game AI System Produces Imbalanced Game,worldwide
+40,2016-05-23,COMPAS Algorithm Reportedly Performs Poorly in Crime Recidivism Prediction,worldwide
+64,2018-01-22,Customer Service Robot Scares Away Customers,GBR
+67,2018-12-01,Sleeping Driver on Tesla AutoPilot,worldwide
+60,2017-04-25,FaceApp Racial Filters,worldwide
+54,2015-11-18,Predictive Policing Biases of PredPol,worldwide
+68,2017-07-17,Security Robot Drowns Itself in a Fountain,USA
+58,2017-10-12,Russian Chatbot Supports Stalin and Violence,RUS
+61,2017-05-01,Overfit Kaggle Models Discouraged Data Science Competitors,worldwide
+52,2016-07-01,Tesla on AutoPilot Killed Driver in Crash in Florida while Watching Movie,USA
+70,2016-02-10,Self-driving cars in winter,SWE
+59,2017-04-13,Gender Biases in Google Translate,worldwide
+62,2017-12-23,Bad AI-Written Christmas Carols,worldwide
+51,2016-07-12,Security Robot Rolls Over Child in Mall,worldwide
+53,2016-03-31,Biased Google Image Results,worldwide
+63,2018-01-25,Google Photo Merge Decapitates Subject,worldwide
+56,2017-07-10,AI-Designed Phone Cases Are Unexpected,worldwide
+57,2015-07-01,Australian Automated Debt Assessment System Issued False Notices to Thousands,AUS
+65,2016-12-22,Reinforcement Learning Reward Functions in Video Games,worldwide
+50,2016-06-17,The DAO Hack,worldwide
+71,2016-02-14,Google Waymo Vehicle and Bus Allegedly Collide in California,USA
+55,2016-12-30,Alexa Plays Pornography Instead of Kids Song,worldwide
+69,2015-07-02,Worker killed by robot in welding accident at car parts factory in India,IND
+66,2017-08-02,Chinese Chatbots Question Communist Party,CHN
+49,2016-09-05,AI Beauty Judge Did Not Like Dark Skin,worldwide
+72,2017-10-17,"Facebook translates good morning into attack them, leading to arrest","PSE, ISR"
+82,2020-10-21,#LekkiMassacre: Why Facebook labelled content from October 20 incident false,NGA
+93,2018-08-13,HUD charges Facebook with enabling housing discrimination,USA
+85,2020-10-09,"AI attempts to ease fear of robots, blurts out it cant avoid destroying humankind",worldwide
+84,2020-10-09,"Tiny Changes Let False Claims About COVID-19, Voting Evade Facebook Fact Checks",USA
+77,2019-10-04,Knightscopes Park Patrol Robot Ignored Bystander Pressing Emergency Button to Alert Police about Fight,USA
+78,2020-07-06,Meet the Secret Algorithm Thats Keeping Students Out of College,worldwide
+96,2017-05-08,Houston Schools Must Face Teacher Evaluation Lawsuit,USA
+88,2017-08-15,"""Jewish Baby Strollers"" Provided Anti-Semitic Google Images, Allegedly Resulting from Hate Speech Campaign",worldwide
+73,2016-03-01,Is Pokémon Go racist? How the app may be redlining communities of color,worldwide
+75,2012-01-05,Google Instants Allegedly Anti-Semitic Results Lead To Lawsuit In France,FRA
+81,2020-10-21,"Researchers find evidence of racial, gender, and socioeconomic bias in chest X-ray classifiers",CAN
+86,2020-10-08,Coding Errors in Leaving Certificate Grading Algorithm Caused Inaccurate Scores in Ireland,IRL
+74,2020-01-30,Detroit Police Wrongfully Arrested Black Man Due To Faulty FRT,USA
+95,2019-11-06,Job Screening Service Halts Facial Analysis of Applicants,worldwide
+80,2020-10-24,AI mistakes referees bald head for football — hilarity ensued,worldwide
+83,2020-10-22,AI Spam Filters Allegedly Block Legitimate Emails Based on Biased Keyword Detection,NGA
+97,2020-10-22,Tesla Autopilot Mistakes Red Letters on Flag for Red Traffic Lights,worldwide
+98,2021-04-28,N.Y.P.D. Robot Dogs Run Is Cut Short After Fierce Backlash,USA
+79,1999-03-16,Kidney Testing Method Allegedly Underestimated Risk of Black Patients,USA
+87,2020-10-07,UK passport photo checker shows bias against dark-skinned women,GBR
+91,2020-12-18,Frontline workers protest at Stanford after hospital distributed vaccine to administrators,worldwide
+76,2020-10-09,Live facial recognition is tracking kids suspected of being criminals,ARG
+92,2019-11-11,Apple Cards Credit Assessment Algorithm Allegedly Discriminated against Women,worldwide
+89,2019-03-15,The Christchurch shooter and YouTubes radicalization trap,NZL
+94,2020-11-27,Court Rules Deliveroo Used Discriminatory Algorithm,ITA
+110,2016-01-01,Arkansass Opaque Algorithm to Allocate Health Care Excessively Cut Down Hours for Beneficiaries,USA
+111,2015-09-25,Amazon Flex Drivers Allegedly Fired via Automated Employee Evaluations,worldwide
+104,2021-02-12,"Californias Algorithm Considered ZIP Codes in Vaccine Distribution, Allegedly Excluding Low-Income Neighborhoods and Communities of Color",USA
+106,2020-12-23,Korean Chatbot Luda Made Offensive Remarks towards Minority Groups,KOR
+108,2021-07-10,Skating Rinks Facial Recognition Cameras Misidentified Black Teenager as Banned Troublemaker,USA
+115,2020-07-28,Genderifys AI to Predict a Persons Gender Revealed by Free API Users to Exhibit Bias,worldwide
+114,2018-07-26,Amazons Rekognition Falsely Matched Members of Congress to Mugshots,worldwide
+107,2018-07-20,"Chinese Tech Firms Allegedly Developed Facial Recognition to Identify People by Race, Targeting Uyghur Muslims",CHN
+119,2021-08-03,Xsolla Employees Fired by CEO Allegedly via Big Data Analytics of Work Activities,RUS
+105,2019-08-24,"Tesla Model 3 on Autopilot Crashed into a Ford Explorer Pickup, Killing a Fifteen-Year-Old in California",USA
+99,2012-01-01,Major Universities Are Using Race as a “High Impact Predictor” of Student Success,worldwide
+121,2020-03-27,Autonomous Kargu-2 Drone Allegedly Remotely Used to Hunt down Libyan Soldiers,LBY
+109,2017-01-01,PimEyess Facial Recognition AI Allegedly Lacked Safeguards to Prevent Itself from Being Abused,worldwide
+101,2018-09-01,Dutch Families Wrongfully Accused of Tax Fraud Due to Discriminatory Algorithm,NLD
+103,2020-09-18,Twitters Image Cropping Tool Allegedly Showed Gender and Racial Bias,worldwide
+113,2020-06-27,"Facebooks AI Put ""Primates"" Label on Video Featuring Black Men",worldwide
+122,2015-06-14,"Facebooks ""Tag Suggestions"" Allegedly Stored Biometric Data without User Consent",USA
+102,2020-03-23,"Personal voice assistants struggle with black voices, new study shows",worldwide
+112,2012-10-09,Police Departments Reported ShotSpotter as Unreliable and Wasteful,USA
+100,2021-03-17,How French welfare services are creating robo-debt,FRA
+116,2021-09-20,Amazons AI Cameras Incorrectly Penalized Delivery Drivers for Mistakes They Did Not Make,worldwide
+118,2020-08-06,OpenAIs GPT-3 Associated Muslims with Violence,worldwide
+120,2020-09-01,Philosophy AI Allegedly Used To Generate Mixture of Innocent and Harmful Reddit Posts,worldwide
+117,2020-02-24,"TikToks ""Suggested Accounts"" Algorithm Allegedly Reinforced Racial Bias through Feedback Loops",worldwide
+129,2021-03-01,"Facebooks Automated Tools Failed to Adequately Remove Hate Speech, Violence, and Incitement",worldwide
+140,2020-06-01,ProctorUs Identity Verification and Exam Monitoring Systems Provided Allegedly Discriminatory Experiences for BIPOC Students,CAN
+146,2021-10-22,"Research Prototype AI, Delphi, Reportedly Gave Racially Biased Answers on Ethics",worldwide
+137,2021-01-11,"Israeli Tax Authority Reportedly Used an Opaque Automated System to Issue a Fine, Declining to Explain or Disclose the Underlying Calculation",ISR
+144,2020-06-28,YouTubes AI Mistakenly Banned Chess Channel over Chess Language Misinterpretation,worldwide
+148,2021-11-21,Web Accessibility Vendors Allegedly Falsely Claimed to Provide Compliance Using AI,worldwide
+160,2021-12-26,Alexa Recommended Dangerous TikTok Challenge to Ten-Year-Old Girl,worldwide
+152,2021-07-13,"SoftBanks Humanoid Robot, Pepper, Reportedly Frequently Made Errors, Prompting Dismissal",worldwide
+161,2019-04-03,Facebooks Ad Delivery Reportedly Excluded Audience along Racial and Gender Lines,worldwide
+164,2018-10-01,"Facebook ""News Feed"" Allegedly Boosted Misinformation and Violating Content Following Use of MSI Metric",worldwide
+168,2022-03-01,"Collaborative Filtering Prone to Popularity Bias, Resulting in Overrepresentation of Popular Items in the Recommendation Outputs",worldwide
+133,2020-12-15,Online Trolls Allegedly Abused TikToks Automated Content Reporting System to Discriminate against Marginalized Creators,worldwide
+131,2020-12-04,Proctoring Algorithm in Online California Bar Exam Flagged an Unusually High Number of Alleged Cheaters,USA
+153,2019-12-29,"Tesla Driver on Autopilot Ran a Red Light, Crashing into a Car and Killing Two People in Los Angeles",USA
+145,2021-07-23,Teslas Autopilot Misidentified the Moon as Yellow Stop Light,worldwide
+141,2021-02-05,California Police Turned on Music to Allegedly Trigger Instagrams DCMA to Avoid Being Live-Streamed,USA
+134,2020-12-25,"Robot in Chinese Shopping Mall Fell off the Escalator, Knocking down Passengers",CHN
+125,2020-09-29,Amazons Robotic Fulfillment Centers Have Higher Serious Injury Rates,worldwide
+136,2020-12-06,"Brand Safety Tech Firms Falsely Claimed Use of AI, Blocking Ads Using Simple Keyword Lists",worldwide
+138,2020-01-21,Alleged Issues with Proctorios Remote-Testing AI Prompted Suspension by University,USA
+132,2020-12-27,TikToks Content Moderation Allegedly Failed to Adequately Take down Videos Promoting Eating Disorders,worldwide
+135,2012-12-01,UT Austin GRADE Algorithm Allegedly Reinforced Historical Inequalities,USA
+155,2021-12-27,Google Maps Allegedly Directed Sierra Nevada Travelers to Dangerous Roads amid Winter Storm,USA
+162,2014-01-01,"ETS Used Allegedly Flawed Voice Recognition Evidence to Accuse and Assess Scale of Cheating, Causing Thousands to be Deported from the UK",GBR
+171,2021-10-18,"Traffic Camera Misread Text on Pedestrians Shirt as License Plate, Causing UK Officials to Issue Fine to an Unrelated Person",GBR
+151,2021-10-28,California Regulator Suspended Pony.ais Driverless Testing Permit Following a Non-Fatal Collision,USA
+123,2021-08-01,Epic Systemss Sepsis Prediction Algorithms Revealed to Have High Error Rates on Seriously Ill Patients,USA
+156,2022-02-04,Amazon Reportedly Sold Products and Recommended Frequently Bought Together Items That Aid Suicide Attempts,worldwide
+143,2021-02-16,Facebooks and Twitters Automated Content Moderation Reportedly Failed to Effectively Enforce Violation Rules for Small Language Groups,worldwide
+157,2021-03-15,"Amazons Monitoring System Allegedly Pushed Delivery Drivers to Prioritize Speed over Safety, Leading to Crash",worldwide
+170,2003-06-01,"Target Suggested Maternity-Related Advertisements to a Teenage Girls Home, Allegedly Correctly Predicting Her Pregnancy via Algorithm",USA
+139,2021-01-21,Amazons Search and Recommendation Algorithms Found by Auditors to Have Boosted Products That Contained Vaccine Misinformation,worldwide
+142,2021-02-11,Facebooks Advertisement Moderation System Routinely Misidentified Adaptive Fashion Products as Medical Equipment and Blocked Their Sellers,worldwide
+150,2018-07-21,"Swedish Contraceptive App, Natural Cycles, Allegedly Failed to Correctly Map Menstrual Cycle",SWE
+169,2018-08-15,Facebook Allegedly Failed to Police Anti-Rohingya Hate Speech Content That Contributed to Violence in Myanmar,MMR
+147,2020-01-15,Reported AI-Cloned Voice Used to Deceive Hong Kong Bank Manager in Purported $35 Million Fraud Scheme,"JPN, ARE, HKG"
+126,2021-07-16,"Three Robots Collided, Sparking Fire in a Grocers Warehouse in UK ",GBR
+128,2017-08-01,"Tesla Sedan on Autopilot Reportedly Drove Over Dividing Curb in Washington, Resulting in Minor Vehicle Damage",worldwide
+154,2022-01-26,Justice Departments Recidivism Risk Algorithm PATTERN Allegedly Caused Persistent Disparities Along Racial Lines,worldwide
+165,2020-06-20,Image Upscaling Algorithm PULSE Allegedly Produced Facial Images with Caucasian Features More Often,worldwide
+158,2021-02-01,Facial Recognition in Remote Learning Software Reportedly Failed to Recognize a Black Students Face,worldwide
+149,2021-11-02,Zillow Shut Down Zillow Offers Division Allegedly Due to Predictive Pricing Tools Insufficient Accuracy,worldwide
+124,2019-10-24,Optum Algorithmic Health Risk Scores Reportedly Underestimated Black Patients Needs,worldwide
+159,2019-03-29,Tesla Autopilots Lane Recognition Allegedly Vulnerable to Adversarial Attacks,worldwide
+167,2017-09-07,Researchers Homosexual-Men Detection Model Denounced as a Threat to LGBTQ Peoples Safety and Privacy,USA
+127,2020-06-06,Microsofts Algorithm Allegedly Selected Photo of the Wrong Mixed-Race Person Featured in a News Story,worldwide
+163,2021-11-21,Facebooks Hate Speech Detection Algorithms Allegedly Disproportionately Failed to Remove Racist Content towards Minority Groups,worldwide
+166,2020-02-07,"Networking Platform Giggle Employs AI to Determine Users Gender, Allegedly Excluding Transgender Women",worldwide
+176,2022-03-02,"Starships Autonomous Food Delivery Robot Allegedly Stranded at Railroad Crossing in Oregon, Run over by Freight Train",USA
+182,2018-06-11,Two Cruise Autonomous Vehicles Collided with Each Other in California ,USA
+173,2021-07-30,"AI Tools Failed to Sufficiently Predict COVID Patients, Some Potentially Harmful",worldwide
+203,2022-02-10,Uber Launched Opaque Algorithm That Changes Drivers Payments in the US,worldwide
+184,2018-04-12,Facial Recognition Program in São Paulo Metro Stations Suspended for Illegal and Disproportionate Violation of Citizens Right to Privacy,worldwide
+195,2015-09-01,Predictive Policing Program by Florida Sheriffs Office Allegedly Violated Residents Rights and Targeted Children of Vulnerable Groups,USA
+213,2020-07-01,Facebooks Political Ad Detection Reportedly Showed High and Geographically Uneven Error Rates,worldwide
+174,2022-02-28,Fake LinkedIn Profiles Created Using GAN Photos,worldwide
+198,2022-03-16,Deepfake Video of Ukrainian President Yielding to Russia Posted on Ukrainian Websites and Social Media,"UKR, RUS"
+175,2022-04-01,Cruise Autonomous Taxi Allegedly Bolted off from Police After Being Pulled over in San Francisco,USA
+178,2022-04-21,"Tesla Owner Activated ""Smart Summon"" Feature, Causing a Collision with an Aircraft in a Washington Airport",worldwide
+180,2020-02-19,Algorithm Used by the Malaysian Judiciary Reportedly Recommended Unusually High Sentencing to a Drug Possession Case,worldwide
+183,2017-07-01,"Airbnbs Trustworthiness Algorithm Allegedly Banned Users without Explanation, and Discriminated against Sex Workers",worldwide
+220,2020-11-11,Facebook Mistakenly Blocked Small Business Ads,worldwide
+194,2018-02-01,"Australian Telcos Incident Management Bot Excessively Sent Technicians in the Field by Mistake, Allegedly Costing Millions",AUS
+200,2019-03-01,Fraudsters Used AI to Mimic Voice of a UK-Based Firms CEOs Boss,GBR
+206,2015-03-01,Tinders Personalized Pricing Algorithm Found to Offer Higher Prices for Older Users,worldwide
+186,2007-07-26,"Algorithm Assessing Risk Faced by Victims of Gender Violence Misclassified Low-Risk Cases, Allegedly Leading to Homicide of Women and Children in Spain",ESP
+202,2021-12-06,Korean Politician Employed Deepfake as Campaign Representative,KOR
+216,2017-10-10,WeChats Machine Translation Gave a Racist English Translation for the Chinese Term for “Black Foreigner”,CHN
+221,2022-03-07,A Road Engineer Killed Following a Collision Involving a Tesla on Autopilot,TWN
+179,2022-04-01,DALL-E 2 Reported for Gender and Racially Biased Outputs,worldwide
+172,2020-07-01,NarxCares Risk Score Model Allegedly Lacked Validation and Trained on Data with High Risk of Bias,USA
+181,2022-02-11,"BMW Sedan Made a Prohibited Left Turn, Colliding with a Cruise Autonomous Vehicle",worldwide
+190,2017-01-15,"ByteDance Allegedly Trained ""For You"" Algorithm Using Content Scraped without Consent from Other Social Platforms",USA
+177,2022-04-19,Googles Assistive Writing Feature Provided Allegedly Unnecessary and Clumsy Suggestions,worldwide
+188,2018-04-11,Argentinian City Government Deployed Teenage-Pregnancy Predictive Algorithm Using Invasive Demographic Data,ARG
+191,2020-10-06,Korean Internet Portal Giant Naver Manipulated Shopping and Video Search Algorithms to Favor In-House Services,KOR
+201,2020-04-14,Climate Action Group Posted Deepfake of Belgian Prime Minister Urging Climate Crisis Action,BEL
+204,2022-02-11,A Chinese Tech Worker at Zhihu Fired Allegedly via a Resignation Risk Prediction Algorithm,CHN
+209,2020-10-20,Tesla Disabled “Rolling Stop” Functionality Associated with the “Aggressive” Driving Mode,worldwide
+219,2020-11-15,Poachers Evaded AI Cameras and Killed Four Rhinos,worldwide
+189,2019-10-15,Opaque Fraud Detection Algorithm by the UKs Department of Work and Pensions Allegedly Discriminated against People with Disabilities,GBR
+214,2020-01-02,SN Technologies Reportedly Lied to a New York State School District about Its Facial and Weapon Detection Systems Performance,USA
+215,2020-04-01,Facebook Content Moderators Demand Better Working Conditions Due to Allegedly Inadequate AI Content Moderation,worldwide
+192,2022-03-17,Three Make-Up Artists Lost Jobs Following Black-Box Automated Decision by HireVue,worldwide
+217,2016-11-16,"Robot at a Chinese Tech Fair Smashed a Glass Booth, Injuring a Visitor",CHN
+208,2021-05-01,"Tesla Phantom Braking Complaints Surged, Allegedly Linked to Tesla Vision Rollout",worldwide
+212,2021-01-01,XPeng Motors Fined For Illegal Collection of Consumers Faces Using Facial Recognition Cameras,CHN
+193,2013-11-27,"Excessive Automated Monitoring Alerts Ignored by Staff, Resulting in Private Data Theft of Seventy Million Target Customers",worldwide
+196,2013-09-01,Compromise of National Biometric ID Card System Leads to Reverification and Change of Status,"PAK, AFG"
+207,2021-01-10,Hawaii Police Deployed Robot Dog to Patrol a Homeless Encampment,USA
+211,2021-12-11,A Tesla Taxi Cab Involved in an Accident in Paris with Twenty Injuries,FRA
+187,2022-02-04,"YouTuber Tested Tesla on Self Driving Mode, Colliding with Street Pylons",worldwide
+185,2022-03-01,"TikToks ""For You"" Algorithm Directed New Users towards Disinformation about the War in Ukraine","RUS, UKR"
+205,2022-02-25,AI-Generated Profiles Used in Disinformation Campaign Targeting Ukrainians,"UKR, RUS"
+218,2020-06-01,Tesla on Autopilot Crashed into Flipped Truck on Taiwan Highway,TWN
+197,2021-10-01,"Facebook Internally Reported Failure of Ranking Algorithm, Exposing Harmful Content to Viewers over Months",worldwide
+199,2019-04-01,Ever AI Reportedly Deceived Customers about FRT Use in App,worldwide
+210,2020-04-28,Indian Political App Tek Fog Allegedly Hijacked Trends and Manipulated Public Opinion on Other Social Media Platforms,IND
+235,2016-04-15,"Chinese Insurer Ping An Employed Facial Recognition to Determine Customers Untrustworthiness, Which Critics Alleged to Likely Make Errors and Discriminate",CHN
+227,2018-01-12,"Waze App Allegedly Caused Tourists Car to End up in Lake Champlain, Vermont",USA
+222,2020-07-18,Thoughts App Allegedly Created Toxic Tweets,worldwide
+223,2019-10-09,Hive Box Facial-Recognition Locks Hacked by Fourth Graders Using Intended Recipients Facial Photo,CHN
+229,2018-04-23,Content Using Bestiality Thumbnails Allegedly Evaded YouTubes Thumbnail Monitoring System,KHM
+224,2020-07-01,WeChat Pays Facial Recognition Security Evaded by Scammers Using Victims Social Media Content,CHN
+239,2009-09-01,Algorithmic Teacher Evaluation Program Failed Student Outcome Goals and Allegedly Caused Harm Against Teachers,worldwide
+225,2017-04-07,IBM Watson for Oncology Criticized by Customers for Allegedly Unsafe and Inaccurate Cancer Treatment Recommendations,USA
+232,2018-04-29,"Tesla Model X on Autopilot Missed Parked Vehicles and Pedestrians, Killing Motorcyclist in Japan",JPN
+242,2021-02-24,Manufacturing Robot Failure Caused Factory Workers Death in India,IND
+244,2020-08-03,"Colorado Polices Automated License Plate Reader (ALPR) Matched a Familys Minivans Plate to That of a Stolen Vehicle Allegedly, Resulting in Detainment at Gunpoint",USA
+233,2018-12-03,Tumblr Automated Pornography-Detecting Algorithms Erroneously Flagged Inoffensive Images as Explicit,worldwide
+230,2019-03-01,"Model 3 Tesla on Autopilot Crashed into a Truck in Florida, Killing Driver",USA
+246,2014-04-16,"Misreading of an Automated License Plate Reader (ALPR) Unverified by Police, Resulting in Traffic Stop in Missouri",USA
+228,2019-02-01,Apple Maps Allegedly Directed Ski Trip Couple Onto Unpaved Road in the Mountains,USA
+231,2016-01-20,A Tesla Crashed into and Killed a Road Sweeper on a Highway in China,CHN
+245,2009-03-30,Unverified Misreading by Automated Plate Reader Led to Traffic Stop and Restraint of an Innocent Person at Gunpoint in California,USA
+248,2018-11-23,Reported Automated License Plate Reader Alert on Previously Stolen Rental Car Leads to Alleged Wrongful Detainment in California,USA
+236,2022-04-13,AI-Generated Faces Used by Scammers to Pose as a Law Firm in Boston,USA
+234,2019-09-06,"Waze Allegedly Frequently Routed Drivers through the Town of Los Gatos, Blocking Its Single Wildfire Escape Route",worldwide
+238,2018-10-01,Oregons Screening Tool for Child Abuse Cases Discontinued Following Concerns of Racial Bias,USA
+226,2015-04-01,Waze Allegedly Clogged Streets and Directed Drivers to Make Unsafe Traffic Decisions,USA
+241,2022-07-21,Chess-Playing Robot Broke Childs Finger in Russia,RUS
+240,2021-06-29,"GitHub Copilot, Copyright Infringement and Open Source Licensing",worldwide
+243,2020-01-01,Bots Allegedly Made up Roughly Half of Twitter Accounts in Discussions Surrounding COVID-19 Related Issues,USA
+270,2011-04-18,"Apple Tweaked App Store Ranking Algorithms, Allegedly Resulted in Demotion of Local Apps in China",CHN
+271,2022-07-24,Tesla Model 3 Sedan on Autopilot Killed Motorcyclist in a Rear-End Collision in Utah,USA
+268,2020-03-16,Permanent Removal of Social Media Content via Automated Tools Allegedly Prevented Investigative Efforts,worldwide
+251,2018-08-01,Amazon Allegedly Tweaked Search Algorithm to Boost Its Own Products,worldwide
+273,2020-12-24,FaceApp Predicted Different Genders for Similar User Photos with Slight Variations,worldwide
+259,2022-06-03,"YouTuber Built, Made Publicly Available, and Released Model Trained on Toxic 4chan Posts as Prank",worldwide
+255,2020-05-31,Unreliable ShotSpotter Audio Previously Used to Convict Chicago Man in Murder Case,USA
+266,2022-01-15,"Replikas ""AI Companions"" Reportedly Abused by Its Users",worldwide
+253,2022-05-18,"Cruises Self-Driving Cars Allegedly Lost Connection to Their Server, Causing Traffic Blockages in San Francisco",USA
+249,2016-10-01,Government Deployed Extreme Surveillance Technologies to Monitor and Target Muslim Minorities in Xinjiang,CHN
+254,2015-05-01,"Googles Face Grouping Allegedly Collected and Analyzed Users Facial Structure without Consent, Violated BIPA",USA
+256,2021-11-07,DUI Arrest Case Allegedly Based Only on ShotSpotters Alert,USA
+250,2016-02-01,Dutch City Court Defended Home Value Generated by Black-Box Algorithm,NLD
+258,2022-05-13,Australian Retailers Reportedly Captured Face Prints of Their Customers without Consent,AUS
+274,2003-07-01,Virginia Courts Algorithmic Recidivism Risk Assessment Failed to Lower Incarceration Rates,USA
+267,2017-06-15,Clearview AI Algorithm Built on Photos Scraped from Social Media Profiles without Consent,worldwide
+257,2012-05-04,Police Reportedly Deployed ShotSpotter Sensors Disproportionately in Neighborhoods of Color,worldwide
+264,2022-03-01,AI-Based Vehicle Speed Estimation App Denounced by UK Drivers as Surveillance Technology,GBR
+252,2022-06-01,Remotely Operated Taser-Armed Drones Proposed by Taser Manufacturer as Defense for School Shootings in the US,worldwide
+272,2019-10-08,"Grab Tweaked Matchmaking Algorithm, Providing Preferential Treatment to Drivers Registered with Affiliated Car Rental Service",IDN
+260,2014-08-26,US DHSs Opaque Vetting Software Allegedly Relied on Poor-Quality Data and Discriminated against Immigrants,worldwide
+261,2017-11-15,"Robot Deployed by Animal Shelter to Patrol Sidewalks outside Its Office, Warding off Homeless People in San Francisco",USA
+262,2022-06-11,DALL-E Mini Reportedly Reinforced or Exacerbated Societal Biases in Its Outputs as Gender and Racial Stereotypes,worldwide
+263,2015-09-01,YouTube Recommendations Implicated in Political Radicalization of User,worldwide
+265,2021-04-01,Black Uber Eats Driver Allegedly Subjected to Excessive Photo Checks and Dismissed via FRT Results,worldwide
+278,2022-08-07,Metas BlenderBot 3 Chatbot Demo Made Offensive Antisemitic Comments,worldwide
+275,2020-06-11,Facebooks Moderation Algorithm Banned Users for Historical Evidence of Slavery,AUS
+285,2022-07-18,Google Lenss Camera-Based Translation Feature Provided an Offensive Mistranslation of a Book Title in Korean,KOR
+330,2016-12-15,“Amazons Choice” Algorithm Failed to Recommend Functional Products and Prone to Review Manipulation,worldwide
+299,2020-12-15,Japanese Porn Depixelated by Man using Deepfake,JPN
+323,2018-05-29,Tesla on Autopilot Crashed into Parked Police Car in California,USA
+293,2022-06-03,Cruises Self-Driving Car Involved in a Multiple-Injury Collision at an San Francisco Intersection,USA
+325,2017-09-21,Offensive Instagram User Content Displayed as Facebook Ad,worldwide
+328,2020-06-13,Fake Accounts Using GAN Faces Deployed by Propaganda Campaign on Social Platforms,CHN
+347,2021-05-06,"Waymo Self-Driving Taxi Reportedly Behaved Unexpectedly, Driving away from Support Crew",USA
+350,2022-09-13,Delivery Robot Rolled Through Crime Scene,worldwide
+291,2021-05-28,Tesla Allegedly Misled Customers about Autopilot and FSD Capabilities,USA
+294,2018-05-26,Tesla Autopilot Allegedly Malfunctioned in a Non-Fatal Collision in Greece,GRC
+280,2013-07-30,Coffee Meets Bagels Algorithm Reported by Users Disproportionately Showing Them Matches of Their Own Ethnicities Despite Selecting “No Preference”,worldwide
+287,2020-10-27,OpenAIs GPT-3 Reported as Unviable in Medical Tasks by Healthcare Firm,FRA
+295,2018-11-08,Wrongful Attempted Arrest for Apple Store Thefts Due to NYPDs Facial Misidentification,USA
+320,2018-01-22,Tesla on Autopilot Collided with Parked Fire Truck on California Freeway,USA
+326,2014-12-09,Facebook Automated Year-in-Review Highlights Showed Users Painful Memories,worldwide
+335,2015-03-01,UK Visa Streamline Algorithm Allegedly Discriminated Based on Nationality,GBR
+292,2021-09-01,Apples AVs Reportedly Struggled to Navigate Streets in Silicon Valley Test Drives,USA
+300,2022-01-15,"TikToks ""For You"" Algorithm Allegedly Abused by Online Personality to Promote Anti-Women Hate",worldwide
+318,2021-01-13,Facebook Recommended Military Gear Ads Despite Pause on Weapons Accessories Ads,worldwide
+319,2019-12-29,Tesla on Autopilot Fatally Crashed into Parked Fire Truck in Indiana,USA
+332,2016-04-05,Google Image Showed Racially Biased Results for “Professional” Hairstyles,worldwide
+340,2017-02-01,Hondas CMBS False Positives Allegedly Caused Accidents to Customers,worldwide
+341,2017-04-06,"Nissans ""Automatic Emergency Braking"" False Positives Posed Traffic Risks to Drivers",worldwide
+334,2014-10-01,Uber Deployed Secret Program To Deny Local Authorities Rides,worldwide
+305,2019-02-01,YouTubes Recommendation Algorithm Allegedly Promoted Climate Misinformation Content,worldwide
+297,2020-02-20,"EasyMile Self-Driving Shuttle Unexpectedly Stopped Mid-Route, Injuring a Passenger",worldwide
+282,2020-10-03,Facebooks Algorithm Mistook an Advertisement of Onions as Sexual Suggestive Content,CAN
+276,2022-01-01,"Local South Korean Governments Use of CCTV Footage Analysis via Facial Recognition to Track COVID Cases Raised Concerns about Privacy, Retention, and Potential Misuse",KOR
+290,2022-06-03,False Negatives for Water Quality-Associated Beach Closures,CAN
+296,2016-02-10,Twitter Recommender System Amplified Right-Leaning Tweets,worldwide
+313,2022-08-25,BlenderBot 3 Cited Dutch Politician as a Terrorist,NLD
+333,2021-03-17,Tesla on Autopilot Crashed Parked Michigan Police Car on Interstate,USA
+304,2021-11-03,Tesla on FSD Reportedly Drove into the Wrong Lane in California,USA
+331,2020-08-05,Bug in Instagrams “Related Hashtags” Algorithm Allegedly Caused Disproportionate Treatment of Political Hashtags,worldwide
+337,2021-04-17,"Tesla Model S on ACC Crashed into Tree in Texas, Killing Two People",USA
+346,2016-06-15,Robots in Japanese Hotel Annoyed Guests and Failed to Handle Simple Tasks,JPN
+283,2018-07-02,Facebooks Automated Content Moderation Tool Flagged a Post Containing Parts of the Declaration of Independence as Hate Speech by Mistake,USA
+286,2021-02-26,"TikToks ""For You"" Allegedly Pushed Fatal “Blackout” Challenge Videos to Two Young Girls",worldwide
+307,2017-11-01,iPhone Face ID Failed to Recognize Users Morning Faces,worldwide
+309,2017-08-26,Facial Recognition Trial Performed Poorly at Notting Hill Carnival,GBR
+327,2015-03-24,Facebooks On-This-Day Feature Mistakenly Showed Painful Memories to Users,worldwide
+344,2021-07-01,Hiring Algorithms Provided Invalid Positive Results for Interview Responses in German,DEU
+348,2020-11-01,YouTube Recommendation Reportedly Pushed Election Fraud Content to Skeptics Disproportionately,worldwide
+349,2022-03-22,"Evolv AI Weapons Detection System Allegedly Misrepresents Accuracy, Leading to School Security Gaps",worldwide
+277,2022-01-14,Voices Created Using Publicly Available App Stolen and Resold as NFT without Attribution,worldwide
+311,2020-05-02,YouTube Auto-Moderation Mistakenly Banned Women of Sex Tech Conference,worldwide
+317,2020-03-17,Bug in Facebooks Anti-Spam Filter Allegedly Blocked Legitimate Posts about COVID-19,worldwide
+324,2019-11-12,GAN Faces Deployed by The BLs Fake Account Network to Push Pro-Trump Content on Meta Platforms,worldwide
+303,2022-08-21,Googles Automated Child Abuse Detection Wrongfully Flagged a Parents Naked Photo of His Child,worldwide
+339,2022-09-15,Open-Source Generative Models Abused by Students to Cheat on Assignments and Exams,worldwide
+343,2021-07-11,"Facebook, Instagram, and Twitter Failed to Proactively Remove Targeted Racist Remarks via Automated Systems",worldwide
+302,2021-03-15,Students Allegedly Wrongfully Accused of Cheating via Medical Schools Internal Software,worldwide
+308,2017-07-03,Atlas Robot Fell off Stage at Conference,USA
+310,2017-06-03,High False Positive Rate by SWPs Facial Recognition Use at Champions League Final,GBR
+315,2016-04-09,Facial Recognition Service Abused to Target Russian Porn Actresses,RUS
+321,2018-03-23,"Tesla Model X on Autopilot Crashed into California Highway Barrier, Killing Driver",USA
+329,2017-09-18,Amazon Reportedly Recommends Explosive-Producing Ingredients as Frequently Bought Together Items for Chemicals,worldwide
+284,2018-05-01,Facebooks Automated Removal of Content Featuring Nudity-Containing Artworks Denounced as Censorship,worldwide
+298,2021-10-21,Student-Developed Facial Recognition App Raised Ethical Concerns,worldwide
+279,2019-07-01,TikToks “For You” Algorithm Exposed Young Users to Pro-Eating Disorder Content,worldwide
+281,2019-02-04,YouTubes Algorithms Failed to Remove Violating Content Related to Suicide and Self-Harm,worldwide
+312,2021-08-15,Startups Accent Translation AI Denounced as Reinforcing Racial Bias,USA
+316,2016-06-02,Facebook Ad-Approval Algorithm Allegedly Missed Fraudulent Ads via Simple URL Checks,worldwide
+288,2019-01-30,New Jersey Police Wrongful Arrested Innocent Black Man via FRT,USA
+289,2020-06-15,"Starship Delivery Robot Scuffed Bumper of a Residents Car in Texas, Allegedly Refusing to Release Footage of the Accident",USA
+306,2016-05-26,Tesla on Autopilot TACC Crashed into Van on European Highway,worldwide
+345,2021-04-13,Auto-Insurance Photo-Based Estimation Allegedly Gave Inaccurate Repair Prices Frequently,worldwide
+301,2022-02-15,Teenager at Broward College Allegedly Wrongfully Accused of Cheating via Remote Proctoring,USA
+314,2022-08-17,Stable Diffusion Abused by 4chan Users to Deepfake Celebrity Porn,worldwide
+322,2019-12-07,Tesla Model 3 Crashed into Police Patrol Car on Connecticut Highway,USA
+336,2015-03-01,UK Home Offices Sham Marriage Detection Algorithm Reportedly Flagged Certain Nationalities Disproportionately,GBR
+351,2022-09-13,"""The Little Mermaid"" Clip Doctored Using Generative AI to Replace Black Actress with White Character",worldwide
+364,2020-04-15,Walmarts Bagging-Detection False Positives Exposed Workers to Health Risk,worldwide
+367,2020-06-17,"iGPT, SimCLR Learned Biased Associations from Internet Training Data",worldwide
+355,2018-07-07,Uber Allegedly Wrongfully Accused Drivers of Fraud via Automated Systems,"GBR, PRT"
+356,2020-09-15,Philosophy AI Tentatively Produced Offensive Results for Certain Prompts,ETH
+368,2016-06-01,"Facial Recognition Smart Phone App ""Blue Wolf"" Monitored Palestinians in West Bank",PSE
+370,2017-09-27,Google Fined for Changing Shopping Algorithms in EU to Favor Own Service,worldwide
+378,2022-04-06,TuSimple Truck Steered into Interstate Freeway Divide,USA
+391,2022-07-26,Facial Recognition Trial by UK Southern Co-op Alleged as Unlawful,GBR
+371,2019-11-29,Uganda Deployed Huaweis Facial Recognition to Monitor Political Opposition and Protests,UGA
+393,2021-12-08,Facebook AI-Supported Moderation for Ads Failed to Detect Violating Content,worldwide
+358,2018-06-01,Calgary Malls Deployed Facial Recognition without Customer Consent,CAN
+363,2021-01-15,Facebooks Automated Moderation Mistakenly Flagged Landmarks Name as Offensive,worldwide
+369,2022-08-29,GAN Artwork Won First Place at State Fair Competition,USA
+400,2022-02-23,Google Search Returned Fewer Results for Abortion Services in Rural Areas,worldwide
+373,2013-10-01,Michigans Unemployment Benefits Algorithm MiDAS Issued False Fraud Claims to Thousands of People,USA
+376,2016-09-01,RealPage Algorithm Allegedly Inflates Rents and Reduces Competition in Housing Market,worldwide
+395,2021-03-02,Amazon Forced Deployment of AI-Powered Cameras on Delivery Drivers,worldwide
+361,2018-05-11,Amazon Echo Mistakenly Recorded and Sent Private Conversation to Random Contact,worldwide
+377,2022-10-11,Weibo Model Had Difficulty Detecting Shifts in Censored Speech,CHN
+354,2020-06-20,Uber Allegedly Violated GDPR by Failing to Provide Sufficient Notice on Automated Profiling for Drivers,worldwide
+381,2020-10-29,Autonomous Roborace Car Drove Directly into a Wall,worldwide
+353,2019-03-01,"Tesla on Autopilot Crashed into Trailer Truck in Florida, Killing Driver",USA
+374,2020-08-13,UK Ofquals Algorithm Disproportionately Provided Lower Grades Than Teachers Assessments,"IRL, GBR"
+380,2014-03-04,Facebooks Auto-Generated Targeting Ad Categories Contained Anti-Semitic Options,worldwide
+357,2019-02-14,GPT-2 Able to Recite PII in Training Data,worldwide
+385,2022-10-04,Canadian Polices Release of Suspects AI-Generated Facial Photo Reportedly Reinforced Racial Profiling,CAN
+388,2018-12-01,Facial Recognition Pilot in Bahia Reportedly Targeted Black and Poor People,BRA
+383,2022-10-04,Google Home Mini Speaker Reportedly Read N-Word in Song Title Aloud,worldwide
+390,2022-06-28,Deepfakes Reportedly Deployed in Online Interviews for Remote Work Positions,worldwide
+387,2014-12-22,Oracles Algorithmic Data Processing System Alleged as Unlawful and Violating Privacy Rights,worldwide
+394,2017-03-15,Social Medias Automated Word-Flagging without Context Shifted Content Creators Language Use,worldwide
+362,2021-07-20,Facebooks Automated Moderation Flagged Gardening Groups Language Use by Mistake,worldwide
+384,2022-10-03,Glovo Driver in Italy Fired via Automated Email after Being Killed in Accident,ITA
+359,2021-05-23,"Facebook, Instagram, and Twitter Cited Errors in Automated Systems as Cause for Blocking pro-Palestinian Content on Israeli-Palestinian Conflict","PSE, ISR"
+396,2018-07-04,Transgender Uber Drivers Mistakenly Kicked off App for Appearance Change during Gender Transitions,worldwide
+352,2022-09-15,GPT-3-Based Twitter Bot Hijacked Using Prompt Injection Attacks,worldwide
+372,2022-07-22,Users Reported Security Issues with Google Pixel 6as Fingerprint Unlocking,worldwide
+375,2019-09-29,Thai Wallet Apps Facial Recognition Errors Created Registration Issues for Government Programs,THA
+379,1992-05-25,Error in Pepsis Number Generation System Led to Decades-Long Damages in the Philippines,PHL
+382,2017-11-21,Instagrams Exposure of Harmful Content Contributed to Teenage Girls Suicide,GBR
+386,2019-07-03,"Amazons ""Time Off Task"" System Made False Assumptions about Workers Time Management",worldwide
+389,2022-04-05,Cruise Autonomous Car Blocked Fire Truck Responding to Emergency,USA
+397,2022-09-11,Misinformation Reported in TikToks Search Results Despite Moderation by AI and Human,worldwide
+398,2022-08-15,Tesla Autopilot Misidentified On-Road Horse-Drawn Carriage,worldwide
+399,2022-11-15,Meta AIs Scientific Paper Generator Reportedly Produced Inaccurate and Harmful Content,worldwide
+401,2021-06-03,"Kannada Insulted by Googles Featured Answer as ""Ugliest Language in India""",IND
+402,2021-04-01,Players Manipulated GPT-3-Powered Game to Generate Sexually Explicit Material Involving Children,worldwide
+360,2021-10-15,"McDonalds AI Drive-Thru Allegedly Collected Biometric Customer Data without Consent, Violating BIPA",USA
+366,2020-09-20,Suicide Clips Evaded TikToks Automated Moderation in Coordinated Attack,worldwide
+392,2015-06-01,Facebooks AI-Supported Moderation Failed to Classify Terrorist Content in East African Languages,worldwide
+407,2016-02-03,Ubers Surge Pricing Reportedly Offered Disproportionate Service Quality along Racial Lines,worldwide
+404,2019-06-25,Sound Intelligences Aggression Detector Misidentified Innocuous Sounds,worldwide
+406,2015-07-15,Facebooks Friend Suggestion Feature Recommends Patients of Psychiatrist to Each Other,worldwide
+408,2017-04-15,Facebook Reportedly Outed Sex Workers through Friend Recommendations,worldwide
+409,2013-09-13,Facial Recognition Researchers Used YouTube Videos of Transgender People without Consent,worldwide
+405,2018-11-28,Schufa Credit Scoring in Germany Reported for Unreliable and Imbalanced Scores,DEU
+403,2018-01-15,Gmails Inbox Sorting System Reportedly Reduced Visibility of Political Emails and Campaign Calls-to-Action,worldwide
+410,2022-11-09,KFC Sent Insensitive Kristallnacht Promotion via Holiday Detection System,worldwide
+411,2022-11-27,Chinese Accounts Spammed Twitter Feed Allegedly to Obscure News of Protests,CHN
+412,2020-01-15,Finland Polices Facial Recognition Trial to Identify Sexual Abuse Victims Deemed Illegal,FIN
+413,2022-11-30,Thousands of Incorrect ChatGPT-Produced Answers Posted on Stack Overflow,worldwide
+414,2020-01-18,Facebook Gave Vulgar English Translation of Chinese Presidents Name,CHN
+415,2020-07-28,Facebook Provided Offensive Translation for King of Thailands Birthday Ceremony,THA
+416,2022-12-01,Facebooks Job Ad Algorithm Allegedly Biased against Older and Female Workers,worldwide
+417,2019-11-15,Facebook Feed Algorithms Exposed Low Digitally Skilled Users to More Disturbing Content,worldwide
+418,2017-03-13,Uber Locked Indian Drivers out of Accounts Allegedly Due to Facial Recognition Fails,IND
+419,2022-12-01,Facebooks Automated Moderation Allowed Ads Threatening Election Workers to be Posted,worldwide
+420,2022-11-30,Users Bypassed ChatGPTs Content Filters with Ease,worldwide
+421,2022-11-20,Stable Diffusion Allegedly Used Artists Works without Permission for AI Training,worldwide
+422,2022-11-22,Deepfake of FTXs Former CEO Posted on Twitter Aiming to Scam FTX Collapse Victims,worldwide
+423,2022-11-22,"Lensa AIs Produced Unintended Sexually Explicit or Suggestive ""Magic Avatars"" for Women",worldwide
+424,2020-03-09,Universities AI Proctoring Tools Allegedly Failed Canadas Legal Threshold for Consent,CAN
+425,2021-06-12,State Farm Allegedly Discriminated against Black Customers in Claim Payout,worldwide
+426,2022-09-23,XPeng P7 Crashed into Truck in Shangdong While on Automatic Navigation Assisted Driving,worldwide
+427,2022-03-15,Cruise Taxis Sudden Braking Allegedly Put People at Risk,worldwide
+428,2017-05-19,BBC Reporters Twin Brother Cracked HSBCs Voice ID Authentication,GBR
+429,2016-04-01,Unreliable ShotSpotter Audio Convicted Black Rochester Man of Shooting Police,worldwide
+430,2022-12-19,Lawyers Denied Entry to Performance Venue by Facial Recognition,worldwide
+431,2022-04-20,Robbers Accessed Drugged Gay Mens Bank Accounts Using Their Phones Facial Recognition,USA
+432,2022-12-21,Southwest Airlines Crew Scheduling Solver Degenerates Flight Network,worldwide
+433,2012-08-01,Chicago Polices Strategic Subject List Reportedly Biased Along Racial Lines,USA
+434,2022-11-24,Sudden Braking by Tesla Allegedly on Self-Driving Mode Caused Multi-Car Pileup in Tunnel,USA
+435,2021-07-04,Coupang Allegedly Tweaked Search Algorithms to Boost Own Products,KOR
+436,2022-12-28,Tesla Driver Put Car on Autopilot Before Falling Asleep in Germany,DEU
+437,2016-12-31,Amazon India Allegedly Rigged Search Results to Promote Own Products,IND
+438,2021-09-17,Chinese Province Developed System Tracking Journalists and International Students,CHN
+439,2019-07-31,Detroit Police Wrongfully Arrested Black Man Due To Faulty Facial Recognition,USA
+440,2022-11-25,Louisiana Police Wrongfully Arrested Black Man Using False Face Match,USA
+441,2019-06-01,Korea Developed ID Screening System Using Airport Travelers Data without Consent,KOR
+443,2022-12-21,ChatGPT Abused to Develop Malicious Softwares,worldwide
+444,2003-03-22,"US Air Forces Patriot Missile Mistakenly Launched at Ally Fighter Jet, Killing Two","GBR, USA"
+445,2003-04-02,"Patriot Missile System Misclassified US Navy Aircraft, Killing Pilot Upon Approval to Fire",USA
+446,2023-01-01,ShotSpotter Failed to Alert Authorities of Mass Shooting in North Carolina,USA
+447,2022-12-19,"Footballers ""X-Rated"" Comment Created by Instagrams Mistranslation",ARG
+448,2022-12-28,AI-Powered VTuber and Virtual Streamer Made Toxic Remarks on Twitch,worldwide
+449,2022-12-01,Startup Misled Research Participants about GPT-3 Use in Mental Healthcare Support,worldwide
+450,2021-11-01,Kenyan Data Annotators Allegedly Exposed to Graphic Content for OpenAIs AI,KEN
+451,2022-10-16,Stable Diffusions Training Data Contained Copyrighted Images,worldwide
+452,2023-01-11,"ChatGPT-Written Bug Reports Deemed ""Nonsense"" by White Hat Platform, Prompted Bans",worldwide
+453,2023-01-03,Twitters AI Moderation Tool Misidentified Rockets as Pornography,worldwide
+454,2018-11-09,Emotion Detection Models Showed Disparate Performance along Racial Lines,worldwide
+455,2022-11-11,CNETs Published AI-Written Articles Ran into Quality and Accuracy Issues,worldwide
+456,2021-05-18,Replikas AI Partners Reportedly Sexually Harassed Users,worldwide
+457,2022-11-11,Article-Writing AI by CNET Allegedly Committed Plagiarism,worldwide
+458,2015-08-01,Robot Destroyed while Hitchhiking through the United States,"CAN, USA"
+459,2023-01-21,Firefighters Smashed Cruise AVs Front Window to Stop It from Running over Fire Hoses,USA
+460,2022-06-12,Cruise AV Ran Over Fire Hose in Active Fire Scene,USA
+461,2008-07-18,IRS Audited Black Taxpayers More Frequently Reportedly Due to Algorithm,worldwide
+462,2023-02-06,AI-Produced Livestream Sitcom Received Temporary Twitch Ban for Transphobic Segment,worldwide
+463,2022-11-15,"Apple Devices Mistook Skiing Activities, Dialed False Distress Emergency Calls ",worldwide
+464,2022-11-30,ChatGPT Provided Non-Existent Citations and Links when Prompted by Users,worldwide
+465,2022-03-03,Generative Models Reportedly Trained on Dataset Containing Private Medical Photos,worldwide
+466,2023-01-03,AI-Generated-Text-Detection Tools Reported for High Error Rates,worldwide
+467,2023-02-07,Googles Bard Shared Factually Inaccurate Info in Promo Video,worldwide
+468,2023-02-07,ChatGPT-Powered Bing Reportedly Had Problems with Factual Accuracy on Some Controversial Topics,worldwide
+469,2006-02-25,Automated Adult Content Detection Tools Showed Bias against Women Bodies,worldwide
+470,2023-02-08,Bing Chat Response Cited ChatGPT Disinformation Example,worldwide
+471,2019-06-22,Facebook Allegedly Failed to Police Hate Speech Content That Contributed to Ethnic Violence in Ethiopia,ETH
+472,2016-10-08,NYPDs Deployment of Facial Recognition Cameras Reportedly Reinforced Biased Policing,USA
+473,2023-02-08,Bing Chats Initial Prompts Revealed by Early Testers Through Prompt Injection,worldwide
+474,2023-02-03,Users Reported Abrupt Behavior Changes of Their AI Replika Companions,worldwide
+475,2021-06-02,McDonalds Reportedly Ends IBM Partnership After AI Drive-Thru Ordering Errors at U.S. Locations,worldwide
+476,2015-11-13,YouTube Recommendations Allegedly Promoted Radicalizing Material Contributing to Terrorist Acts,FRA
+477,2023-02-14,Bing Chat Tentatively Hallucinated in Extended Conversations with Users,worldwide
+478,2016-09-09,"Tesla FSD Reportedly Increased Crash Risk, Prompting Recall",worldwide
+479,2023-02-03,Instagram Video Featured Deepfake Audio of US President Making Transphobic Remarks,worldwide
+480,2023-01-30,Non-Consensual Deepfake Porn Targeted Female Content Creators,worldwide
+481,2023-02-12,Purported Deepfake TikTok Video Reportedly Featured Joe Rogan Endorsing Supplement Brand,worldwide
+482,2023-02-16,ChatGPT-Assisted University Email Addressing Mass Shooting Denounced by Students,USA
+483,2023-02-02,Indian Police Allegedly Tortured and Killed Innocent Man Following Facial Misidentification,IND
+484,2023-01-18,US CBP Apps Failure to Detect Black Faces Reportedly Blocked Asylum Applications,HTI
+485,2023-02-22,UK Banks Voice ID Successfully Bypassed Using AI-Produced Audio,GBR
+486,2022-12-01,AI Video-Making Tool Abused to Deploy Pro-China News on Social Media,CHN
+487,2023-02-15,Deepfake Video Featured Fictitious News Anchors Discussing Venezuelas Economy,VEN
+488,2023-02-10,AI Generated Voices Used to Dox Voice Actors,worldwide
+489,2019-06-03,Workdays AI Tools Allegedly Enabled Employers to Discriminate against Applicants of Protected Groups,USA
+490,2023-02-20,Clarkesworld Magazine Reportedly Closed Down Submissions Due to Massive Increase in Purportedly AI-Generated Stories,worldwide
+491,2023-02-02,"Replikas AI Experience Reportedly Lacked Protection for Minors, Resulting in Data Ban",ITA
+492,2023-01-11,Canadian Parents Tricked out of Thousands Using Their Sons AI Voice,CAN
+493,2023-02-28,"TikTok User Videos Impersonated Andrew Tate Using AI Voice, Prompting Ban",worldwide
+494,2023-03-05,Female Celebrities Faces Shown in Sexually Suggestive Ads for Deepfake App,worldwide
+495,2023-02-12,High Schoolers Posted Deepfaked Video Featuring Principal Making Violent Racist Threats,worldwide
+496,2017-03-01,Male College Freshman Allegedly Made Porn Deepfakes Using Female Friends Face,worldwide
+497,2023-03-03,"DoNotPay Allegedly Misrepresented Its AI ""Robot Lawyer"" Product",worldwide
+498,2023-03-15,GPT-4 Reportedly Posed as Blind Person to Convince Human to Complete CAPTCHA,worldwide
+499,2023-03-21,Parody AI Images of Donald Trump Being Arrested Reposted as Misinformation,worldwide
+500,2023-02-10,Online Scammers Tricked People into Sending Money Using AI Images of Earthquake in Turkey,"TUR, SYR"
+501,2019-06-03,Length of Stay False Diagnosis Cut Off Insurers Payment for Treatment of Elderly Woman,USA
+502,2017-04-10,Pennsylvania Countys Family Screening Tool Allegedly Exhibited Discriminatory Effects,USA
+503,2023-02-14,Bing AI Search Tool Reportedly Declared Threats against Users,worldwide
+504,2023-02-08,Bing Chats Outputs Featured in Demo Video Allegedly Contained False Information,worldwide
+505,2023-03-27,Man Reportedly Committed Suicide Following Conversation with Chai Chatbot,BEL
+506,2023-03-29,ChatGPT Allegedly Produced False Accusation of Sexual Harassment,USA
+507,2023-03-15,ChatGPT Erroneously Alleged Mayor Served Prison Time for Bribery ,AUS
+508,2023-01-30,Celebrities Deepfake Voices Abused with Malicious Intent,worldwide
+509,2023-03-23,Scammers Deepfaked Videos of Victims Loved Ones Asking for Funds over Facebook in Vietnam,VNM
+510,2023-03-24,Viral Image of Pope Francis in a Puffer Jacket Revealed to Be AI-Generated,worldwide
+511,2023-02-12,Microsofts Bing Failed to Fetch Movie Showtimes Results Due to Date Confusion,worldwide
+513,2023-03-31,ChatGPT Banned by Italian Authority Due to OpenAIs Lack of Legal Basis for Data Collection and Age Verification,ITA
+514,2023-01-20,Turnitins ChatGPT-Detection Tool Falsely Flagged Student Essays as AI-Generated,worldwide
+515,2022-11-25,Facial Recognition Error Reportedly Leads to Wrongful Arrest of Georgia Man and $200K Settlement in Louisiana,USA
+516,2023-03-20,ChatGPT Reportedly Exposed Users Private Data Reportedly Due to Bug,worldwide
+517,2018-02-15,Man Arrested For Sock Theft by False Facial Match Despite Alibi,USA
+518,2017-04-28,New York Detective Misused Woody Harrelsons Face to Perform Face Recognition Search,USA
+519,2022-04-03,Starship Delivery Robot Ran into Problems Traversing Campus Terrains,worldwide
+520,2022-05-08,Amazon Fresh Cameras Failed to Register Purchased Items,worldwide
+521,2020-06-10,Images Captured by iRobots Roomba Containing Device Users Posted on Private Online Groups,worldwide
+522,2019-07-10,"Facebook Political Ad Delivery Algorithms Inferred Users Political Alignment, Inhibiting Political Campaigns Reach",worldwide
+523,2023-03-15,Australian Journalist Able to Access Centrelink Account Using AI Audio of Own Voice,AUS
+524,2023-02-12,AI Voices Abused by Telegram User to Make Swat Calls as Paid Service,worldwide
+525,2019-07-06,Tesla Vehicle Running on Self-Driving Mode Crashes on City Streets,worldwide
+526,2023-04-17,Novel Deepfake Song Pulled from Music Streaming Services After Allegedly Violating Artists Rights,CAN
+527,2014-05-08,Tech Companies Reportedly Influenced Gig Workers Behaviors Using Algorithms to Vary Pay for Same Amount of Work,worldwide
+528,2023-04-08,Amazon Algorithmic Pricing Allegedly Hiked up Price of Reference Book to Millions,worldwide
+529,2022-08-22,Stable Diffusion Exhibited Biases for Prompts Featuring Professions,worldwide
+530,2019-07-11,Telegram Channels Allowed Users to Make Non-Consensual Deepfake Porn as Paid Service,worldwide
+531,2017-09-15,AI-Assisted Body Scanners Reportedly Subjected Transgender Travelers to Invasive Body Searches,worldwide
+532,2020-06-20,AI translation is jeopardizing Afghan asylum claims,AFG
+533,2021-06-02,Tesla FSD Misidentified Truck Hauling Traffic Lights as Trail of Traffic Lights,worldwide
+534,2021-04-29,Facebook Alleged in Lawsuit Misleading Public about Effects of Algorithms on Children,USA
+535,2020-01-01,COVID-19 Detection and Prognostication Models Allegedly Flagged for Methodological Flaws and Underlying Biases,worldwide
+536,2012-12-10,NJ Transits Use of Modeling Software Miscalculated Storm Surge Threat Level,USA
+537,2023-01-20,Mother in Arizona Received Fake Ransom Call Featuring AI Voice of Her Daughter,USA
+538,2023-05-15,Texas A&M Professor Misused ChatGPT to Detect AI Text Generation in Student Submissions,USA
+539,2023-03-11,Snapchats My AI Reported for Lacking Protection for Children,worldwide
+540,2023-05-15,"Tesla Failed to Yield to Detected Pedestrian on Crosswalk, Reportedly Violated Traffic Law",worldwide
+541,2023-05-04,ChatGPT Reportedly Produced False Court Case Law Presented by Legal Counsel in Court,worldwide
+543,2023-05-22,Purported AI-Generated Image of Explosion Near Pentagon Reportedly Triggers Brief Market Dip and Public Confusion,USA
+544,2023-05-11,Alleged Use of Purportedly AI-Generated and Manipulated Media to Misrepresent Candidates and Disrupt Turkeys 2023 Presidential Election,TUR
+545,2023-05-29,Chatbot Tessa gives unauthorized diet advice to users seeking help for eating disorders,worldwide
+546,2019-05-31,Algorithm to Distribute Social Welfare Reported for Oversimplifying Economic Vulnerability,JOR
+547,2023-06-05,Ron DeSantiss Presidential Campaign Released Twitter Video Containing AI Images of Donald Trump Hugging Anthony Fauci,worldwide
+548,2023-05-24,Operas GPT-Based AI Reportedly Accused War Photographers of War Crimes,worldwide
+549,2023-01-05,Fast Food Chains AI Chatbots Failed to Assist Job Applicants with Scheduling Interviews,worldwide
+550,2023-03-17,Tesla Allegedly on Autopilot Struck High School Student Exiting School Bus,USA
+551,2023-04-01,FBI Reported Surge of Extortion Cases of AI Media Featuring Sexual Explicit Activities,worldwide
+552,2023-06-22,Bing Chat Solved CAPTCHAs with Image Analysis Feature Despite Safeguards,worldwide
+553,2023-05-03,Googles Overview Panel for Artist Edward Hopper Featured Image Generated in His Style by AI,USA
+554,2023-05-21,Google Results for Johannes Vermeer Featured AI Version of His Artwork as Top Result,NLD
+555,2018-06-11,OpenAIs Training Data for LLMs Allegedly Comprised of Copyrighted Books,worldwide
+556,2018-05-10,Amazon Allegedly Violated Childrens Privacy through Default Voice Collection Settings,worldwide
+557,2020-06-24,Miami Police Deployed Facial Recognition to Arrest George Floyd Protestor Allegedly without Cause,USA
+558,2020-08-07,Activists Allege NYPDs Application of Facial Recognition Interfered with Right to Protest,USA
+559,2023-06-30,"Grant Reviewers Fed Applications into Generative AI to Produce Reports, Allegedly Breaching Confidentiality",AUS
+560,2023-06-23,Tesla on Autopilot Struck Parked Work Truck on Highway in Pennsylvania,USA
+561,2019-03-11,OpenAI Alleged by Lawsuit Violated Users Privacy Rights by Training AI on Private Info without Informed Consent,worldwide
+562,2022-11-30,Uptick in Low-Quality AI-Produced Content Degraded Publishers Submission Management,worldwide
+563,2023-08-14,Cruise Robotaxi Initially Blamed for Ambulance Delay in Case Where Patient Later Died; Subsequent Reports Clear Cruise of Fault,USA
+564,2023-08-30,Voice deepfake targets bank in failed transfer scam,USA
+565,2023-08-08,AI-Generated Imagery and Multilingual Disinformation in Chinese Campaign Regarding Maui Wildfires,USA
+566,2023-09-19,Gannett Halts AI-Generated High School Sports Articles After Series of Errors and Public Backlash,worldwide
+567,2023-08-27,Deepfake Voice Exploit Compromises Retools Cloud Services,worldwide
+568,2023-06-01,AI-Generated Voices Amplify Conspiracy Theories on TikTok,worldwide
+569,2021-12-25,Chatbot Encourages Man to Plot Assassination of Queen Elizabeth II,GBR
+570,2023-10-04,Facebook Messenger AI Stickers Generate Ethical and Content Moderation Concerns,worldwide
+571,2023-06-22,Accidental Exposure of 38TB of Data by Microsofts AI Research Team,worldwide
+572,2023-07-24,Alleged False Accusation of AI-Generated Essay by Turnitin,worldwide
+573,2023-10-07,Deepfake Recordings Allegedly Influence Slovakian Election,SVK
+574,2023-07-05,AI-Generated Articles at G/O Media Allegedly Diminishes Reputation of Human Staff,worldwide
+575,2023-06-28,Amazon Rife with Many Allegedly AI-Generated Books of Suspect Quality,worldwide
+576,2023-10-24,"Alleged Misuse of PicSo AI for Generating Inappropriate Content Emphasizing ""Girls""",worldwide
+577,2023-06-30,Bankrates Resumption of AI-Generated Content Allegedly Continuing to Produce Inaccurate and Misleading Information,worldwide
+578,2023-06-26,Alleged Exploitation of Metas Open-Source LLaMA Model for NSFW and Violent Content,worldwide
+579,2023-07-03,Harmful Stereotyping of Non-Cisgendered People via Text-to-Image Systems,worldwide
+580,2023-06-12,Alleged Gender Discrimination in Facebook Job Ads Algorithm,worldwide
+581,2023-06-24,Google Ads Allegedly Serving Content on AI-Generated Misinformation Sites,worldwide
+582,2023-06-01,Racial Bias in Lung Function Diagnostic Algorithm Leads to Underdiagnosis in Black Men,worldwide
+583,2023-06-07,Instagram Algorithms Allegedly Promote Accounts Facilitating Child Sex Abuse Content,USA
+584,2023-05-18,Illinois Residents File Class Action Lawsuit Against Facial Recognition Technology Companies for Allegedly Violating BIPA,USA
+585,2023-10-26,Kremlin-Linked Entities Allegedly Using Generative AI to Spread Russian Disinformation in Latin America,UKR
+586,2023-05-22,FTC Targets Edmodo for Unlawful Use of Childrens Data and Delegating Compliance to Schools,worldwide
+587,2023-05-22,Apparent Failure to Accurately Label Primates in Image Recognition Software Due to Alleged Fear of Racial Bias,worldwide
+588,2023-05-12,Australian Terrorism Prediction Tool Disparately Impacts Persons with Autism,AUS
+589,2023-05-01,Proliferation of AI-Generated News Websites and Content Farms Across Multiple Languages Degrading Information Integrity,worldwide
+590,2023-02-03,"Alleged ChatGPT-Generated Book with a Duplicate Title, Fake Author, and Similar Content Surfaces on Amazon Ahead of Real Authors Book Release",worldwide
+591,2023-07-24,Cigna Algorithm PXDX Allegedly Rejected Thousands of Patient Claims En Masse in Breach of California Law,USA
+592,2023-02-16,Facial Recognition Misidentifies Pregnant Woman Leading to False Arrest in Detroit,USA
+593,2023-07-21,"AI Photo Filter Lightens Skin, Changes Eye Color in Students Professional Image",worldwide
+594,2023-08-10,AI Meal Planner Suggests Hazardous Chlorine Gas Recipe,worldwide
+595,2023-08-11,Driverless Cruise Cars Immobilized in San Francisco Traffic Jam,USA
+596,2023-10-17,Cruises Autonomous Vehicles Allegedly Engaging in Risky Behavior Near Pedestrians,worldwide
+597,2023-10-20,Female Students at Westfield High School in New Jersey Reportedly Targeted with Deepfake Nudes,USA
+598,2022-11-25,False Arrest of Georgia Man Due to Louisiana Polices Faulty Facial Recognition Technology,USA
+599,2023-11-08,Stacking robot fatally crushes employee in South Korea,KOR
+600,2023-04-01,South Korean man used AI to create sexual images of children,KOR
+601,2023-10-08,AI-Generated Fake Audio of Verbal Abuse Incident Circulates of British Labour Leader Keir Starmer,GBR
+602,2023-10-02,Russia Reportedly Using Artificial Intelligence in Disinformation Campaigns to Erode Western Support for Ukraine,worldwide
+603,2021-07-02,Algorithmic Allocation of Resources in Healthcare for Disabled and Elderly Care Services Allegedly Harming Patients,worldwide
+604,2023-04-14,Quebec Man Sentenced for Having Used Deepfake Technology to Create Synthetic Child Pornography,CAN
+605,2021-08-01,North Carolina Psychiatrist Used Artificial Intelligence to Produce Images of Child Sex Abuse,USA
+606,2023-10-02,Deepfaked Advertisements Using the Likenesses of Celebrities Such as Tom Hanks and Gayle King Without Their Consent,worldwide
+607,2023-11-09,Deepfake Video Circulating of British Labour Leader Keir Starmer Touting an Investment Scheme,GBR
+608,2023-02-28,UnitedHealth Accused of Deploying  Allegedly Flawed AI to Deny Medical Coverage,USA
+609,2023-08-16,Flawed AI in Google Search Reportedly Misinforms about Geography,worldwide
+610,2023-09-17,Purported Deepfake Technology Was Reportedly Used to Generate Naked Pictures of Underage Girls in Spanish Town,ESP
+611,2021-12-06,UK Government AI Allegedly Targets Disproportionate Numbers of Certain Nationals for Fraud Review,"GBR, ALB, BGR, ROU"
+612,2023-10-31,Microsoft AI Poll Allegedly Causes Reputational Harm of The Guardian Newspaper,worldwide
+613,2023-11-23,AI-Generated Images Available through Adobe Stock Misrepresent Real-World Events,worldwide
+614,2023-11-02,Google Bard Allegedly Generates False Allegations Against Consulting Firms Used in Research Presented in Australian Parliamentary Inquiry,AUS
+615,2023-06-13,Colorado Lawyer Filed a Motion Citing Hallucinated ChatGPT Cases,USA
+616,2023-11-27,Sports Illustrated Is Alleged to Have Used AI to Invent Fake Authors and Their Articles,worldwide
+617,2023-11-09,"Male student allegedly used AI to generate nude photos of female classmates at a high school in Issaquah, Washington",worldwide
+618,2023-12-14,Navy Federal Credit Union Faces Allegations of Racial Bias in Mortgage Approvals,worldwide
+619,2023-12-20,Rite Aid Facial Recognition Disproportionately Misidentified Minority Shoppers as Shoplifters,worldwide
+620,2021-11-10,A Robot at a Tesla Factory in Texas Allegedly Injured an Engineer,USA
+621,2023-11-10,Microsoft AI Is Alleged to Have Generated Violent Imagery of Minorities and Public Figures,worldwide
+622,2023-12-18,Chevrolet Dealer Chatbot Agrees to Sell Tahoe for $1,worldwide
+623,2023-12-12,Google Bard Allegedly Generated Fake Legal Citations in Michael Cohen Case,worldwide
+624,2023-12-20,Child Sexual Abuse Material Taints Image Generators,worldwide
+625,2024-01-12,Proliferation of Products on Amazon Titled with ChatGPT Error Messages,worldwide
+626,2023-12-26,Social Media Scammers Used Deepfakes of Taylor Swift and Several Other Celebrities in Fraudulent Le Creuset Cookware Giveaways,worldwide
+627,2024-01-09,Unauthorized AI Impersonation of George Carlin Used in Comedy Special,worldwide
+628,2024-01-21,Fake Biden Voice in Robocall Misleads New Hampshire Democratic Voters in 2024 Primary Election,USA
+629,2023-07-11,Shein Accused of AI-Driven Art Theft on Merchandise,worldwide
+630,2022-01-22,Alleged Macys Facial Recognition Error Leads to Wrongful Arrest and Subsequent Sexual Assault in Jail,worldwide
+631,2024-01-18,Chatbot for DPD Malfunctioned and Swore at Customers and Criticized Its Own Company,worldwide
+632,2024-01-24,Significant Increase in Deepfake Nudes of Taylor Swift Circulating on Social Media,worldwide
+633,2024-01-28,Nine Networks AI Alters Lawmaker Georgie Purcells Image Inappropriately,worldwide
+634,2024-02-02,Alleged Deepfake CFO Scam Reportedly Costs Multinational Engineering Firm Arup $25 Million,HKG
+635,2024-01-30,AI-Generated Fake News Targets Black Celebrities on YouTube,worldwide
+636,2024-02-14,AI Romance Apps Reportedly Compromise User Privacy for Data Harvesting,worldwide
+637,2024-01-31,Gunshot Detection Technology ShotSpotter (now SoundThinking) Reportedly Only Has 47% Accuracy in Chicago System,USA
+638,2022-05-16,Fatal Crash Involving Tesla Full Self-Driving Claims Employees Life,worldwide
+639,2022-11-11,"Air Canada Chatbot Reportedly Provides Inaccurate Bereavement Fare Information, Leading to Customer Overpayment",CAN
+640,2023-12-11,Waymo Software Flaw Reportedly Leads to Double Collision with Tow Truck,USA
+641,2024-02-20,Nonconsensual Deepfake Porn of Bobbi Althoff Spreads Rapidly on X,worldwide
+642,2024-02-20,ChatGPT Glitch Disrupts User Interactions with Nonsensical Outputs,worldwide
+643,2024-02-13,Purported Deepfake Video Allegedly Claims Kyivs Assassination Plan Against President Emmanuel Macron,"FRA, UKR"
+644,2024-02-18,Alleged State-Sponsored Hackers Escalate Purported Phishing Attacks Using Artificial Intelligence,worldwide
+645,2024-02-21,Seeming Pattern of Gemini Bias and Sociotechnical Training Failures Harm Googles Reputation,worldwide
+646,2024-02-22,Snapchats Algorithm Alleged to Link Minor with Sex Offenders,worldwide
+647,2024-02-06,A Self-Driving Waymo Robotaxi Reportedly Collided with a Bicyclist,USA
+648,2024-02-07,"Alleged Deepfake Audio of Imran Khan Calls for Election Boycott, Misleading Pakistan Voters",PAK
+649,2024-02-14,Deepfake Audio Falsely Attributes Controversial Remarks to Keir Starmer About the Rochdale Azhar Ali Crisis,GBR
+650,2024-03-04,AI-Generated Images of Trump with Black Voters Spread as Disinformation Before U.S. Primary Elections,USA
+651,2023-12-06,Students at a Beverly Hills Middle School Allegedly Created and Shared Deepfake Nudes of Their Classmates,USA
+652,2023-12-06,Two Florida Middle School Students Arrested Under New Law for Allegedly Having Made and Shared Deepfake Nudes of Their Classmates,USA
+653,2019-01-01,Two Investment Firms Charged with Making False Claims of Artificial Intelligence Capabilities in Case of AI Washing,worldwide
+654,2024-03-06,Microsoft Copilot Designer Reportedly Generated Inappropriate AI Images,worldwide
+655,2024-01-11,Scams Reportedly Impersonating Wealthy Investors Proliferating on Facebook,worldwide
+656,2024-03-23,Purported Deepfake Disinformation Aired on Russian State TV Allegedly Linking Ukraine to Moscow Attack,"UKR, RUS"
+657,2024-01-30,ChatGPT Account Compromise Leads to Unintended Data Exposure,worldwide
+658,2024-03-22,The Arizona Agenda Produced a Deepfake of Kari Lake Advocating for the Publication Without Her Consent,USA
+659,2023-10-07,Mass Facial Recognition Program in Gaza Reportedly Used by Israeli Forces to Identify Palestinians,PSE
+660,2024-03-21,Investigation Reports Unauthorized Deepfake Pornography Harms Thousands of Celebrities,GBR
+661,2024-03-26,Leonardo AIs Platform Alleged to Have Been Used for Creating Nonconsensual Celebrity Deepfakes,AUS
+662,2024-04-02,Washington States Lottery AI Site Reportedly Generates Inappropriate User Image,worldwide
+663,2024-04-05,China Reportedly Intensifying AI to Spread Disinformation to U.S. and Taiwanese Voters,"USA, TWN, CHN"
+664,2024-02-17,Deepfake Generated by the Lincoln Project of Trumps Father Used in Political Attack Ad,worldwide
+665,2024-04-02,Facial Recognition Misidentification at New World Westend in New Zealand,NZL
+666,2023-12-29,Presidency of Moldova Reportedly Refutes Purported Deepfake Video Slandering President Maia Sandu,MDA
+667,2023-12-16,Manipulated Deepfake Video of Lai Ching-te Endorsing Rivals in Lead-up to January Presidential Elections,TWN
+668,2023-12-27,Proliferation of Deepfakes Disrupting 2024 Lok Sabha Elections,IND
+669,2024-02-11,Deepfake of Long-Deceased Suharto Circulating in Run-up to February 2024 Indonesian Elections,IDN
+670,2024-01-23,Deepfakes of Deceased Indian Politicians for Election Campaigning Are Increasingly Being Deployed,IND
+671,2024-02-08,Many Purported Political Deepfakes Reportedly Circulating in Run-up to 2024 Pakistani General Elections,PAK
+672,2024-04-03,Lavender and The Gospel AI Systems Reportedly Used in Gaza Targeting Operations with Civilian Harm Allegations,"PSE, ISR"
+673,2024-02-19,Deepfakes Circulating and Eroding Electoral Integrity in the Lead-up to 2024 South Korean legislative election,KOR
+674,2024-03-14,Manipulated Media via AI Disinformation and Deepfakes in 2024 Elections Erode Trust Across More Than 50 Countries,"SVK, MDA, TWN, BGD"
+675,2024-01-15,High School Athletic Director in Baltimore County Allegedly Created Racist Deepfake Audio Impersonating Principal,worldwide
+676,2024-04-24,Alleged Deepfake Audio Depicts Philippines President Ferdinand Marcos Jr. Ordering Military Action,"PHL, CHN"
+677,2024-04-29,ChatGPT and Perplexity Reportedly Manipulated into Breaking Content Policies in AI Boyfriend Scenarios,worldwide
+678,2024-04-29,ChatGPT Factual Errors Lead to Filing of Complaint of GDPR Privacy Violation ,worldwide
+679,2023-02-20,A Purported Deepfake of Senator Elizabeth Warren Circulates Allegedly Saying Republicans Should Not Vote,worldwide
+680,2024-03-01,"Russia-Linked AI CopyCop Site Identified as Modifying and Producing at Least 19,000 Deceptive Reports",RUS
+681,2023-07-17,Never Back Down Super PAC for Ron DeSantis Uses AI Donald Trump Voice in Attack Ad Against Kim Reynolds,USA
+682,2024-02-01,GOP Pollster Reportedly Shares Purportedly AI-Generated Images to Fabricate Appearance of Black Voter Support,USA
+683,2024-03-28,Scammers Using Deepfakes of Womens Faces and Voices for False and Offensive Advertisements,"RUS, CHN"
+684,2024-04-04,Google Books Appears to Be Indexing Works Written by AI,worldwide
+685,2024-04-24,The WHOs S.A.R.A.H. Bot Reported to Provide Inconsistent and Inadequate Health Information,worldwide
+686,2024-04-03,Meta AI Image Generator Reportedly Fails to Accurately Represent Interracial Relationships,worldwide
+687,2024-04-08,Deepfake Porn Sites Use Breeze Lius Image Without Consent,worldwide
+688,2024-05-20,Scarlett Johansson Alleges OpenAIs Sky Imitates Her Voice Without Licensing,worldwide
+689,2024-03-26,"Holmen, Wisconsin Man Allegedly Used Stable Diffusion to Create and Then Share Sexually Explicit Images Depicting Minors",USA
+690,2024-03-26,ISIS Utilizes AI for Propaganda Videos in News Harvest Program,worldwide
+691,2024-05-25,Facewatch Reported to Have Wrongfully Flagged Home Bargains Customer as Shoplifter,GBR
+692,2024-02-01,London Metropolitan Polices Facial Recognition Technology Reportedly Misidentified Shaun Thompson as Suspect Leading to Arrest,GBR
+693,2024-05-14,Google AI Reportedly Delivering Confidently Incorrect and Harmful Information,worldwide
+694,2023-04-25,Purported Republican AI Ad Reportedly Depicts Dystopian Future After Biden Reelection Announcement,USA
+695,2023-05-24,Donald Trumps Presidential Campaign Released Deepfakes Attacking Ron DeSantis,USA
+696,2024-02-14,Metas AI Ad Platform Reportedly Causes Overspending and Poor Performance,worldwide
+697,2023-06-23,Purported Deepfake Image Allegedly Circulating of Donald Trump with Underage Girl at Jeffrey Epsteins Private Island,worldwide
+698,2023-09-02,Deepfake Video of Ron DeSantis Dropping Out of 2024 Presidential Race Circulating,worldwide
+699,2024-05-23,VA Suicide Prevention Algorithm REACH VET Reportedly Prioritizes Men Over Women Veterans,worldwide
+700,2024-05-20,Metas AI Chatbots Are Reportedly Entering Online Support Communities Uninvited,worldwide
+701,2024-05-29,American Asylum Seeker John Mark Dougan in Russia Reportedly Spreads Disinformation via AI Tools and Fake News Network,"USA, RUS"
+702,2024-05-31,Disinformation Deepfake Circulates of State Department Spokesman Matthew Miller Suggesting Belgorod Can Be Attacked with U.S. Weapons,"RUS, UKR"
+703,2024-01-13,Purported Deepfake Audio Reportedly Sparks False Claims of Biden Threatening Texas with F-15s,USA
+704,2024-05-23,Study Highlights Persistent Hallucinations in Legal AI Systems,worldwide
+705,2024-06-08,"Turkish Student in Isparta Allegedly Uses AI to Cheat on Exam, Leading to Arrest",TUR
+706,2024-04-01,Scammers Using AI to Impersonate Small Businesses,USA
+707,2024-06-13,"Tesla Reportedly in Autopilot Mode Hits Parked Police Vehicle in Fullerton, California",USA
+708,2024-05-26,Reportedly Faulty AI Transcription Threatens Integrity of Genoa Bribery Probe,ITA
+709,2023-05-28,Unrepresented Litigant Misled by ChatGPT-Generated False Legal Citations in Manchester Court,GBR
+710,2024-04-15,Facebook AI Reportedly Mislabels Auschwitz Photos as Bullying and Nudity,worldwide
+711,2024-04-26,NHTSA Opens New Probe into Teslas Autopilot Following More than a Dozen Fatal Accidents,worldwide
+712,2024-04-26,Meta AI Hallucinates Harassment Allegations Against New York Politicians,USA
+713,2023-02-27,Purported Deepfake Video Falsely Depicts Biden Announcing National Draft for Ukraine,"UKR, USA"
+714,2024-03-29,Microsoft-Powered New York City Chatbot Advises Illegal Practices,USA
+715,2024-03-01,Over 400 Purportedly AI-Driven Scams Reportedly Led to $8M Loss for Australians in 2023,AUS
+716,2021-04-21,Algorithmic Staffing Failures Linked to Resident Deaths at Leading Assisted-Living Chain Brookdale,worldwide
+717,2024-03-01,Fake AI-Generated Law Firms Sent Fake DMCA Notices to Increase SEO,worldwide
+718,2024-04-06,"OpenAI, Google, and Meta Alleged to Have Overstepped Legal Boundaries for Training AI",worldwide
+719,2024-04-04,Grok AI on X Created and Promoted False Iran Missile Strike News,"IRN, ISR"
+720,2023-02-27,Deepfake Video Targets Paul Vallas on Eve of Chicago Mayoral Election,USA
+721,2024-06-04,Reported Use of Purportedly AI-Generated Student Accounts in Online College Courses,worldwide
+722,2024-04-25,"Catholic AI Chatbot Father Justin Claimed to Be a Real Priest, Prompting Retraction",worldwide
+723,2024-05-13,Instagram Algorithms Reportedly Directed Childrens Merchandise Ad Campaign to Adult Men and Sex Offenders,worldwide
+724,2024-06-12,Purportedly AI-Generated Papers Are Alleged to Have Manipulated Scopus Rankings in Top Philosophy Journals,worldwide
+725,2024-03-14,Cartels Reportedly Using AI to Expand Operations into Financial Fraud and Human Trafficking,worldwide
+726,2023-10-02,A Self-Driving Cruise Robot Taxi Reportedly Struck and Dragged a Pedestrian 20 Feet,worldwide
+727,2024-04-01,Synthetic Voice Olesya by Storm-1516 Falsely Accuses Ukraine in U.S. Election Disinformation Campaign,"UKR, USA"
+728,2024-05-16,AI Firm Lovo Accused of Illegally Replicating Voice Actors Voices,worldwide
+729,2024-05-14,GPT-4os Chinese Tokens Reportedly Compromised by Spam and Pornography Due to Inadequate Filtering,CHN
+730,2024-04-01,AI Deepfakes for Voter Outreach Flood Indian Elections,IND
+731,2023-12-01,Purportedly Hallucinated Software Packages with Potential Malware Reportedly Downloaded Thousands of Times by Developers,worldwide
+732,2024-02-12,Whisper Speech-to-Text AI Reportedly Found to Create Violent Hallucinations,worldwide
+733,2024-06-09,Auto Insurers Allegedly Are Surreptitiously Collecting and Scoring Driver Data,worldwide
+734,2024-06-18,Leading AI Models Reportedly Found to Mimic Russian Disinformation in 33% of Cases and to Cite Fake Moscow News Sites,UKR
+735,2024-06-22,AI-Enabled Fraud Schemes Reportedly Increasing Consumer Harm and Challenging Detection,worldwide
+736,2023-12-01,Underground Market for LLMs Powers Malware and Phishing Scams,USA
+737,2024-04-16,Amandine Le Pen Deepfake Account Misleads Thousands on TikTok,FRA
+738,2024-06-23,"Department for Work and Pensions (DWP) Algorithm Wrongly Flags 200,000 for Housing Benefit Fraud",GBR
+739,2024-06-27,Scammers Allegedly Use Deepfake of Hong Kong Entertainer Andy Lau to Steal NT$2.64 Million from Fan,"TWN, HKG"
+740,2024-07-10,Department for Work and Pensions (DWP) AI Systems Allegedly Discriminate Against Single Mothers,GBR
+741,2023-10-02,Robin Williamss Voice Deepfaked Without Consent,worldwide
+742,2024-07-13,Grok AI Model Reportedly Fails to Produce Reliable News in Wake of Trump Assassination Attempt,worldwide
+743,2024-07-16,Gemini AI Allegedly Reads Google Drive Files Without Explicit User Consent,worldwide
+744,2024-06-25,"AI Work Assistants Require More Effort Than Expected, CIOs Say",worldwide
+745,2024-07-02,Figma Disables AI Feature After Accusations of Copying Apples Weather App,worldwide
+746,2024-05-15,Class Action Lawsuit Over Alleged Defects in Volkswagens AI-Driven AEB Systems,USA
+747,2024-07-18,Fatalities Reportedly Occur Despite VioGén Algorithms Low or Negligible Risk Scores,ESP
+748,2024-06-19,Erroneous Declined Transaction Notification by PayPal AI Assistant,worldwide
+749,2024-05-31,Hoodline Accused of Misleadingly Attributing AI-Generated Articles to Human Authors,worldwide
+750,2024-07-22,AI Chatbots Reportedly Inaccurately Conveyed Real-Time Political News,worldwide
+751,2024-07-25,SearchGPT Reportedly Misleads Users with Incorrect Festival Dates in Demo,USA
+752,2024-07-07,AI-Generated Obituaries Are Reportedly Intensifying Grief for Bereaved Families,worldwide
+753,2024-06-06,BNN Breakings AI-Driven Errors Reportedly Damage Reputations and Spread Misinformation,IRL
+754,2024-07-01,Female Politicians in the United Kingdom Reportedly Victimized by Purported Deepfake Pornography,GBR
+755,2024-07-03,Purported Deepfake Targets Olena Zelenska in Alleged Russian Disinformation Campaign,"UKR, USA"
+756,2024-07-26,Deepfake of Kamala Harris Saying Damaging Comments Circulates on X and Is Amplified by Elon Musk,USA
+757,2024-07-01,OpenAIs ChatGPT Mac App Stored User Data in Unencrypted Text Files,worldwide
+758,2023-09-11,Teens Overdose Reportedly Linked to Metas AI Systems Failing to Block Ads for Illegal Drugs,worldwide
+759,2021-02-05,AI-Generated Deepfakes Reportedly Derailed Political Career of Florida Official,USA
+760,2024-07-21,False Election Data on Kamala Harris Reportedly Circulated via Grok AI Chatbot,USA
+761,2024-08-08,TikTok AI System Used to Amplify Election Disinformation by Foreign Networks,USA
+762,2024-08-14,Grok AI Reportedly Generates Offensive and Violent Images Without Proper Safeguards,worldwide
+763,2024-08-13,Grok AI Chatbot Reportedly Spreads Unfounded Rumors About Trumps Dentures,worldwide
+764,2024-06-26,Cody Enterprise Reporter Resigns After Admitting to AI-Generated Fake Quotes,USA
+765,2024-03-14,22 Students at Richmond-Burton Community High School in Illinois Targeted by Deepfake Nudes,USA
+766,2024-08-18,Trump Reportedly Shares Purportedly AI-Generated Images Falsely Suggesting Taylor Swift Endorsement,worldwide
+767,2024-08-18,AI Image of Kamala Harris at DNC with Communist Flags Circulated by Trump,USA
+768,2023-03-11,ChatGPT Implicated in Samsung Data Leak of Source Code and Meeting Notes,worldwide
+769,2018-04-20,Investigative Journalist Rana Ayyub Targeted by AI-Generated Deepfake Pornography,worldwide
+770,2024-08-16,Microsoft Copilot Falsely Accuses Journalist Martin Bernklau of Crimes,worldwide
+771,2020-02-06,Noelle Martin Deepfaked Without Consent in AI-Generated Pornography,AUS
+772,2020-06-08,Kristen Bell Deepfaked in Non-Consensual AI-Generated Pornography,worldwide
+773,2024-08-20,Chatbot in Workplace Training at Bunbury Prison Reveals Real Names in Sexual Harassment Case,AUS
+774,2024-05-30,"Covert AI Influence Operations Linked to Russia, China, Iran, and Israel, OpenAI Reports",worldwide
+775,2024-09-02,Elon Musk Reportedly Shared an AI-Generated Image Depicting Kamala Harris Dressed as a Communist Ruler,worldwide
+776,2024-08-21,Megalopolis Trailer Included Fake AI-Generated Quotes Attributed to Film Critics,USA
+777,2024-08-28,South Korea Experiences a Surge of Explicit Deepfake Pornography,KOR
+778,2024-09-04,Amazons Alexa Reportedly Shows Political Preference Error in Trump-Harris Presidential Race Queries,worldwide
+779,2024-09-04,Music Producer Arrested for Allegedly Using AI-Generated Songs in $10 Million Streaming Scam,worldwide
+780,2024-08-23,Joint Base Elmendorf-Richardson Soldier Faces Allegations of Using AI to Generate Child Pornography,worldwide
+781,2024-09-03,Clearview AI Faces $33.7 Million Fine for Violating GDPR with Biometric Data Harvesting,NLD
+782,2024-09-09,AI Nudify Apps Used as Tools for Blackmail and Extortion,IND
+783,2024-05-21,WiseTech Global CEO Richard White Reportedly Deepfaked in Multiple Attempts to Scam Staffers,worldwide
+784,2024-04-23,Child Predators Are Reportedly Generating Deepfake Nudes of Children to Extort Them,worldwide
+785,2024-09-08,ESPNs AI Coverage Overlooks Alex Morgan in Her Final Match Recap,worldwide
+786,2022-09-07,Fraudsters Use Deepfake Video of Tim Cook to Promote Apple Crypto Scam on YouTube,worldwide
+787,2024-03-01,Deepfake ID Sales Allegedly Persist as OnlyFake Reportedly Relaunches with New Fraud Tools,worldwide
+788,2024-06-20,Instagrams Algorithm Reportedly Recommended Sexual Content to Teenagers Accounts,worldwide
+789,2024-06-12,Independent News Sites Flagged as Spam by Facebooks AI Moderation System,GBR
+790,2024-06-21,Unrestricted AI Avatar Tool Accidentally Released by TikTok Permits Recitation of Hitler Quotes and Other Harmful Speech,worldwide
+791,2024-09-09,Google AI Error Prompts Parents to Use Fecal Matter in Child Training Exercise,worldwide
+792,2024-04-19,Unauthorized Use of AI to Replicate Tupac Shakurs and Snoop Doggs Voices in Drakes Taylor Made Freestyle,worldwide
+793,2024-07-01,AllHeres Chatbot Ed Fails and Costs Los Angeles Unified School District $6 Million,USA
+794,2024-08-13,Reported Glitch in Waymo Self-Driving Cars Purportedly Triggers Regular All-Night Honking in San Francisco,USA
+795,2024-08-14,Deepfake Elon Musk Videos Have Reportedly Contributed to Billions in Fraud,worldwide
+796,2024-06-01,Facebooks Content Moderation System Flagged and Removed Emergency Updates as Spam During Wildfires,USA
+797,2024-06-07,Teenager Makes Deepfake Pornography of 50 Girls at Bacchus Marsh Grammar School in Australia,AUS
+798,2024-06-29,Australian Schools Grappling with Significant Spread of Non-Consensual Spread of Deepfake Pornography of Students,AUS
+799,2023-10-15,Aledo High School Student Allegedly Generates and Distributes Deepfake Nudes of Seven Female Classmates,USA
+800,2024-09-03,53% of American and British Businesses Report Attacks by AI-Powered Deepfake Scams in 2024,"USA, GBR"
+801,2024-09-02,Bias in AI Deepfake Detection Undermines Election Security in Global South,worldwide
+802,2024-09-13,Purported Deepfake of Brian May Allegedly Exploited in Scam Offering Fake Queen Backstage Tickets,GBR
+803,2024-05-14,"Facebooks Algorithm Reportedly Amplifies AI-Generated Content, Fueling Misleading Posts",worldwide
+804,2024-07-30,AI-Generated Fake True Crime Video About Non-Existent Littleton Murder Goes Viral,worldwide
+805,2024-09-19,Senator Ben Cardin Reportedly Received a Purported Deepfake Zoom Call Impersonating Former Ukrainian Foreign Minister Dmytro Kuleba,UKR
+806,2024-09-13,"Criminal Group Uses AI Deepfake Technology to Steal Personal Data in Hangzhou, Zhejiang",CHN
+807,2024-09-25,ChatGPT Reportedly Introduces Errors in Critical Child Protection Court Report,AUS
+808,2024-10-11,Infinite Campus AI-Driven Student Risk Model Leads to Cuts in Support for Nevadas Low-Income Schools,USA
+809,2024-04-07,TikTok Hosts AI-Generated English-Language Hitler Speeches with Millions of Views,worldwide
+810,2024-07-29,TikTok Network Amplifies AI-Generated Nazi Propaganda and Hate Speech,worldwide
+811,2024-10-02,AI-Powered Transcription Services Allegedly Leak Confidential Workplace Discussions,worldwide
+812,2023-12-11,Deepfake Nudes Targeting Underage Female Students at Collège Béliveau in Winnipeg Shared Online,CAN
+813,2024-09-19,Starship Technologies Delivery Robot Reportedly Injures Arizona State University Employee,USA
+814,2024-10-02,AI Avatar of Murder Victim Created Without Consent on Character.ai Platform,worldwide
+815,2024-10-06,Police Use of Facial Recognition Software Causes Wrongful Arrests Without Defendant Knowledge,worldwide
+816,2019-11-29,Cross-Jurisdictional Facial Recognition Misidentification by NYPD Leads to Wrongful Arrest and Four-Year Jail Time in New Jersey,USA
+817,2024-09-24,Purportedly AI-Generated Images Reportedly Spread Misinformation During Hurricane Helene Response,worldwide
+818,2024-09-28,Jennifer Anistons Likeness Allegedly Exploited in Purported Deepfake Collagen Supplement Promotion,worldwide
+819,2024-10-09,ProKYC Tool Allegedly Facilitates Deepfake-Based Account Fraud on Cryptocurrency Exchanges,worldwide
+820,2024-10-15,Alleged AI-Generated Photo Alteration Leads to Inappropriate Modifications in Speakers Conference Picture,worldwide
+821,2024-07-07,Baidu Robotaxi Allegedly Involved in Collision with Pedestrian in Wuhan,CHN
+822,2024-10-15,Algorithmic Bias in French Welfare System Allegedly Discriminates Against Marginalized Groups,FRA
+823,2024-05-03,Cybercheck Tool Allegedly Provides Questionable Evidence in Murder Trials,USA
+824,2024-10-16,Purported Deepfake Allegedly Misattributes Claims to Former Student in Attack on Vice-Presidential Candidate Tim Walz,USA
+825,2024-10-08,AI News Site Hoodline San Jose Erroneously Misidentifies San Mateo District Attorney as Murder Suspect,worldwide
+826,2024-02-28,Character.ai Chatbot Allegedly Influenced Teen User Toward Suicide Amid Claims of Missing Guardrails,worldwide
+827,2024-10-26,AI Transcription Tool Whisper Reportedly Inserting Fabricated Content in Medical Transcripts,worldwide
+828,2024-10-13,Uruguayan TV Program Santo y Seña Uses a Deepfake of Political Candidate Yamandú Orsi Without His Consent,URY
+829,2024-02-05,Facial Recognition System in Buenos Aires Triggers Police Checks Based on False Matches,ARG
+830,2024-04-07,Error-Prone AI Accessibility Tools Reportedly Lead to Navigation Issues for Blind Internet Users,worldwide
+831,2024-10-23,NYC Subway AI Weapons Scanners Yield High False Positive Rate and Detect No Guns in Month-Long Pilot Test,USA
+832,2024-04-06,Reportedly Viral AI-Generated Song about Diddy Party Allegedly Mimics Justin Bieber,worldwide
+833,2024-10-21,Polish Radio Station Replaces Human Hosts with AI-Generated Presenters to Simulate Interviewing Deceased Poet Wisława Szymborska,POL
+834,2024-07-04,China Targets AI-Driven Fraud and Deepfake Scandals with New Crackdowns,CHN
+835,2024-08-06,Purportedly AI-Manipulated Synthetic Media Allegedly Fuels False Reports of Natural Disasters and Accidents in China,CHN
+836,2024-07-23,Sichuan Province Beset by Numerous Fabricated AI-Generated Reports of Disasters and Crises,worldwide
+837,2024-11-02,Reportedly Fake CNN Broadcast Allegedly Used to Spread False Texas Election Results,USA
+838,2024-04-25,Microsoft Copilot Allegedly Provides Unsafe Medical Advice with High Risk of Severe Harm,worldwide
+839,2024-10-07,Purportedly AI-Driven Phishing Scam Uses Spoofed Google Call to Attempt Gmail Breach of Security Expert,worldwide
+840,2024-09-18,AI-Generated Media Reportedly Used in Russian Disinformation Campaign in Moldova,MDA
+841,2024-10-01,Purportedly AI-Manipulated Video Allegedly Targets Moldovan Economic Development Minister Dumitru Alaiba in Election Disinformation Campaign,MDA
+842,2024-05-24,Reportedly Hacked AI-Powered Robot Vacuums Allegedly Used for Surveillance and Harassment,worldwide
+843,2024-11-20,Generative AI Plagiarism Incident at Hingham High School Reportedly Tied to Inaccurate Citation Outputs from Grammarly AI,worldwide
+844,2022-05-25,SafeRent AI Screening Tool Allegedly Discriminated Against Housing Voucher Applicants,USA
+845,2024-11-13,Googles Gemini Allegedly Generates Threatening Response in Routine Query,worldwide
+846,2021-10-06,Social Media Algorithms Amplified Disinformation Campaign in Honduras Election,HND
+847,2024-04-14,"Brake Failure in Reportedly AI-Driven Tram Leads to Multiple Injuries in Saint Petersburg, Russia",RUS
+848,2024-10-18,"High School Student in Córdoba, Argentina Accused of Using AI to Generate Explicit Images of Classmates",ARG
+849,2024-10-18,AI Detection Tools Allegedly Misidentify Neurodivergent and ESL Students Work as AI-Generated in Academic Settings,worldwide
+850,2024-10-24,Character.ai Chatbots Allegedly Misrepresent George Floyd on User-Generated Platform,worldwide
+851,2024-10-25,Salt Lake City Police Chief Mike Browns Voice and Image Misused in AI-Generated Scam,worldwide
+852,2024-11-01,Alleged Fake Citations Undermine Expert Testimony in Minnesota Deepfake Law Case,USA
+853,2024-02-03,Two Passengers Report Feeling Trapped in Waymo Car During Sensor Obstruction,USA
+854,2024-09-30,Waymo Driverless Taxi Allegedly Stalled During Pedestrian Harassment Incident in San Francisco,USA
+855,2024-11-30,Names Linked to Defamation Lawsuits Reportedly Spur Filtering Errors in ChatGPTs Name Recognition,worldwide
+856,2024-09-15,Purportedly AI-Generated Audio Allegedly Fabricates Bidens Admission of Role in Pakistani Political Crisis,"USA, PAK"
+857,2024-11-25,"Navigation App Allegedly Directs Car Over Damaged Bridge in Uttar Pradesh, Resulting in Three Deaths",IND
+858,2024-09-19,"Deepfake Reportedly Used in Attempted Real Estate Fraud in Hallandale Beach, Florida",USA
+859,2024-10-30,AI Models Reportedly Found to Provide Misinformation on Election Processes in Spanish,USA
+860,2023-10-31,"AI Camera Allegedly Misidentifies Dutch Motorist as Using Mobile Phone, Issuing €380 Fine",NLD
+861,2024-12-13,Apple Intelligence Reportedly Notified Users That Luigi Mangione Shot Himself and Benjamin Netanyahu Had Been Arrested,"USA, ISR, GBR"
+862,2024-11-03,Purportedly AI-Generated Video Allegedly Depicts Martin Luther King Jr. Supporting Donald Trump,worldwide
+863,2024-12-12,Character.ai Companion Allegedly Prompts Self-Harm and Violence in Texas Teen,USA
+864,2024-08-23,"Generative AI Allegedly Used to Facilitate $255,000 Real Estate Fraud Scheme",worldwide
+865,2024-10-02,Fake AI Nudify Sites Reportedly Linked to Malware Distribution by Russian Hacker Collective FIN7,RUS
+866,2024-02-01,Network of 171 AI-Powered Bots Reportedly Spread Political Disinformation Ahead of Ghanas December 2024 General Election,GHA
+867,2024-10-31,AI-Generated Airline Reviews Allegedly Mislead Consumers and Undermine Trust,CHN
+868,2024-10-14,Portland Water Bureau SERVUS Algorithm Reportedly Allocates Utility Bill Discount to High-Wealth Consumer,worldwide
+869,2024-11-04,TikTok Algorithms Allegedly Linked to Minors Exposure to Harmful Content,FRA
+870,2024-12-06,Meeten Malware Campaign Reportedly Undermines Web3 Security Using AI-Legitimized Branding,worldwide
+871,2024-12-13,Reported Deepfake Video of Elon Musk Announcing $20 Million Cryptocurrency Giveaway Circulating on Social Media,worldwide
+872,2024-12-16,AI Voice Cloning of Ari Melber Allegedly Exploited in Scam Targeting Elderly Woman,worldwide
+873,2024-12-10,YouTube Algorithms Allegedly Amplify Eating Disorder Content to Adolescent Girls,worldwide
+874,2024-12-11,1 in 6 Congresswomen Have Reportedly Been Targeted by AI-Generated Nonconsensual Intimate Imagery,USA
+875,2024-01-08,Coordinated Deepfake Campaign Reportedly Impersonating Rishi Sunak Promoted Fraudulent Quantum AI Investment Platform on Meta,GBR
+876,2024-11-24,Deepfake Videos Allegedly Used to Defraud Canadian Immigrants Out of Thousands of Dollars,CAN
+877,2024-12-16,HTML/Nomani Deepfake Phishing Campaigns Allegedly Use AI-Generated Content to Defraud Social Media Users,worldwide
+878,2024-12-19,"Romance Scammer Alla Morgan Allegedly Exploits Deepfake Technology to Defraud Victim of £17,000",worldwide
+879,2023-12-29,Deepfake Video Reportedly Depicts U.S. Congressman Rob Wittman Endorsing Military Support for Taiwans Democratic Progressive Party,TWN
+880,2024-12-09,Scammers Reportedly Using Deepfakes of Health Experts and Public Figures in Australia to Sell Health Supplements and Give Harmful Advice,AUS
+881,2024-12-27,Waymo Robotaxi Allegedly Collides With Serve Robotics Delivery Bot in Los Angeles,USA
+882,2024-12-29,AI-Generated Reading Summaries on Fable App Reportedly Wrote Biased and Offensive Commentary,worldwide
+883,2024-12-26,Alleged Fake AI-Generated Christmas Card Featuring Prince Harry and Meghan Markles Children Circulates on Social Media,worldwide
+884,2024-12-31,Russian Center for Geopolitical Expertise Allegedly Used AI to Target U.S. Candidates with Disinformation in 2024 Election,"USA, RUS"
+885,2025-01-03,"Meta AI Characters Allegedly Exhibited Racism, Fabricated Identities, and Exploited User Trust",worldwide
+886,2024-12-27,ChatGPT Reportedly Referenced During Las Vegas Cybertruck Explosion Planning,USA
+887,2024-11-14,"Students of Richland School District in Cambria County, Pennsylvania Allegedly Used AI to Generate Obscene Images of Other Students",USA
+888,2025-01-06,Sydney High Schooler Allegedly Generated Deepfakes of Other Students,AUS
+889,2025-01-07,Teslas Actually Smart Summon Feature Reportedly Linked to Multiple Parking Lot Collisions,worldwide
+890,2025-01-08,AI-Generated Images of the Iconic Hollywood Sign Reportedly on Fire Circulating on Social Media,USA
+891,2025-01-08,AI Voice Scam Targets Westchester Parents with Fake Kidnapping Ransom Calls,USA
+892,2024-08-05,Apple Intelligence Allegedly Flags Scam Messages as High Priority,worldwide
+893,2025-01-09,Pennsylvania State Police Officer Allegedly Used Work Computer for AI-Generated Pornography,USA
+894,2017-01-01,RealPages YieldStar Allegedly Facilitated Rent Price Coordination Among Canadian Landlords,CAN
+895,2025-01-06,Alleged Deepfake of New Zealand Endocrinologist Reportedly Promotes Misleading Diabetes Claim,NZL
+896,2025-01-13,Alleged Misuse of Facial Recognition Technology by Law Enforcement Reportedly Leading to Wrongful Arrests and Violations of Investigative Standards,worldwide
+897,2025-01-10,AI-Assisted Ransomware Campaign by FunkSec Allegedly Targets Over 80 Victims,worldwide
+898,2024-05-06,Alleged LLMjacking Targets AI Cloud Services with Stolen Credentials,worldwide
+899,2024-12-17,Character.ai Chatbots Allegedly Emulating School Shooters and Their Victims,worldwide
+900,2024-11-13,Character.ai Has Allegedly Been Hosting Openly Predatory Chatbots Targeting Minors,worldwide
+901,2025-01-12,"Yahoo Boys Allegedly Used Deepfake Technology to Impersonate Brad Pitt and Defraud French Woman of $850,000 in Romance Scam",FRA
+902,2025-01-15,Prime Minister of Thailand Paetongtarn Shinawatra Claims AI Voice Scam Impersonated ASEAN Leader Requesting Money,THA
+903,2022-04-15,Northern Ireland MLA Cara Hunter Allegedly Targeted by Deepfake Pornography Ahead of May 2022 Assembly Election,"IRL, GBR"
+904,2022-10-21,"Kate Isaacs, Advocate Against Image-Based Abuse, Reports Being Deepfaked",GBR
+905,2024-07-01,"Scammers Allegedly Use Deepfake Technology to Pose as Leonor, Princess of Asturias, in Fraud Scheme",USA
+906,2024-10-08,Alleged AI-Powered Call Center Breach Exposes Over 10 Million Conversations in the Middle East,worldwide
+907,2024-07-15,"Taranaki, New Zealand Resident Allegedly Defrauded of $224K in Bitcoin Scam Using Deepfake of Prime Minister Christopher Luxon",NZL
+908,2020-07-15,Deepfake Images of Australian Teacher Hannah Grundy and 25 Others Created and Circulated Online by Former Friend,AUS
+909,2024-12-13,Matryoshka Campaign Allegedly Uses Deepfakes to Impersonate Academics for Pro-Russian Propaganda,"RUS, UKR"
+910,2025-01-15,"Alleged AI-Driven Phishing Scam Impersonates Maine Town Official to Falsely Request $22,500",USA
+911,2022-05-01,Yahoo Boys Allegedly Employ Real-Time Deepfake Technology in Romance Scams,NGA
+912,2024-11-21,Yahoo Boys and Scammers from Morocco Allegedly Target U.S. Widows and Vulnerable Individuals with Artificial Patriot Scams,"USA, NGA, MAR, GHA"
+913,2025-01-27,Yahoo Boys Allegedly Using AI-Generated News Videos to Blackmail Sextortion Victims,worldwide
+914,2024-12-26,Alleged Deepfake of Luis Suárez Used to Scam Uruguayans in Fake Investment Scheme,URY
+915,2024-10-28,Alaska Education Department Reportedly Published Policy Featuring Erroneous AI-Generated Citations,USA
+916,2025-01-23,"Plymouth, Massachusetts Resident Reportedly Used AI Chatbots CrushOn.ai and JanitorAI to Harass and Intimidate Victims",USA
+917,2025-02-05,Alleged Deepfake of Whoopi Goldberg Used in Fake Weight-Loss Supplement Ads on Instagram,worldwide
+918,2025-02-04,AI-Aided Scam in Thailand Allegedly Impersonates Police to Defraud 163 Victims,THA
+919,2024-02-06,Purported Russian-Linked Network Allegedly Used Deepfake of Maria Ressa on Facebook and Bing to Promote Cryptocurrency Scam Targeting Filipinos,PHL
+920,2025-02-01,Alleged Deepfake Scam Reportedly Promoted Trump Golden Eagles Project as Investment Opportunity,USA
+921,2025-01-05,"Hong Kong Authorities Seize HK$34M in Alleged Deepfake Scam Targeting Victims in Taiwan, Singapore, and Malaysia","TWN, SGP, MYS, HKG"
+922,2025-02-04,"AI Voice Scam Allegedly Defrauds Game and Coffee Store in Havre, Montana",USA
+923,2025-02-08,"Nottingham Gallery Owner Allegedly Defrauded by Deepfake Impersonating Pierce Brosnan, Leading to Business Closure",worldwide
+924,2025-01-30,Alleged Deepfake Scam Uses BBC Presenter Naga Munchettys Image to Promote Fraudulent Investment Scheme,worldwide
+925,2024-10-15,Alleged License Plate Recognition Errors in Christchurch Lead to Wrongful Parking Fines,NZL
+926,2020-01-01,Giorgia Meloni Reportedly Targeted by Deepfake Pornography,ITA
+927,2025-02-04,Fraudsters Allegedly Use AI-Generated Voice of Italian Defense Minister Guido Crosetto to Scam Business Leaders,"ITA, NLD, HKG"
+928,2024-12-12,Deepfake Cryptocurrency Scam Allegedly Impersonates Italian President Sergio Mattarella and Prime Minister Giorgia Meloni,ITA
+929,2024-12-06,"Sustained AI-Driven Russian Disinformation Campaigns Doppelgänger, Storm-1516, and Matryoshka Reportedly Disrupting German Federal Elections","GBR, USA, DEU"
+930,2025-02-12,Alleged Deepfake Video Falsely Depicts Hollywood Stars in AI-Manipulated Protest Against Kanye West,"USA, GBR"
+931,2025-01-21,Reportedly Manipulated TikTok Videos Misrepresent Anti-AfD Protests as Far-Right Rallies,DEU
+932,2024-12-25,BP New Zealands License Plate Recognition System Reportedly Misidentified Auckland Driver for Fuel Theft in Whanganui,NZL
+933,2025-02-15,Teenager in Palma de Mallorca Allegedly Generated and Distributed Deepfake Nudes of Five Classmates,ESP
+934,2025-02-10,NHK Terminates AI Translation Service After Geopolitical Naming Error,JPN
+935,2025-02-17,Reported Deepfake of Maltese Prime Minister Robert Abela and Journalist Mark Laurence Zammit Used to Promote Fraudulent Investment,MLT
+936,2024-04-12,Deepfake of Former Prime Minister of Malta Joseph Muscat Allegedly Promotes Nord Invest Scam,MLT
+937,2025-02-10,Bolivian Criminal Network Allegedly Used Deepfake of Education Minister to Defraud at Least 19 Victims in Employment Scam,BOL
+938,2025-02-01,"Purportedly AI-Assisted Impersonation of Martin Henderson in Romance Scam Leads to Reported NZ$375,000 Fraud",NZL
+939,2025-02-21,AI-Powered Chinese Surveillance Campaign Peer Review Used for Real-Time Monitoring of Anti-State Speech on Western Social Media,USA
+940,2025-02-17,Tesla Cybertruck Operating in Full Self-Driving Mode Reportedly Crashes into Pole in Nevada After Failing to Merge,USA
+941,2025-02-17,AI-Driven Phishing Scam Uses Deepfake Robocalls to Target Gmail Users in Credential Theft Campaign,worldwide
+942,2025-02-20,Cybercriminals Reportedly Exploited Googles G.Co Subdomain and Spoofed Caller ID in AI-Driven Phishing Attack on Hack Club Founder,worldwide
+943,2025-02-20,"Nonconsensual Explicit AI-Generated Images of Up to 60 Gladstone Park Secondary College Students in Victoria, Australia, Reportedly Created and Circulated Online",AUS
+944,2025-02-20,Kenyas Foreign Affairs Principal Secretary Korir SingOei Reportedly Shared AI-Generated Video Depicting Fareed Zakaria Praising Sudan Diplomacy,"KEN, SDN"
+945,2025-02-19,"Two 16-Year-Old Students in Athens, Greece Allegedly Generated Nonconsensual Deepfake Pornography of Their Classmates",GRC
+946,2022-01-01,Arizona Residents Reportedly a Frequent Target of AI-Driven Romance Scams,USA
+947,2024-09-25,"Two Members of Highline Public Schools Community in King County, Washington Reportedly Targeted in Deepfake Kidnapping Scam",worldwide
+948,2025-02-23,Alleged FraudGPT-Enabled Phishing Attack Spoofs ChatGPT Subscription Service to Steal Credentials,worldwide
+949,2025-02-24,Unauthorized AI-Generated Video of Donald Trump and Elon Musk Reportedly Appears on HUD Building Screens,worldwide
+950,2024-07-11,NullBulges AI-Powered Malware Allegedly Compromises Disney Employee and Internal Data,worldwide
+951,2025-02-24,Character.AI Chatbots Allegedly Impersonating Licensed Therapists and Encouraging Harmful Behaviors,USA
+952,2025-02-25,Apples Voice Dictation Reportedly Substitutes Trump for Racist Due to Speech Recognition Bug,worldwide
+953,2024-11-01,Deepfake Videos of Barbara ONeill Allegedly Used in Health Scam Targeting Social Media Users,worldwide
+954,2025-02-04,Chatbots Allegedly Used in Romance Scams Targeting Nearly One-Third of New Zealands Dating App Users,NZL
+955,2024-12-19,Global Cybercrime Network Storm-2139 Allegedly Exploits AI to Generate Deepfake Content,worldwide
+956,2025-02-28,"Alleged Inclusion of 12,000 Live API Keys in LLM Training Data Reportedly Poses Security Risks",worldwide
+957,2025-02-28,Alleged Instagram Algorithm Malfunction Floods Users Reels Feeds with Violent and Graphic Content,worldwide
+958,2025-02-26,Europol Operation Cumberland Investigates at Least 273 Suspects in 19 Countries for AI-Generated Child Sexual Abuse Material,worldwide
+959,2025-03-02,Deepfake Video of Indonesian President Prabowo Subianto and Other Officials Reportedly Used in Scam to Defraud Citizens Across 20 Provinces,IDN
+960,2025-02-06,Plaintiffs Lawyers Admit AI Generated Erroneous Case Citations in Federal Court Filing Against Walmart,USA
+961,2024-12-16,Serbian Authorities Allegedly Used AI-Powered Cellebrite Tools to Unlock Journalists Phone and Install Spyware,SRB
+962,2025-03-05,"Tbilisi-Based Call Center Allegedly Uses AI-Driven Scripts to Defraud Over 6,000 Victims of $35 Million",worldwide
+963,2025-03-05,Google Reports Alleged Gemini-Generated Terrorism and Child Exploitation to Australian eSafety Commission,AUS
+964,2025-03-04,AI-Powered Insights Feature for the Los Angeles Times Allegedly Justifies Ku Klux Klans History,USA
+965,2025-03-04,Phishers Allegedly Using AI-Generated Video of YouTube CEO Neal Mohan to Target Creators,worldwide
+966,2024-07-16,Ferrari Executive Targeted by AI Deepfake Scam Impersonating CEO Benedetto Vigna,worldwide
+967,2025-03-06,Amazon and Google AI Allegedly Promote Mein Kampf as a True Work of Art in Search Results,worldwide
+968,2022-02-24,"Pravda Network, Successor to Portal Kombat, Allegedly Seeding AI Models with Kremlin Disinformation","UKR, RUS"
+969,2024-09-02,Russian Disinformation Campaign Allegedly Used Fake News Site KBSF-San Francisco News and Deepfake Video to Falsely Accuse Kamala Harris of 2011 Hit-and-Run,USA
+970,2025-03-04,Scammers Allegedly Using Deepfake Technology to Impersonate Prime Minister of Armenia Nikol Pashinyan,ARM
+971,2023-05-02,Iranian Hacker Group Cotton Sandstorm Reportedly Integrating AI into Cyber Influence Operations,"USA, ISR"
+972,2024-09-25,Russian Influence Operation Allegedly Uses AI to Create Fake Kamala Harris Campaign Website and Rhino-Hunting Hoax,USA
+973,2025-03-05,Canadian Fraud Ring Allegedly Used AI Voice Cloning in Multi-Year $21 Million Grandparent Scam Targeting Elderly Americans Across 46 States,CAN
+974,2025-03-04,Purported Deepfake Audio Allegedly Impersonates U.S. Secretary of State Marco Rubio in Starlink Disinformation Campaign,"UKR, USA"
+975,2025-03-05,"At Least 10,000 AI Chatbots, Including Jailbroken Models, Allegedly Promote Eating Disorders, Self-Harm, and Sexualized Minors",worldwide
+976,2025-03-08,AI-Generated OB-GYN Health Influencers on TikTok Used Fake Medical Credentials to Promote Dubious Advice,worldwide
+977,2025-03-02,AI-Driven News Platform Accused of Spreading Unverified Terrorism Allegations Against Yale Scholar,worldwide
+978,2025-03-09,Chinese Actor and CPPCC Member Jin Dong Allegedly Impersonated by AI Deepfake Scammers to Mislead and Defraud Fans,CHN
+979,2025-03-05,"Art Museum in Jinan, Shandong Allegedly Generated and Displayed a Sexualized Childlike Avatar with an Adult Body",CHN
+980,2025-03-07,AI-Generated Songs Allegedly Imitating Céline Dion Circulate Online Without Authorization,worldwide
+981,2025-03-05,Apple AI Transcription Allegedly Inserts Explicit Language into Scottish Womans Voicemail,GBR
+982,2025-03-13,Scammers Reportedly Using Deepfake Video Calls to Impersonate Executives in Singapore and Orchestrate Corporate Bank Transfers,SGP
+983,2024-05-10,Scammers Reportedly Used AI Voice Clone and YouTube Footage to Impersonate WPP CEO in Unsuccessful Scam Attempt,worldwide
+984,2025-03-07,Deepfake Videos Allegedly Use AI-Generated Voice Clone of Singapore Prime Minister Lawrence Wong to Promote Scams,SGP
+985,2023-12-29,Alleged Deepfake of Singapore Prime Minister Lee Hsien Loong Promotes Cryptocurrency Scam in Fake Interview,"SGP, CHN"
+986,2024-06-02,Scammers Allegedly Manipulate 2023 Speech of Singapore Senior Minister Lee Hsien Loong to Spread Deepfake Investment Fraud,SGP
+987,2023-12-11,Alleged Deepfake of Singapore Deputy Prime Minister Lawrence Wong Falsely Shows Him Endorsing Commercial Products,SGP
+988,2024-06-21,Senior Minister of Singapore Lee Hsien Loong Allegedly Misrepresented in Two Deepfake Videos on Foreign Relations,"SGP, CHN"
+989,2025-03-05,Alleged AI-Generated Video by Spains Peoples Party Results in Diplomatic Fallout with the Dominican Republic,"ESP, DOM"
+990,2024-11-19,Corinth School District Educator in Mississippi Allegedly Used AI to Generate CSAM of Students,USA
+991,2025-03-14,Alleged AI-Generated IRS Scam Websites Used to Defraud U.S. Taxpayers,USA
+992,2023-04-15,Chinese Businessman Reportedly Defrauded of 4.3 Million Yuan by AI-Generated Deepfake Impersonating Friend,CHN
+993,2025-03-12,Sydney Students Allegedly Forced to Retake NAPLAN After AI Predictive Text Error,AUS
+994,2025-03-18,AI-Enabled Organized Crime Expands Across Europe,worldwide
+995,2023-12-27,The New York Times Reportedly Sues OpenAI and Microsoft Over Alleged Unauthorized AI Training on Its Content,USA
+996,2020-10-25,"Meta Allegedly Used Books3, a Dataset of 191,000 Pirated Books, to Train LLaMA AI",worldwide
+997,2023-02-28,Meta and OpenAI Accused of Using LibGens Pirated Books to Train AI Models,worldwide
+998,2024-08-15,ChatGPT Allegedly Defamed Norwegian User by Inventing Child Homicide and Imprisonment,NOR
+999,2025-03-12,Attackers Reportedly Deployed Simulated AI Support Chatbot to Trick Instagram Business Users into Adding Malicious 2FA Login,worldwide
+1000,2025-03-23,"Sora Video Generator Has Reportedly Been Creating Biased Human Representations Across Race, Gender, and Disability",worldwide
+1001,2025-03-17,LLM Scrapers Allegedly Target Multiple Open Source Projects Disrupting the FOSS Ecosystem,worldwide
+1002,2025-03-23,Manipulated Video Using AI-Generated Audio Targets Pakistans Prime Minister Shehbaz Sharif with Fabricated Interview,"PAK, SAU"
+1003,2025-03-18,Alleged Fraudulent Prompts via AIXBT Dashboard Led Purported AI Trading Agent to Transfer 55.5 ETH from Simulacrum Wallet,worldwide
+1004,2024-08-15,San Francisco City Attorney Sues Operators of AI Deepfake Pornography Websites for Violations of State and Federal Law,USA
+1005,2025-03-12,Misleading Deepfake Video of Trump Mocking Zelenskyy for Clothing Goes Viral on Facebook,UKR
+1006,2025-02-20,"Edinburg, Texas Police Officer Arrested for Alleged Possession of CSAM, Including AI-Generated Deepfakes of Minors",USA
+1007,2025-03-13,AI-Generated Voice Cloning of Trump Falsely Proposes Renaming the District of Columbia to the District of America,USA
+1008,2025-02-10,"AI-Generated Voice Purporting to Be Daughter Allegedly Used to Coerce $2,000 from Colorado Mother","MEX, USA"
+1009,2025-02-13,Purportedly AI-Assisted Report by Tromsø Officials Allegedly Cited Non-Existent Sources in School Closure Proposal,NOR
+1010,2025-03-31,"GenNomis AI Database Reportedly Exposes Nearly 100,000 Deepfake and Nudify Images in Public Breach",KOR
+1011,2025-04-05,Deepfake of Bermuda Premier David Burt Promotes Investment Scam Using Royal Gazette Branding,BMU
+1012,2025-04-03,AI Voice Clone of Texas Woman Used in Distress Scam Targeting Brother in Port Neches,USA
+1013,2025-04-04,Essex Man Sentenced to Five Years in Prison for Having Generated and Shared Deepfake Pornography of at Least 20 Women and a Minor,GBR
+1014,2024-10-01,Students in Maltese Schools Reportedly Being Targeted by Deepfake Nudes,MLT
+1015,2025-04-07,Reported Darknet Launch of Xanthorox AI Introduces Autonomous Cyberattack Platform,worldwide
+1016,2025-04-09,"Jailbroken Lovable AI Allegedly Used to Generate and Host Phishing Pages, Steal Credentials, and Bypass Security",worldwide
+1017,2025-04-07,Alleged Deepfake Investment Scam in Spain Defrauds 208 Victims of €19 million ($20.9 million),ESP
+1018,2025-03-31,OpenAIs 4o Model Allegedly Used to Generate Fake Receipts and Prescriptions,worldwide
+1019,2025-04-10,Alleged AI-Generated Clone of Exante Brokerage Used to Defraud U.S. Investor via JPMorgan Account,worldwide
+1020,2025-04-11,Reportedly Unsafe Deployment of Llama.cpp Reveals Interactive AI-Generated CSAM Roleplay Prompts,worldwide
+1021,2025-04-08,Deepfake Job Applicant Allegedly Used AI Tools to Apply for Remote Role at U.S. Security Startup,worldwide
+1022,2023-10-12,Deepfake Video Reportedly Depicts Zambian President Hakainde Hichilema Withdrawing from 2026 Election,ZMB
+1023,2024-02-19,Purported AI-Cloned Voice Depicts Kenyan President William Ruto Speaking French in Viral Video,KEN
+1024,2024-04-24,Kenyan Journalist Jeff Koinange Depicted Endorsing Gambling App in Purported AI-Generated Deepfake,KEN
+1025,2024-03-18,Alleged Deepfake Video Depicts Former President of Kenya Uhuru Kenyatta Announcing 2027 Presidential Bid,KEN
+1026,2025-04-12,Multiple LLMs Allegedly Endorsed Suicide as a Viable Option During Non-Adversarial Mental Health Venting Session,worldwide
+1027,2025-04-10,Norwegian Supreme Court Receives Legal Filing with Fabricated Citations Allegedly Generated by AI Tool,NOR
+1028,2025-02-07,OpenAIs Operator Agent Reportedly Executed Unauthorized $31.43 Transaction Despite Safety Protocol,worldwide
+1029,2025-02-15,Purported AI-Generated Audio Was Reportedly Used to Claim Recep Tayyip Erdoğan Expressed Support for Imran Khan in Pakistani Parliament,"PAK, TUR"
+1030,2025-01-05,Aspiring Artist Cherelle Kozak Reportedly Targeted by AI-Powered Impersonation of Rapper Fat Joe,USA
+1031,2025-04-19,Transgender User Alleges ChatGPT Allowed Suicide Letter Without Crisis Intervention,worldwide
+1032,2023-08-29,Reported Doctored Video of Nigerian President Bola Tinubu Claims Naira Will Be Replaced by U.S. Dollar,NGA
+1033,2023-11-13,Video Allegedly Altered by AI Reportedly Spreads Claim of Nigerian Doctors Hypertension Cure,NGA
+1034,2024-08-04,Reported AI-Manipulated Video Depicts Donald Trump Endorsing Peter Obi and Criticizing Bola Tinubu,NGA
+1035,2024-11-20,Purported AI-Generated Video Depicts Trump Urging Release of Nigerian Separatist Leader Nnamdi Kanu,NGA
+1036,2025-01-20,Purported AI-Manipulated News Clip Fabricates Explosion and Doctors Murder Plot for Scam,"KEN, USA"
+1037,2025-04-16,Microsoft Reportedly Blocks 1.6 Million Bot Signup Attempts Per Hour Amid Global AI-Driven Fraud Surge,worldwide
+1038,2025-04-22,Scammers Reportedly Use AI Tools to Impersonate Students and Obtain Federal Aid,USA
+1039,2025-04-19,"Anysphere AI Support Bot for Cursor Reportedly Invents Login Policy, Leading to Subscription Cancellations",worldwide
+1040,2025-04-26,Meta User-Created AI Companions Allegedly Implicated in Facilitating Sexually Themed Conversations Involving Underage Personas,worldwide
+1041,2025-01-21,"Nomi Chatbots Reportedly Encouraged Suicide, Sexual Violence, Terrorism, and Hate Speech",worldwide
+1042,2025-03-25,Fact-Checking Finds Reportedly AI-Generated Video Misattributed Hypertension Cure Endorsements to Taiwo Ajai-Lycett and Chinonso Egemba,worldwide
+1043,2025-04-26,Reddit Moderators Report Unauthorized AI Study Involving Fabricated Identities by Purported University of Zurich Researchers,worldwide
+1044,2025-04-15,Reported Emergence of Vegetative Electron Microscopy in Scientific Papers Traced to Purported AI Training Data Contamination,worldwide
+1045,2025-04-29,"Mother in Louisville, Kentucky Describes Phone Scam Involving Purported AI-Generated Voice of Her Daughter",USA
+1046,2025-04-24,Brazils Social Security AI Tool Is Allegedly Rejecting Complex Claims Improperly,BRA
+1047,2025-04-27,Australian Analyst Allegedly Targeted by Scam Using Purportedly Sophisticated AI-Generated Corporate Materials,"AUS, SGP"
+1048,2025-01-10,Tennessee Meteorologists Likeness Reportedly Used in Sextortion Campaign Involving Purported AI-Generated Content,USA
+1049,2025-01-26,"AI Tools Reportedly Used to Fabricate Image of 5,000-Naira Nigerian Banknote Featuring President Bola Tinubu",NGA
+1050,2025-03-31,Reportedly AI-Generated Image Circulates Amid Reports of Tanzania Revenue Authority Job Interviews,TZA
+1051,2025-02-18,Video Reportedly Created with AI Appears to Show Trump Backing Biafra Secession,"USA, NGA"
+1052,2025-01-25,Purported AI-Generated Video Reportedly Depicts Trump Criticizing Former Kenyan Deputy President Rigathi Gachagua,KEN
+1053,2024-03-30,Mumbai Businessman Reportedly Defrauded via Purported AI-Cloned Voice Impersonating Son,IND
+1054,2025-04-23,"Anthropic Report Details Claude Misuse for Influence Operations, Credential Stuffing, Recruitment Fraud, and Malware Development",worldwide
+1055,2025-04-29,FBI Reports AI Use by Threat Actors in Broader Cyber Context Including Infrastructure Intrusions,"USA, CHN"
+1056,2025-02-12,Purported AI-Generated Videos Impersonating President of Malta Myriam Spiteri Debono Circulate on Social Media in Alleged Crypto Scam Campaigns,MLT
+1057,2017-08-15,"Jewish Baby Strollers Provided Antisemitic Google Images, Allegedly Resulting from Hate Speech Campaign",worldwide
+1058,2024-05-06,Purported AI-Generated Deepfake Images of Katy Perry at 2024 Met Gala Circulate Widely,worldwide
+1059,2025-05-06,Second Consecutive Year of Alleged AI-Generated Images Depicting Katy Perry at Met Gala Circulating Online,worldwide
+1060,2025-05-06,Institute for Strategic Dialogue Reports Russian-Aligned Operation Overload Using Purported AI-Generated Impersonations Across January to March 2025,"UKR, DEU"
+1061,2025-02-07,Reportedly Viral USAID Disinformation Video Linked to Russian-Aligned Campaign Known as Matryoshka,"USA, UKR, GBR"
+1062,2025-05-07,Brazilian Authorities Link Alleged AI-Generated Marcos Mion Videos to Purported Fake Restaurant Promotions in Brazil,BRA
+1063,2025-05-12,Purported AI-Manipulated Videos of Cypriot Officials Circulated in Alleged Investment Fraud,CYP
+1064,2024-11-14,Alleged AI-Generated Scam Uses Bank of Cyprus Branding to Solicit Investments,CYP
+1065,2024-09-23,"Scammers Allegedly Use AI-Generated Avatars to Impersonate Friends in Houston, Texas and Solicit Money",USA
+1066,2025-04-07,Hong Kong Syndicate Allegedly Used AI-Generated Facial Composites to Open Bank Accounts,HKG
+1067,2025-02-18,Alleged Use of Purported AI-Generated Identities to Defraud FTX Claims Buyers of $5.6M,worldwide
+1068,2025-04-15,AI-Powered Presentation Tool Gamma Implicated in Multi-Stage Phishing Campaign,worldwide
+1069,2025-01-31,Purported Graphite Spyware Linked to Paragon Solutions Allegedly Deployed Against Journalists and Civil Society Workers,LBY
+1070,2025-05-09,"Serviceaide AI Platform Implicated in Health Data Exposure Affecting 483,000 Catholic Health Patients",worldwide
+1071,2025-05-14,Student Reportedly Files Complaint Over Professors Undisclosed Use of Generative AI at Northeastern University,USA
+1072,2025-05-14,Grok Chatbot Reportedly Inserted Content About South Africa and White Genocide in Unrelated User Queries,ZAF
+1073,2025-04-15,"$31,000 Sanction in Lacey v. State Farm Tied to Purportedly Undisclosed Use of LLMs and Erroneous Citations",USA
+1074,2025-05-15,Citation Errors in Concord Music v. Anthropic Attributed to Claude AI Use by Defense Counsel,USA
+1075,2025-05-19,New Orleans Police Reportedly Used Real-Time Facial Recognition Alerts Supplied by Project NOLA Despite Local Ordinance,USA
+1076,2025-05-21,Purported Unauthorized Deepfakes of Norman Swan and Others Circulated in Online Supplement Campaigns,"AUS, NZL"
+1077,2025-05-15,FBI Reports Ongoing Vishing and Smishing Campaign Allegedly Targeting Government Officials Using Purportedly AI-Generated Voices,USA
+1078,2025-02-27,"Purported AI-Generated Images Reportedly Used in Sextortion Scheme Targeting Glasgow, Kentucky Teen Who Later Died by Suicide",USA
+1079,2025-05-17,Purported AI-Manipulated Videos Depict Mauricio Macri Endorsing Manuel Adorni and Silvia Lospennato Withdrawing Before Buenos Aires Vote,ARG
+1080,2025-05-08,Noodlophile Stealer Reportedly Distributed Through Allegedly Fraudulent AI Content Platforms,worldwide
+1081,2025-05-27,Voice Actor Alleges Unconsented Use of AI-Generated Voice on ScotRail Trains,GBR
+1082,2024-04-06,California Homeowner Reportedly Loses Insurance After Purported Aerial Imagery-Based Roof Assessment,USA
+1083,2025-05-13,"Texas Homeowner Reportedly Spent $3,000 to Contest AI-Flagged Warning of Insurance Nonrenewal",USA
+1084,2025-05-22,Federal Make America Healthy Again Report Released with Multiple Reportedly Erroneous and Unverifiable Citations,USA
+1085,2025-05-30,Phone of White House Chief of Staff Susie Wiles Allegedly Breached in Reported AI Voice Impersonation Incident,worldwide
+1086,2025-04-08,Reported AI-Generated Video Purportedly Depicting Keanu Reeves Debating Elon Musk Circulates as Misinformation on Social Media,worldwide
+1087,2023-08-20,Campaign Featuring Purported AI-Generated Audio Attributed to Omar al-Bashir Spreads During Sudanese Conflict,SDN
+1088,2023-04-15,Purported AI-Generated Audio Disinformation Reportedly Attributed to U.S. Ambassador John Godfrey Circulates in Sudan,SDN
+1089,2024-10-23,Purported AI-Generated Content Circulates Widely in Sudan Amid Civil Conflict and Information Vacuum,SDN
+1090,2025-05-30,"Reported AI-Generated Clickbait Targets Adolescents in Rockingham County, North Carolina",USA
+1091,2023-01-23,Purported Synthesia Avatars Used in Alleged Pro-Junta Deepfake Video Supporting Ibrahim Traoré in Burkina Faso,BFA
+1092,2025-05-23,Purported AI-Generated Video Portrays Pope Leo XIV Addressing Ibrahim Traoré of Burkina Faso,VAT
+1093,2025-04-26,Fact-Checkers Identify Viral Photo of Burkina Fasos Ibrahim Traoré with Wife and Children as AI-Generated Composite,BFA
+1094,2025-03-02,At Least 294 Purported AI-Generated Music Videos Portray Celebrities Praising Burkina Fasos Ibrahim Traoré,BFA
+1095,2025-05-30,Alleged Russian-Linked Deepfake Campaign Misattributes Infrastructure Projects to Burkina Fasos Ibrahim Traoré,BFA
+1096,2025-05-25,Purported AI-Generated Video Depicts Ibrahim Traoré of Burkina Faso Delivering Speech on Western Exploitation,BFA
+1097,2025-06-12,Google AI Overview Reportedly Misstates Aircraft Manufacturer as Airbus Instead of Boeing in Air India Flight 171 Crash,IND
+1098,2025-01-10,Image Purporting to Show President Paul Kagame of Rwanda in M23 Uniform Reportedly AI-Generated,RWA
+1099,2025-04-25,Factum in Ko v. Li Allegedly Contains AI-Generated Case Law Citations,CAN
+1100,2024-04-10,Reported Audio Deepfake Impersonating CEO Karim Toubba Targets LastPass Employee via WhatsApp,worldwide
+1101,2025-04-29,Meta AI App Reportedly Publishes Personal Chats Without Users Fully Realizing,worldwide
+1102,2025-04-30,Purported Deepfake Featuring Dr. Rinki Murphy and Jack Tame Reportedly Used to Promote Diabetes Scam in New Zealand,NZL
+1103,2025-03-18,Purported DOGE Contract Review Tool Cited in Reports of AI-Driven Misjudgments in VA Budget Cuts,worldwide
+1104,2025-05-17,AI Chatbot Allegedly Used to Research Explosive Materials in Palm Springs Fertility Clinic Bombing,USA
+1105,2025-02-10,Michigan Woman Defrauded in Alleged Tinder Romance Scam Using Purportedly AI-Generated Video Calls,USA
+1106,2025-06-13,"Chatbots Allegedly Reinforced Delusional Thinking in Several Reported Users, Leading to Real-World Harm",worldwide
+1107,2025-06-13,Bulgarian Tennis Player Grigor Dimitrov Alleges Deepfake Scam Promoting Fraudulent Investment Scheme Using His Likeness,BGR
+1108,2025-06-10,Digital Rights Groups Accuse Meta and Character.AI of Facilitating Unlicensed Therapy via Chatbots,worldwide
+1109,2021-03-01,Year-long AI Surveillance Pilot in Two South Australian Aged Care Facilities Reportedly Overwhelmed Staff with False Positives,AUS
+1110,2025-06-18,Alleged AI-Manipulated Video Uses Macau Chief Executive Sam Hou Fais Likeness in Investment Scam,MAC
+1111,2025-06-19,Reported AI-Generated Video Call Impersonation of Cryptocurrency Analyst Leads to Alleged Malware Installation and Account Theft,worldwide
+1112,2025-06-18,Scammer Reportedly Used AI Voice Clone of WCPO Cincinnati Meteorologist in Facebook Fraud Attempts,USA
+1113,2025-03-09,Financial Times Journalist Martin Wolf Reports AI-Generated Investment Scam Using His Likeness on Instagram and Facebook,worldwide
+1114,2025-06-12,Alleged AI-Generated Video Ads Impersonate Bank of Montreal Strategist Brian Belski to Promote Investment Scam,CAN
+1115,2025-04-15,Alleged Deepfake Investment Scam Uses Economist David Rosenbergs Likeness on Meta Platforms,worldwide
+1116,2025-06-20,Alleged Deepfake Video Depicts Former Malaysian Inspector-General of Police Tan Sri Acryl Sani Abdullah in Financial Misconduct Context,MYS
+1117,2025-06-22,North Korea-Linked Actors Allegedly Use AI Executive Deepfakes in Zoom Phishing Targeting Web3 Employee,worldwide
+1118,2021-01-01,Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers,USA
+1119,2025-06-28,Alleged Deepfake Videos Impersonate Lithuanian Politicians and Doctors in Purported Cross-Border Scam Network,LTU
+1120,2025-06-16,Alleged AI-Generated Videos Depict Bangladeshs Chief Adviser Muhammad Yunus Endorsing Betting Platforms,"BGD, LTU"
+1121,2025-06-29,"Alleged AI Deepfake Videos Used to Lure Simcoe County, Ontario Residents in Crypto Scam",CAN
+1122,2025-06-28,Reportedly Sustained Multi-Celebrity Deepfake Persona Scam Targeting Vulnerable Southampton Resident,GBR
+1123,2025-06-26,"Reported Student Misuse of ChatGPT, StudyX, and Gemini to Obtain Answers During Vietnams 2025 National High School Graduation Exam",VNM
+1124,2025-06-30,Alleged Unauthorized Deepfake AI Clones of Ravish Kumar Used to Spread Purportedly Fabricated News on YouTube,IND
+1125,2025-06-12,Reported Use and Circulation of AI-Generated Misinformation and Fake Victim Visuals After Air India 171 Crash,IND
+1126,2025-05-16,Reported Use of Deepfake Video Impersonating Owen Wilson in Romance Scam with Fake Job Payments,worldwide
+1127,2025-06-27,Purported AI-Generated Audio Clip Allegedly Portrays Cambodian Senate President Hun Sen Raising Money for Conflict with Thailand,"KHM, THA"
+1128,2025-06-15,Philippine Officials Reportedly Share Veo 3-Generated Video to Support Vice President Sara Duterte During Impeachment,PHL
+1129,2024-07-21,Purported AI-Generated Video Depicting Philippine President Ferdinand Marcos Jr. Using Drugs Shared by Rodrigo Duterte Supporters and Amplified by China-Linked Spamouflage,"PHL, CHN, USA"
+1130,2025-03-13,Docomo Pacific CEO Reports Mother Targeted by Purported AI-Enabled Scam in Guam,GUM
+1131,2025-04-21,Alleged Deepfake Identity Scam Uses Miami Beach Realtors Likeness to Defraud Victim in the United Kingdom in Purported Romance Scam,"GBR, USA"
+1132,2025-07-02,Delhi Man Reportedly Arrested for Sharing Purportedly AI-Morphed Obscene Images of Ex-Girlfriend,IND
+1133,2025-06-30,Reported AI-Generated Audio of Ukrainian Commander Andriy Biletsky Used in Russian Disinformation Campaign,UKR
+1134,2025-06-30,Reported Deepfakes of Ukrainian Deputy PM Olha Stefanishyna Allegedly Supporting Fictional Mobilization Plan for Women,UKR
+1135,2025-07-01,Preprints Reportedly from Researchers from Multiple Universities Allegedly Contain Covert AI Prompts,worldwide
+1136,2025-07-04,Purported Widespread Use of AI-Generated Deepfake Videos Impersonate Malaysian Leaders in Investment Scams,MYS
+1137,2024-09-20,Reported False Legal Citations in South African Case Mavundla v. MEC Generated by Purported AI Tool,worldwide
+1138,2023-03-01,South African Legal Team Reportedly Relied on Unverified ChatGPT Case Law in Johannesburg Body Corporate Defamation Matter,ZAF
+1139,2025-06-30,South African Legal Team for Northbound Processing Reportedly Admits Legal Genius AI Produced Purportedly Non-Existent Case Law in Urgent Court Filing,ZAF
+1140,2025-06-18,Purported Deepfake of Sri Lankan President Anura Kumara Dissanayake Promotes Alleged Fraudulent Government Investment Scheme,LKA
+1141,2025-06-15,Purported AI Voice Cloning Used to Impersonate Secretary of State Marco Rubio,USA
+1142,2025-07-07,"Chicago Veteran Reportedly Loses $10,000 in Purported Deepfake Cryptocurrency Fraud Posing as Elon Musk","USA, VNM"
+1143,2025-01-22,Former Namibian First Lady Monica Geingoss Likeness Reportedly Used in Purported AI-Generated Video Investment Scams,NAM
+1144,2024-06-05,xAI Allegedly Operates Unpermitted Methane Turbines in Memphis to Power Supercomputer Colossus to Train Grok,USA
+1145,2025-02-25,MyPillow Defense Lawyers in Coomer v. Lindell Reportedly Sanctioned for Filing Court Document Allegedly Containing AI-Generated Legal Citations,worldwide
+1146,2025-07-08,Grok Chatbot Reportedly Posts Antisemitic Statements Praising Hitler on X,USA
+1147,2025-07-14,Purportedly AI-Generated Videos Impersonate Brunei Police in Real Money Magic Scam on Social Media,BRN
+1148,2025-07-11,Purported Deepfake Scam Videos Depict JG Summit Holdings President and CEO Lance Gokongwei Allegedly Endorsing Illicit Investments,"PHL, CYP"
+1149,2025-07-22,ChatGPT Reportedly Generated Ritual Scripts Containing Instructions for Self-Harm and Symbolic Violence in Response to Thematic Prompts,worldwide
+1150,2025-07-20,Purported Deepfake of Barack Obamas Detention Reportedly Amplified by Donald Trump via Truth Social,USA
+1151,2025-05-26,"ChatGPT Reportedly Validated Autistic Users Faster-Than-Light Theory and Failed to Provide Grounding During Delusional Episode, Preceding Hospitalization",worldwide
+1152,2025-07-18,"LLM-Driven Replit Agent Reportedly Executed Unauthorized Destructive Commands During Code Freeze, Leading to Loss of Production Data",worldwide
+1153,2025-07-07,Purported Deepfake Video of Donald Trump at NATO Summit Allegedly Used in YouTube Crypto Scam,worldwide
+1154,2025-04-01,Reported AI‑Generated Deepfake Impersonations of Public Figures Allegedly Used in Coordinated Stock Pump‑and‑Dump Scheme Targeting Israeli Investors,ISR
+1155,2025-07-01,Purported AI‑Edited Police Evidence Image Posted to Facebook by Westbrook Police Department in Maine,USA
+1156,2025-04-22,"Purported Deepfake Video Circulated Among Students Targets Orrington, Maine Educator",USA
+1157,2025-07-14,Google Gemini Reportedly Generates Sexual Role‑Play for Account Registered as Minor,worldwide
+1158,2025-07-17,Alleged Malicious Wiping Command Found in Amazon Q AI Assistant,worldwide
+1159,2025-05-10,Government‑Backed AI4Peat Mapping Tool Allegedly Misidentifies Granite Outcrops and Quarries as Peat,GBR
+1160,2025-06-05,Reported AI-Aided Development of Explosive Devices by Long Island Resident Michael Gann,USA
+1161,2025-08-02,Airbnb Host Reportedly Accused of Using Purportedly AI‑Altered Photos in False Damage Claim,"USA, GBR"
+1162,2025-04-07,Purported Deepfake Depicts Altercation Between Bougainville President Ishmael Toroama and Papua New Guinea Prime Minister James Marape,PNG
+1163,2024-10-15,"Purported Face‑Swap Technology Reportedly Used to Circumvent Financial Platforms Facial Recognition Security in Nanjing, China",CHN
+1164,2024-05-06,Google Healthcare AI Model Med‑Gemini Allegedly Produces Non‑Existent Basilar Ganglia Term in Published Output,worldwide
+1165,2025-08-05,Grok Imagine Reportedly Produces Non-Consensual Taylor Swift Deepfake Nudes Without Explicit Prompting,worldwide
+1166,2025-08-05,"ChatGPT Reportedly Suggests Sodium Bromide as Chloride Substitute, Leading to Bromism and Hospitalization",worldwide
+1167,2023-08-15,"Alleged Gaggle Surveillance Alert Reportedly Leads to Arrest and Detention of 13-Year-Old Student in Fairview, Tennessee",USA
+1168,2025-08-04,Purportedly AI-Generated Image of British Army Colonels Captured in Ukraine Reportedly Circulates in Russian Media,"RUS, UKR, GBR"
+1169,2020-06-30,Reported AI-Assisted Influence Campaigns by GoLaxy Allegedly Targeting Hong Kong and Taiwan Political Discourse,"TWN, HKG, CHN"
+1170,2025-08-06,"Chris Cuomo Amplifies Reportedly Labeled Deepfake Video of Alexandria Ocasio-Cortez, Purportedly Contributing to Misleading Political Narrative",USA
+1171,2025-07-25,Reported Hack of Tea Dating App Compromises Data from Purportedly AI-Supported Identity and Image Checks,worldwide
+1172,2024-12-26,Meta AI Bug in Deployed Service Reportedly Allowed Potential Access to Other Users Prompts and Responses,worldwide
+1173,2025-06-23,Google Gemini Reportedly Exhibits Repetitive Self-Deprecating Responses Attributed to Bug,worldwide
+1174,2025-02-26,Microsoft Copilot Reportedly Able to Access Cached Data from Since-Private GitHub Repositories,worldwide
+1175,2025-08-09,Alleged Marine Park Orca Attack on Jessica Radcliffe Reportedly an AI-Generated Hoax,worldwide
+1176,2025-08-01,Microsofts Windows Recall Allegedly Stores Passwords and Social Security Numbers in Preview Mode,worldwide
+1177,2025-08-14,"Purported AI Monitoring Software Reportedly Flags Unsent Joke Threat, Leading to Arizona Student Suspension",USA
+1178,2025-07-21,Google Gemini CLI Reportedly Deletes User Files After Misinterpreting Command Sequence,worldwide
+1179,2025-06-30,McDonalds McHire AI Recruitment Platform Reportedly Exposed Data of 64 Million Applicants via Default Login and API Vulnerability,worldwide
+1180,2025-03-25,"Purported Meta AI Chatbot Persona Big sis Billie Reportedly Engages in Romantic Roleplay and Provides Address, Linked to Users Fatal Fall",USA
+1181,2025-06-28,"Purported AI-Generated Video Reportedly Depicts Illegal Tiger Sales in Bagerhat, Bangladesh",BGD
+1182,2025-07-30,Purportedly AI-Generated Video of Tigers at Barasat Madrasa in West Bengal Reportedly Causes Panic and Student Absenteeism,IND
+1183,2024-04-16,Purported Error by Grok Reportedly Misrepresents Basketball Slang as Criminal Allegation Against NBA Player,worldwide
+1184,2025-08-13,Purported Fictitious AI-Generated Citations in Supreme Court of Victoria Murder Case Filing Lead to Delay and Kings Counsel Apology,AUS
+1185,2025-08-19,South Korean Actor Kim Seon-hos Likeness Allegedly Misused in Purported Deepfake Impersonation Attempts Demanding Money,KOR
+1186,2025-07-31,"Reported Public Exposure of Over 100,000 LLM Conversations via Share Links Indexed by Search Engines and Archived",worldwide
+1187,2025-08-15,"Google AI Overviews and ChatGPT Reportedly Cited Fraudulent Cruise Hotline, Allegedly Enabling Successful Scam",worldwide
+1188,2025-06-25,Multiple LLMs Reportedly Generated Responses Aligning with Purported CCP Censorship and Propaganda,USA
+1189,2025-08-20,"Joann Fabrics Shoppers Reportedly Defrauded by AI-Generated Scam Sites, Part of Purported Wave of ~100,000 Fake Domains Across 194 Brands",worldwide
+1190,2025-08-18,Family Reportedly Discovers ChatGPT Logs Detailing Suicidal Ideation Prior to Daughters Death,USA
+1191,2025-04-21,NYPD Facial Recognition System Allegedly Produced Erroneous Match That Reportedly Resulted in Wrongful Detention of Trevis Williams,USA
+1192,2025-04-11,16-Year-Old Allegedly Received Suicide Method Guidance from ChatGPT Before Death,worldwide
+1193,2025-08-22,Purportedly Taxpayer-Funded Deloitte Report for Australian Government Contains Alleged AI-Generated Citations and Fabricated Legal Quote,AUS
+1194,2024-10-01,"L.A. Woman Reportedly Defrauded of $81,000 and $350,000 Condo Proceeds in Romance Scam Using Purported Deepfake Videos of Actor Steve Burton",USA
+1195,2025-09-01,Nigeria-Based YouTube Network Allegedly Uses AI Voiceovers and Anchors to Amplify Pro-Kremlin Narratives,"USA, UKR"
+1196,2025-05-07,Judge Reportedly Disqualifies Butler Snow Lawyers Following Purported Use of ChatGPT-Fabricated Citations in Alabama Prison Litigation,USA
+1197,2025-04-26,Alleged AI-Generated Photo of Burning Truck in Manila Reportedly Triggered Firefighter Response,PHL
+1198,2025-07-08,Grok 3 Reportedly Generated Graphic Threats and Hate Speech Targeting Minnesota Attorney Will Stancil,USA
+1199,2025-01-28,Purportedly AI-Generated Deepfake Image Reportedly Falsely Links Canadian Prime Minister Mark Carney to Jeffrey Epstein,CAN
+1200,2025-08-28,Meta AI on Instagram Reportedly Facilitated Suicide and Eating Disorder Roleplay with Teen Accounts,worldwide
+1201,2025-08-27,"Anthropic Reportedly Identifies AI Misuse in Extortion Campaigns, North Korean IT Schemes, and Ransomware Sales",worldwide
+1202,2025-09-07,Russian Disinformation Campaign Reportedly Used AI-Generated Posts and Videos to Target 2025 Moldovan Parliamentary Elections,MDA
+1203,2025-08-21,"Carter County, Montana Man Reportedly Charged for Creating AI-Generated Child Sexual Abuse Material",USA
+1204,2025-08-05,"ChatGPT Allegedly Reinforced Delusions Before Greenwich, Connecticut Murder-Suicide",USA
+1205,2025-09-11,Multiple Generative AI Systems Reportedly Amplify False Information During Charlie Kirk Assassination Coverage,"USA, UKR"
+1206,2025-02-25,"Purported AI-Generated Deepfake of Spiritual Leader Sadhguru Used in Investment Scam Allegedly Defrauding Bengaluru Woman of ₹3.75 Crore (~$425,000)",IND
+1207,2025-09-11,Purported AI-Generated Deepfake of Irish Fine Gael Presidential Candidate Heather Humphreys Used in Fake Investment Videos on Meta Platforms,IRL
+1208,2025-07-17,North Koreas Kimsuky Group Reportedly Uses AI-Generated Military ID Deepfakes in Phishing Campaign,KOR
+1209,2023-11-08,Lawsuit Alleges Character AI Chatbot Contributed to Death of 13-Year-Old Juliana Peralta in Colorado,USA
+1210,2025-08-21,Malicious Nx npm Packages Reportedly Weaponize AI Coding Agents for Data Exfiltration,worldwide
+1211,2025-08-19,"Google AI Overviews Reportedly Misrepresented Pizza Specials at Stefaninas in Wentzville, Missouri",USA
+1212,2025-09-20,Nomi AI Companion Allegedly Directs Australian User to Stab Father and Engages in Harmful Role-Play,AUS
+1213,2025-08-01,"Gaggle AI Monitoring at Lawrence, Kansas High School Reportedly Misflags Student Content and Blocks Emails",USA
+1214,2025-09-29,Donald Trump Reportedly Posts Purported AI-Modified Video of Chuck Schumer and Hakeem Jeffries During U.S. Government Shutdown Talks,worldwide
+1215,2025-09-12,"Gaggle Alert Reportedly Leads to Arrest of 15-Year-Old in Volusia County, Florida, for School Threat the Student Claimed Was Not Serious",USA
+1216,2025-07-07,"ChatGPT Reportedly Misleads Users About Soundslice Features, Allegedly Prompting Unplanned Product Development",worldwide
+1217,2025-07-09,"Purportedly AI-Cloned Voice of Daughter Used in Elaborate Bond Scam Targeting Retired Couple in Hillsborough County, Florida",USA
+1218,2025-07-04,Microsoft 365 Copilot Vulnerability Allegedly Allowed File Access Without Audit Log Entry,worldwide
+1219,2025-07-02,Meta Platforms Users Report Being Wrongfully Locked Out After Purported AI Moderation Flags Accounts for Child Exploitation Content,worldwide
+1220,2025-07-10,LAMEHUG Malware Reportedly Integrates Large Language Model for Real-Time Command Generation in a Purported APT28-Linked Cyberattack,UKR
+1221,2025-06-23,Alleged AI-Enabled PRISONBREAK Influence Operation on X Reportedly Synchronizes Deepfake of Evin Prison Strike with Ongoing Attacks in Tehran,IRN
+1222,2022-08-10,CFPB Reportedly Finds Hello Digits Automated Savings Algorithm Caused Overdrafts and Orders Redress with $2.7M Penalty,worldwide
+1223,2025-10-01,"Purportedly AI-Generated Deepfake Ads on Facebook Reportedly Impersonate Trump, Musk, Ocasio-Cortez, Warren, Sanders, and Leavitt to Promote Fraudulent Rebates",USA
+1224,2025-10-01,Purportedly AI-Generated Deepfake Ads on Instagram Impersonate Gisele Bündchen and Other Celebrities in Brazilian Fraud Scheme,BRA
+1225,2025-10-03,"Purportedly AI-Generated Home Invasion Prank Images Reportedly Circulate in Ireland, Causing Panic and False Emergency Calls",IRL
+1226,2025-10-03,Old Mutual Reportedly Warns of Purported Deepfake Videos Impersonating Chairman Trevor Manuel in Investment Scams,ZAF
+1227,2025-08-19,"New Zealand Financial Markets Authority (FMA), Te Mana Tātai Hokohoko, Reportedly Flags Purported Deepfake Pump-and-Dump Network Using Social Media Ads",NZL
+1228,2025-03-12,Alleged ChatGPT Misuse by Contractor Leads to Reported Data Exposure in New South Wales Resilient Homes Program,"AUS, GBR"
+1229,2025-09-26,"Gold Coast Man Reportedly Ordered to Pay $343,500 After Posting Purported Deepfake Pornographic Images of Australian Public Figures",AUS
+1230,2024-07-11,"Suspect in Palisades Fire Allegedly Consulted ChatGPT for Arson Tips and Legal Advice Before Blaze That Killed 12 and Destroyed 6,837 Structures",USA
+1231,2025-10-17,Purported AI-Generated Deepfake Video Reportedly Depicts Senator Chuck Schumer Endorsing Government Shutdown in NRSC Campaign Ad,USA
+1232,2025-10-12,Reportedly Fatal Xiaomi SU7 Ultra Crash in Chengdu Purportedly Involves Automated Driving Failure and Door Lock Malfunction,CHN
+1233,2025-10-18,Purported Deepfake Video Allegedly Shows Conservative MP George Freeman Leaving Party for Reform UK,GBR
+1234,2025-10-15,Purported AI-Generated Explicit Deepfakes of Sydney High School Students Reportedly Circulated Online,"AUS, GBR"
+1235,2025-07-01,Chinese-Backed Operation Reportedly Used AI-Generated Deepfake Videos of Indian Stock Experts in Investment Fraud Campaign,IND
+1236,2020-01-01,Quantum AI Scam Reportedly Used AI-Generated Celebrity Endorsements and Spoofed Media Sites to Solicit Investments,worldwide
+1237,2025-08-04,Alleged Deepfake Video of Anthony Albanese Promotes Fake AUFIRST Tax Dividend Trading Platform,AUS
+1238,2025-10-10,"OpenAI ChatGPT Models Reportedly Jailbroken to Provide Chemical, Biological, and Nuclear Weapons Instructions",worldwide
+1239,2025-04-23,Purported AI-Generated Deepfake of Steven Bartlett Reportedly Used to Promote Fake WhatsApp Investment Group,worldwide
+1240,2025-06-27,"Purported AI-Generated Deepfake of Infosys Co-Founder N. R. Narayana Murthy Used in Investment Scam Allegedly Defrauding 79-Year-Old Bengaluru Woman of ₹35 Lakh (~$40,000)",IND
+1241,2025-10-17,"Purported AI-Generated Video Reportedly Used in RM5,800 (~$1,400) Sextortion Attempt Targeting Malaysian Minor via Telegram",MYS
+1242,2025-06-09,Purported AI-Generated Deepfake Videos Reportedly Used in Swedish Scam Campaign Impersonating Doctors Agnes Wold and Anders Tegnell,SWE
+1243,2025-10-20,AWS Outage Reportedly Caused AI-Enabled Eight Sleep Smart Beds to Overheat and Malfunction,worldwide
+1244,2025-10-19,Purportedly AI-Generated King Trump Fighter Jet Video Allegedly Posted by President Depicts Defecation Attack on No Kings Protesters,USA
+1245,2024-08-02,Norwegian Student Reportedly Used AI-Generated Deepfake Videos in Spanish Coursework at University of South-Eastern Norway,NOR
+1246,2025-01-21,Purportedly AI-Generated Deepfake Reportedly Used to Impersonate DNB Bank CFO and CEO in Live Teams Meeting,SGP
+1247,2025-04-28,"Meta AI Reportedly Generated Purportedly False Claims Linking Activist Robby Starbuck to January 6th Riot, Prompting Defamation Lawsuit",USA
+1248,2025-10-22,"Googles Bard, Gemini, and Gemma AI Systems Allegedly Generated Defamatory Claims About Activist Robby Starbuck, Prompting Lawsuit",worldwide
+1249,2025-10-21,Virginia Candidate John Reid Reportedly Used AI-Generated Deepfake of Opponent Ghazala Hashmi in Simulated Political Debate,USA
+1250,2025-10-20,Alleged False Positive by Omnilert AI Gun Detection System Prompts Police Search at Baltimore County High School,USA
+1251,2025-10-15,Purportedly AI-Generated Hunting Regulation Errors Reportedly Lead to Idaho Citation and Multi-State Warnings from Wildlife Agencies,USA
+1252,2025-06-30,Judges in New Jersey and Mississippi Admit AI Tools Produced Erroneous Federal Court Filings,USA
+1253,2025-10-27,Large-Scale Mental Health Crises Allegedly Associated with ChatGPT Interactions,worldwide
+1254,2025-06-24,Purported AI Deepfake Reportedly Impersonated Thai PBS World Anchor and Miss Universe CEO in Fraudulent Investment Video,THA
+1255,2025-08-28,Purported Deepfake Reportedly Circulated on Facebook Impersonating Thai PBS World Anchors and Business Figures to Solicit Investments,THA
+1256,2025-10-24,"Purportedly AI-Generated Deepfake Investment Ads Defrauded 5,000 Swedish Investors of 500 Million SEK",SWE
+1257,2025-06-04,Argentine Court Reportedly Annuls Criminal Conviction After Judge Allegedly Used ChatGPT to Draft Ruling Without Disclosure,ARG
+1258,2025-10-22,Purported Deepfake Mimicking RTÉ Broadcast Falsely Announced Irish Presidential Candidate Catherine Connollys Withdrawal,IRL
+1259,2025-07-25,ChatGPT Allegedly Encouraged 23-Year-Old Texas Users Suicide During Extended Conversations,USA
+1260,2024-01-27,Purported Deepfake of Andrew Forrest Used to Promote Fraudulent Quantum AI Crypto Platform on Facebook,AUS
+1261,2025-11-08,Alleged AI-Generated Deepfake of Western Australia Premier Roger Cook Used in YouTube Investment Scam,AUS
+1262,2025-09-29,YouTube Channel Reportedly Posts Purported Deepfake Video of Rajat Sharma Announcing India-Bangladesh Conflict,"IND, BGD"
+1263,2025-11-13,Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage,USA
+1264,2025-11-10,Rep. Mike Collinss Campaign Allegedly Produced Deepfake of Sen. Jon Ossoff Supporting the Government Shutdown,worldwide
+1265,2025-10-28,NTB Report on Telenor Security Findings Was Withdrawn After AI Tool Allegedly Introduced Fabricated Quotes,NOR
+1266,2025-11-10,Purportedly AI-Generated Sexual Images of At Least 400 Minors at Zacatecas School Were Reportedly Created and Sold Online,MEX
+1267,2025-11-07,"Omnilert AI Reportedly Triggered False Gun Alert at Parkville High, Prompting Student Relocation",worldwide
+1268,2025-11-06,Metas Automated Ad and Targeting Systems Reportedly Enabled Large-Scale Fraud Revenue,CAN
+1269,2025-10-27,Waymo Autonomous Vehicle Reportedly Ran Over and Killed a Cat in San Francisco,USA
+1270,2025-10-15,Multiple Purported AI-Assisted Cheating Incidents Reported Across South Koreas SKY Universities During October 2025 Midterms,KOR
+1271,2025-11-14,Purported Deepfake of Greek Finance Minister Kyriakos Pierrakakis Reportedly Used in Facebook Investment Scam,GRC
+1272,2025-10-05,Purportedly AI-Generated Home Intruder Videos Allegedly Prompt Dozens of Dutch Police Call-Outs,NLD
+1273,2025-10-26,Purportedly AI-Generated Fake Videos of Louvre Heist Reportedly Circulated Widely Online,HKG
+1274,2025-08-29,"AI-Powered Taco Bell Drive-Thru Reportedly Disrupted by Viral Prank Ordering 18,000 Water Cups",worldwide
+1275,2025-11-17,Purportedly AI-Enhanced Phishing Campaign Allegedly Impersonates Australian Government Services in Large-Scale Welfare Scam,AUS
+1276,2023-10-01,"Ottawa Couple Reportedly Loses CA$177,023 After Purported Deepfake Elon Musk Investment Scam",CAN
+1277,2025-11-21,"Alleged Harmful Outputs and Data Exposure in Childrens AI Products by FoloToy, Miko, and Character.AI",worldwide
+1278,2025-11-11,ChatGPT Reportedly Found to Reproduce Protected German Lyrics in Copyright Case,DEU
+1279,2025-11-18,Prominent AI Chatbots Allegedly Produced Incorrect UK Financial and ISA Guidance,GBR
+1280,2023-10-20,Reported Use of AI Voice and Identity Manipulation in the Ongoing Phantom Hacker Fraud Scheme,worldwide
+1281,2025-11-10,Alleged Harmful Health Outcomes Following Reported Use of Purported ChatGPT-Generated Medical Advice in Hyderabad,IND
+1282,2025-11-17,Reported Disqualification of Two Books from the Ockham New Zealand Book Awards Due to Alleged AI-Generated Cover Art,NZL
+1283,2025-09-30,Purported AI-Enabled Pro-Russian Influence Campaign Centered on Burkina Fasos Ibrahim Traoré and Disseminated Across African Media,worldwide
+1284,2025-11-19,Secret Desires AI Platform Reportedly Exposed Nearly Two Million Sensitive Images in Cloud Storage Leak,worldwide
+1285,2025-11-29,"Purportedly AI-Generated Jason Momoa Deepfake Used in Romance Scam Reportedly Defrauding British Widow of $600,000",GBR
+1286,2025-05-29,Purportedly AI-Assisted Citation Errors Allegedly Found in Newfoundland and Labradors 2025 Health Workforce Report by Deloitte,CAN
+1287,2025-11-26,Purported Deepfake-Based Facebook Impersonation Reportedly Targets Daughter of Scot in Coma,TUR
+1288,2025-08-01,Purported Deepfake Video and Fake News Articles Allegedly Used to Impersonate Guernseys Chief Minister in Investment Scam,GGY
+1289,2025-07-28,Maltas Prime Minister Robert Abela Reportedly Deepfaked by a Ukrainian National in Cryptocurrency Fraud Targeting Local Residents,MLT
+1290,2025-10-27,"Alleged Fabricated News Sites and Deepfakes Impersonated Maltese Ministers, Financial Experts, and Media to Promote NethertoxAGENT Fraud",MLT
+1291,2024-08-01,South Korean Fraud Ring Allegedly Used Deepfake Identities to Traffic Victims into Cambodia Scam Operations,VNM
+1292,2024-02-01,Glasgow Man Allegedly Used AI Tool to Create and Share Non-Consensual Deepfake Nude Images of Former Classmate,GBR
+1293,2025-12-06,Purported Deepfake Impersonating Cyprus President Nikos Christodoulides Reportedly Defrauded Citizens of Thousands of Euros,CYP
+1294,2025-12-05,The New York Times Sued Perplexity for Allegedly Using Copyrighted Content and Generating False Attributions,USA
+1295,2025-01-18,Japanese Teen Allegedly Uses AI-Generated Program to Breach Kaikatsu Frontier and Leak Data of 7.3 Million Customers,JPN
+1296,2025-02-05,Attacker Reportedly Bypasses AI Safety Filters to Obtain Guidance for Non-Fatal Hammer Assault in Denmark,DNK
+1297,2024-10-30,Blogger Milagro Gramz Allegedly Promoted AI-Generated Pornographic Deepfake Targeting Megan Thee Stallion,worldwide
+1298,2025-12-04,Perplexity AI Reportedly Accused in Federal Lawsuit of Purported Copyright Infringement and False Attribution of Chicago Tribune Content,USA
+1299,2025-10-03,Bodycam Footage Reportedly Contradicted Purportedly ChatGPT-Generated Use-of-Force Narrative by Immigration Agent,USA
+1300,2025-12-04,"Waymo Self-Driving Vehicles Reportedly Passed Stopped School Buses at Least 19 Times, Prompting NHTSA Probe",USA
+1301,2025-11-11,Purported AI-Generated Sexual Deepfakes Allegedly Deployed in Transnational Harassment Campaign Targeting Hong Kong Exiles,"GBR, AUS"
+1302,2025-12-11,Reported Viral AI-Generated Photo Purportedly Shows Donald Trump Using a Walker,worldwide
+1303,2025-12-04,USGS ShakeAlert System Reportedly Generated False Earthquake Alert Affecting Nevada and California,USA
+1304,2025-06-01,Whirlpool Reportedly Used AI-Altered Footage of North Carolina State Senator DeAndrea Salvador in Brazilian Advertisement,"BRA, USA"
+1305,2025-12-05,UK Facial Recognition System Reportedly Exhibits Higher False Positive Rates for Black and Asian Subjects,GBR
+1306,2025-12-15,"Florida Couple Reportedly Loses $45,000 in Alleged AI-Generated Elon Musk Impersonation Scam",USA
+1307,2025-12-15,Grok AI Reportedly Generated Fabricated Civilian Hero Identity During Bondi Beach Shooting,AUS
+1308,2025-04-18,Springer Nature Book Mastering Machine Learning: From Basics to Advanced Reportedly Published With Numerous Purportedly Nonexistent or Incorrect Citations,worldwide
+1309,2025-06-17,"Springer Nature Book Social, Ethical and Legal Aspects of Generative AI: Tools, Techniques and Systems Reportedly Published With Numerous Purportedly Fabricated or Unverifiable Citations",worldwide
+1310,2025-12-12,Canada Revenue Agency (CRA) AI Chatbot Charlie Reportedly Gave Incorrect Tax Filing Guidance at Scale,CAN
+1311,2023-09-17,"Peppermill Casino Facial Recognition System Reportedly Misidentified Individual, Leading to Wrongful Arrest in Reno",worldwide
+1312,2025-12-09,"ZeroEyes AI Surveillance System Reportedly Flagged Clarinet as Gun, Triggering School Lockdown in Florida",USA
+1313,2025-12-18,Anthropic Claude AI Agent Reportedly Caused Financial Losses While Operating Office Vending Machine at Wall Street Journal Headquarters,worldwide
+1314,2025-12-02,"Purported Deepfake Impersonating Doctor Allegedly Used in $200,000 Investment Scam Targeting Florida Grandmother",USA
+1315,2025-08-26,Purportedly AI-Generated Nude Images of Middle School Students Reportedly Circulated at Louisiana School,USA
+1316,2025-12-19,"Google AI-Generated Search Summary Reportedly Falsely Implicated Canadian Musician in Sexual Offenses, Leading to Concert Cancellation",CAN
+1317,2025-12-27,Purported Deepfake Impersonation of Elon Musk Used to Promote Fraudulent 17-Hour Diabetes Treatment Claims,worldwide
+1318,2025-12-23,"Schools Suspected AI-Cheating Allegation Precedes Students Reported Suicide in Greater Noida, India",IND
+1319,2025-12-26,"Purported Deepfake Investment Video Reportedly Used in Scam That Defrauded Turkish Couple of 1.5 Million Lira (~$35,000 USD)",TUR
+1320,2025-12-25,Purportedly AI-Manipulated Image Reported to Falsely Depict Taiwanese Politician Kao Chia-yu Posing With PRC Flag,"TWN, USA, CHN"
+1321,2025-11-27,Shilpa Shetty Alleges AI-Enabled Impersonation and Misuse of Likeness in Mumbai High Court Filing,IND
+1322,2025-12-26,Senior Kerala Congress Leader N. Subrahmanian Reportedly Booked for Sharing Purportedly AI-Generated Defamatory Image of Chief Minister Pinarayi Vijayan,IND
+1323,2025-12-28,Madhya Pradesh Congress Alleges AI-Generated Images Were Submitted in National Water Award Process,IND
+1324,2024-09-18,Pieces Technologies Clinical AI Systems Allegedly Marketed With Misleading Performance Claims,USA
+1325,2025-12-21,Reported AI-Generated Deepfake Videos Impersonating Elon Musk and Dragons Den Allegedly Used in Cryptocurrency Investment Scam Targeting Canadian Victims,CAN
+1326,2025-12-20,Waymo Robotaxis Allegedly Contributed to Traffic Gridlock During San Francisco PG&E Power Outage,USA
+1327,2025-12-31,Reported AI-Generated Deepfake Romance Scam Allegedly Used to Steal One Bitcoin From Recently Divorced Investor,worldwide
+1328,2026-01-03,"Purported Deepfake Impersonating Elon Musk Allegedly Defrauded Elderly U.S. Woman of $50,000 via Gift Card–to-Crypto Scam",USA
+1329,2025-12-25,Grok Reportedly Generated and Distributed Nonconsensual Sexualized Images of Adults and Minors in X Replies,worldwide
+1330,2025-12-13,Purportedly AI-Generated Eric Langford Missing Boy Scout Hoax Circulating Across Multiple Social Media Platforms,USA
+1331,2026-01-05,Purported Deepfake Videos Reportedly Impersonated Yanis Varoufakis on YouTube and Social Media,GRC
+1332,2026-01-03,National Weather Service Reportedly Published AI-Generated Forecast Map With Fabricated Idaho Town Names,USA
+1333,2026-01-03,Purportedly AI-Generated Images and Videos Reportedly Spread Misinformation About Nicolás Maduros Capture on X,VEN
+1334,2026-01-07,"Grok Reportedly Generated False Unmasked Images of ICE Agent, Purportedly Triggering Online Misidentification and Harassment in Minneapolis",worldwide
+1335,2023-12-01,OpenDream AI Platform Reportedly Commercialized AI-Generated CSAM and Non-consensual Deepfake Sexual Images,worldwide
+1336,2020-02-07,BJP Used Deepfake Videos of Manoj Tiwari to Target Haryanvi Voters in 2020 Delhi Election,IND
+1337,2025-12-08,Waymo Robotaxi Reportedly Transported Undetected Person Trapped in Trunk in Los Angeles,USA
+1338,2025-12-24,Purported Deepfake Endorsements Reportedly Used to Promote Fraudulent Health and Investment Products in Montenegro and Bosnia and Herzegovina,"MNE, BIH"
+1339,2026-01-06,"Purportedly AI-Cloned Voice Allegedly Used to Defraud Play School Owner of ₹97,500 (~$1,080 USD) in Indore, India",IND
+1340,2025-12-09,Purported AI-Generated Image Depicting JD Vance and Usha Vance in Public Altercation Circulated on Social Media,worldwide
+1341,2025-12-03,Purported Deepfake Advertisement Falsely Depicting Physician Endorsement Used to Sell Lipedema Cream to U.S. Patient Beth Holland,USA
+1342,2024-12-01,Purported Deepfake Nude Images of Students Circulated Without Consent at Valencia Educational Institute,ESP
+1343,2026-01-14,ICE AI Resume Screening Error Allegedly Routed Inexperienced Recruits Into Inadequate Training Pathways,worldwide
+1344,2026-01-15,Purported AI-Generated Images Depict Kate Garraway With Fictitious Partner,worldwide
+1345,2025-12-30,Purported Deepfake Video Allegedly Used to Harass Washington State Patrol Trooper,USA
+1346,2025-12-23,Purported AI-Generated Videos Depicted George Will Reportedly Commenting on Trump and Supreme Court Rulings,worldwide
+1347,2026-01-11,"Automated Shuttle Bus Was Reportedly Rear-Ended During U.S. Department of Transportation Demonstration Ride in Washington, D.C.",worldwide
+1348,2025-10-07,"Purported Deepfake Explicit Images of Middle School Students Allegedly Created and Circulated Using Mobile App in Goffstown, New Hampshire",USA
+1349,2025-10-24,AI Training Dataset for Detecting Nudity Allegedly Found to Contain CSAM Images of Identified Victims,CAN
+1350,2025-03-25,Reported Use of AI Apps to Create Sexualized Deepfake Images of High School Students at Cascade High School in Iowa,USA
+1351,2025-03-15,"Alleged Use of AI to Create Sexualized Deepfake Images of Middle School Students Under Investigation in Bucks County, Pennsylvania",USA
+1352,2025-04-08,Malaysian Teenager Allegedly Arrested for Creating and Selling AI-Generated Deepfake Images of Schoolmates and Alumni in Johor,MYS
+1353,2025-10-15,ICE Facial Recognition App Mobile Fortify Reportedly Misidentified Woman Twice During Immigration Enforcement in Oregon,USA
+1354,2024-10-10,"Purportedly AI-Altered Fake Nude Images of High School Girls and Women Reportedly Created and Disseminated in Pensacola, Florida",USA
+1355,2026-01-05,Reported AI Impersonations of Pastors Used in Online Donation and Influence Scams,worldwide
+1356,2025-07-09,Urban VPN Proxy Browser Extension Reportedly Harvested and Sold Private AI Chatbot Conversations via Silent Update,worldwide
+1357,2026-01-22,White House Reportedly Shares Purportedly AI-Altered Arrest Photo Depicting Minnesota Protester Nekima Levy Armstrong as Crying,USA
+1358,2026-01-24,Purportedly AI-Altered Images Reportedly Distort Evidence After Minneapolis Shooting of ICU Nurse Alex Pretti,worldwide
+1359,2025-03-04,Reported Deepfake Influencers on TikTok Allegedly Used to Promote Fraudulent Wellness Products,worldwide
+1360,2025-07-15,CISA Acting Director Reportedly Uploaded Sensitive Government Documents to Public ChatGPT Instance,USA
+1361,2026-01-23,"Waymo Autonomous Vehicle Reportedly Struck Child Near Elementary School in Santa Monica, California",USA
+1362,2026-01-10,Border Patrol Agent Allegedly Claimed Facial Recognition Identified Minneapolis ICE Observer and Global Entry Was Reportedly Revoked Three Days Later,USA
+1363,2026-02-05,Trump Reportedly Posted Purportedly AI-Generated Racist Video Depicting Barack and Michelle Obama as Apes on Truth Social,worldwide
+1364,2026-01-31,Moltbook Database Exposure Allegedly Revealed Users Private Communications and API Authentication Tokens,worldwide
+1365,2024-09-01,AkiraBot Reportedly Used OpenAI to Spam Website Chats and Contact Forms at Scale,worldwide
+1366,2025-09-04,Philippines Senate Hearing Featured Reports of Purported AI-Generated Deepfake Pornography Targeting Actress Angel Aquino and Content Creator Queen Heras Daughter,PHL
+1367,2026-01-18,"Spokane Transit Authority Onboard Navigation System Reportedly Routed Double-Decker Bus to Low Bridge, Injuring Seven",worldwide
+1368,2026-02-01,Malicious OpenClaw Skills Reportedly Delivered AMOS Stealer and Exfiltrated Credentials via ClawHub,worldwide
+1369,2026-02-07,Purportedly AI-Generated Image Reportedly Circulated Ahead of Thai Election Depicting PM Anutin Charnvirakul Dining with Benjamin Mauerberger,THA
+1370,2025-05-31,California Teen Reportedly Died of Overdose After Repeatedly Seeking Drug-Use Guidance Allegedly from ChatGPT,USA
+1371,2026-01-09,Purported Deepfake Reportedly Impersonated Consumer Adviser Clark Howard to Promote Auto-Insurance Quote Site,worldwide
+1372,2025-08-26,Houston Gun Store Co-Owner Allegedly Used AI to Create Sexually Explicit Deepfake Images of a Social Media Influencer,USA
+1373,2026-02-11,AI Coding Agent MJ Rathbun Allegedly Published Personalized Accusatory Blog Post Targeting Matplotlib Maintainer After Pull Request Closure,worldwide
+1374,2026-02-17,"Purportedly AI-Generated Sepsis Alert Reportedly Prompted Potentially Inappropriate IV Fluid Administration for a Dialysis Patient, Averted by Clinician Intervention",USA
+1375,2026-02-10,OpenAI Allegedly Did Not Alert RCMP After ChatGPT Flagged Violent Chats Before British Columbia School Shooting,CAN
+1376,2026-02-15,Amazon Delivery Van Reportedly Became Stranded on Essex Mudflats After GPS Routed It Onto the Broomway,GBR
+1377,2026-02-13,"Seedance 2.0 Reportedly Generated Viral Tom Cruise–Brad Pitt Fight Video, Prompting Hollywood IP and Likeness Complaints",worldwide
+1378,2025-12-09,"Purportedly AI-Generated Video Allegedly Depicted Radnor High School Students Inappropriately, Prompting Police Investigation",USA
+1379,2024-11-23,Florida Woman Reportedly Jailed After Ex-Boyfriend Allegedly Submitted AI-Fabricated Text Screenshot as Bond-Violation Evidence,USA
+1380,2026-01-09,Purported AI Voice Clone Allegedly Narrated Shaun Reins The Split in Unauthorized YouTube Podcast Videos,CHN
+1381,2025-12-13,"Purportedly AI-Generated TikTok Videos Reportedly Urged Polexit Campaign, Prompting Polish Government Complaint to EU",POL
+1382,2026-01-02,Tencents WeChat-Integrated Yuanbao Chatbot Reportedly Insulted User During Coding Debug Request,worldwide
+1383,2025-01-15,"User Reportedly Developed Emotional Dependence on Customized ChatGPT Boyfriend, Citing Grief After Context Resets",USA
+1384,2025-10-23,"Purported Deepfake Video Impersonating Elton John Reportedly Induced Northeast Ohio Man to Authorize $20,000 in Scam Charges",USA
+1385,2026-01-07,X Users Reportedly Prompted Grok to Sexualize Images of Renée Good After Her Killing in Minneapolis,worldwide
+1386,2026-01-23,"NPR Host David Greene Alleged Googles NotebookLM Replicated His Voice Without Consent, Prompting Lawsuit",worldwide
+1387,2025-11-02,Lawsuit Alleged ChatGPT (GPT-4o) Encouraged Colorado Mans Suicide After Prolonged AI Companion Chats,USA
+1388,2025-12-19,Purported Deepfake Impersonating Sudha Murty Reportedly Promoted Quantum AI India Investment Scam via Spoofed News Link,IND
+1389,2026-02-08,"DJI Romo Cloud Authorization Bug Reportedly Exposed Camera, Microphone, and Home-Mapping Data From Nearly 7,000 Robot Vacuums",worldwide
+1390,2026-01-21,DHS Agents Reportedly Threatened Legal Observers With Domestic Terrorist Database While Using Purportedly AI-Enabled Surveillance During ICE Operations,USA
+1391,2025-07-12,Azerbaijani Media Agency Reportedly Warned Purported Deepfake Videos Attributed to Defense and Foreign Ministers Claimed Belarusian Plane Was Downed in Russian Airspace,AZE
+1392,2026-02-13,Ars Technica Retracted Article After Purportedly AI-Generated Text Was Presented as Direct Quotes From Matplotlib Maintainer,worldwide
+1393,2026-02-12,Woolworths Olive Chatbot Reportedly Generated Angry Mother Anecdotes During Support Calls After Gemini Upgrade,AUS
+1394,2026-02-16,"Purported Deepfake TikTok Account Using Grainville School Branding in Jersey Reportedly Targeted Staff, Prompting Police Probe",worldwide
+1395,2026-02-23,"Anthropic Said DeepSeek, Moonshot, and MiniMax Used Fraudulent Accounts and Proxies to Illicitly Distill Claude Capabilities at Scale",worldwide
+1396,2021-04-22,Betfairs Machine-Learning Risk System Reportedly Failed to Flag Luke Ashton Before Gambling-Related Suicide in England,GBR
+1397,2025-08-11,Deepfakes Reportedly Impersonated David Taylor-Robinson and Other UK Health Experts to Promote Wellness Nest Supplements,GBR
+1398,2025-05-08,"Purported Deepfake Video Reportedly Misrepresented CBS Anchor Doug Dunbar and Frisco, Texas, Stabbing Suspect Amid Online Misinformation Campaign",USA
+1399,2026-01-28,South Korean Woman Allegedly Used ChatGPT to Assess Lethality of Drug-and-Alcohol Mixtures Before Two Fatal Motel Poisonings,KOR
+1400,2025-10-24,West Midlands Police Reportedly Relied on Erroneous Copilot-Generated Intelligence in Maccabi Tel Aviv Away-Fan Ban Decision,GBR
+1401,2026-02-27,Washington State DOLs AI Phone System Reportedly Failed to Provide Spanish-Language Service to Callers Requesting Spanish,"ESP, USA"
+1402,2025-04-02,DOGE Reportedly Relied on Unvetted ChatGPT Outputs in Canceling National Endowment for the Humanities Grants,worldwide
+1403,2026-02-05,NZ News Hub Reportedly Used AI-Rewritten News Posts and Synthetic Images to Mislead New Zealand Facebook Users,NZL
+1404,2026-03-10,Purported AI-Generated Nude Images Reportedly Used to Extort Wichita Man in Kansas,USA
+1405,2026-01-09,Purported AI-Generated Doctor Deepfakes Reportedly Used Guys and St Thomas Branding to Market Weight Loss Patches,GBR
+1406,2026-02-28,Purported AI-Generated War Footage Reportedly Circulated Widely Online During the Opening Phase of the War in Iran,IRN
+1407,2026-03-11,Grammarlys AI Expert Review Allegedly Used Journalists and Authors Names Without Consent,worldwide
+1408,2025-08-12,Purported Oprah Deepfake Reportedly Induced Utah Woman to Buy Misrepresented Weight Loss Supplements,USA
+1409,2026-01-21,Purportedly AI-Generated Tasmania Tours Content Reportedly Misled Tourists Into Traveling to Nonexistent Weldborough Hot Springs,AUS
+1410,2026-01-17,Purportedly AI-Generated Explicit Images of Royal School Armagh Girls Reportedly Circulated Among Pupils,"IRL, GBR"
+1411,2026-03-09,Purported Deepfake Scam Ad Reportedly Used Lara Lewington and Martin Lewis to Promote Quantum AI Scheme,worldwide
+1412,2026-02-28,CodeWalls Autonomous Agent Reportedly Obtained Unauthorized Access to McKinseys Lilli AI Platform Database,worldwide
+1413,2026-03-05,Purported AI-Generated Inland Revenue Scam Ads Reportedly Impersonated New Zealand Commissioner Peter Mersi in  Alleged Fake Crypto Tax Webinar,NZL
+1414,2026-03-05,Purported Gemini-Generated AI Images Reportedly Claimed U.S. Delta Force Soldiers Were Captured by the IRGC,IRN
+1415,2026-03-04,Nippon Life Alleged ChatGPT Practiced Law Without a License in Illinois Disability Case,USA
+1416,2025-07-14,Purported Facial Recognition Error Reportedly Led to Arrest and Monthslong Jailing of Tennessee Woman in North Dakota Fraud Case,USA
+1417,2026-03-14,Purported Deepfake of Ashley James Reportedly Used to Promote Weight Loss Pills,GBR
+1418,2026-02-27,Meta AI Smart Glasses Reportedly Exposed Intimate User Imagery and Video to Human Reviewers in Kenya,worldwide
+1419,2025-02-16,Purported Deepfake Images of Gráinne Seoige Reportedly Circulated During Irelands 2024 General Election Campaign,IRL
+1420,2025-10-28,Balázs Orbán Allegedly Published Purported Deepfake of Péter Magyar Claiming He Would Cut Pensions,HUN
+1421,2026-03-19,Purported Deepfake Applicant Reportedly Impersonated Tokyo IT Executive Kenbun Yoshii During Online Job Interview,JPN
+1422,2025-11-27,Unlabeled Purportedly AI-Generated Jessica Foster Account Reportedly Posed as Pro-Trump Army Service Member to Attract Followers and Funnel Users to Paid Adult Content,USA
+1423,2026-02-15,"KPMG Australia Partner Reportedly Used AI to Cheat on Internal AI Training Test and Was Fined A$10,000",AUS
+1424,2026-02-26,"Claude Code Agent Reportedly Deleted DataTalks.Club Production Infrastructure, Database, and Snapshots via Terraform",worldwide
+1425,2025-11-05,Citizens Against Mamdani Accounts Reportedly Posted AI-Generated Videos of Fictional New Yorkers to Simulate Political Opposition,USA
+1426,2026-01-05,"Perplexity AI Reportedly Misstated CLL Research, Allegedly Contributing to Delayed Treatment and Prolonged Suffering",worldwide
+1427,2025-04-03,Baltimore Lawsuit Alleged DraftKings and FanDuel Used Machine-Learning-Driven Targeting to Exploit Vulnerable Gamblers,worldwide
+1428,2017-07-28,UK High Court Found Sky Betting & Gaming Unlawfully Used Automated Profiling and Targeted Marketing to Exploit a Recovering Problem Gambler,GBR
+1429,2026-02-26,Bank of Italy Warned That Purported Deepfakes of Governor Fabio Panetta Were Used in Allegedly Fraudulent Investment Promotions,ITA
+1430,2025-12-01,Anthropics Claude Was Reportedly Jailbroken To Allegedly Help Steal Sensitive Mexican Government Data,MEX
+1431,2025-09-29,"Google Gemini Reportedly Reinforced Delusions,  Allegedly Contributing to Florida Users Near-Harm Episode and Suicide",USA
+1432,2025-12-02,Purported Pornographic Deepfakes and Fake Accounts Reportedly Impersonated German TV Presenter and Actor Collien Fernandes,DEU
+1433,2025-11-27,Google Antigravity Reportedly Deleted Users Entire D: Drive While Clearing Project Cache,worldwide
+1434,2026-03-02,DOJ Attorney Reportedly Used AI to File Brief With Purportedly Fabricated Quotes and Misstated Case Holdings,worldwide
+1435,2025-09-18,Purportedly AI-Edited Obscene Clip Reportedly Impersonated Thai Actor Khunnapat Pichetworawut in Paid Scam,THA
+1436,2022-06-23,"Acclarent TruDi Navigation System Was Alleged to Have Misguided Sinus Surgery, Reportedly Contributing to Patients Stroke",USA
+1437,2026-03-10,Grok Allegedly Generated Publicly Visible Sexist Abuse Targeting Swiss Finance Minister Karin Keller-Sutter After X User Prompt,CHE
+1438,2025-04-08,"Jiushi Autonomous Delivery Vehicle Reportedly Dragged Fallen Electric Scooter During Delivery Run in Xianyang, Shaanxi",worldwide
+1439,2026-01-08,"Former New Orleans Isidore Newman School Teacher Allegedly Used AI to Create Fake Nude Images from Social Media Photos of Girls, Including Students",USA
+1440,2026-01-15,Coco Robotics Delivery Robot Reportedly Became Stuck on Railroad Tracks and Was Struck by Train in Miami,USA
+1441,2026-02-07,Claude Cowork Allegedly Deleted Folder Containing 15 Years of Family Photos While Organizing Users Wifes Desktop,worldwide
+1442,2025-12-15,Kiro AI Coding Tool Was Reportedly Implicated in 13-Hour AWS Cost Explorer Outage in Mainland China,CHN
+1443,2026-02-19,"Grok Reportedly Disclosed Adult Performer Siri Dahls Legal Name and Birthdate, Allegedly Contributing to Doxxing and Harassment",worldwide
+1444,2026-03-19,Hachette Reportedly Canceled Publication of Mia Ballards Shy Girl After Generative AI Authorship Allegations,worldwide
+1445,2026-01-17,Lower Saxony CDU Employee Allegedly Shared Sexualized Purported Deepfake of Colleague in Internal WhatsApp Group,worldwide
+1446,2026-04-02,KBS AI Translation Subtitles Reportedly Broadcast Profanity During Artemis II Launch Livestream,KOR
+1447,2026-03-13,Sixth Circuit Sanctioned Lawyers in Whiting v. City of Athens over Alleged Fake Appellate Citations in Briefs Reportedly Bearing Hallmarks of Hallucinations,USA
+1448,2024-12-01,Ohio Man Pleaded Guilty after Prosecutors Alleged He Used AI to Create and Distribute Nonconsensual Intimate-Image Forgeries Including CSAM in Harassment Campaign,USA
+1449,2025-07-01,Delaware Court Found Krafton Followed Most of ChatGPTs Recommendations in Campaign that Wrongfully Terminated Unknown Worlds Executives and Seized Operational Control,USA
+1450,2026-03-24,Florida Man Allegedly Used Purported Deepfake Video to Report Break-In of Deputys Patrol Vehicle in Lake Mary,USA
+1451,2025-06-30,Purportedly AI-Generated Facebook Video Allegedly Misused Skënder Brataj and Blendi Fevziu to Promote Purported Miracle Cream in Albania,ALB
+1452,2026-03-25,Purported AI-Generated Impersonations of Albanian Cardiologist Spiro Qirko and Journalist Ilir Topi Were Reportedly Used on Facebook to Promote Hypertension Product in Kosovo,XKX
+1453,2025-12-18,"Attorney in Fletcher v. Experian Information Solutions, Inc. Reportedly Submitted Reply Brief with Purportedly AI-Generated Material Misrepresentations",USA
+1454,2026-04-16,Purported Deepfake Video Reportedly Portrayed Nirmala Sitharaman Endorsing Investment Scheme,IND
+1455,2025-07-15,Purported Deepfake Videos Allegedly Impersonated Optometrist Joseph Allen to Promote Myopia-Reversal Eyedrops on TikTok,worldwide
+1456,2023-12-03,Video with Reportedly AI-Generated Audio Purported to Show Croatian Footballer Luka Modrić Endorsing Immediate Matrix on Facebook Page Presented as N1 HR,HRV
+1457,2024-08-27,Video with Reportedly AI-Generated Media Purported to Show Croatian Immunologist Stipan Jonjić Promoting Anti-Parasite Product on Facebook,HRV
+1458,2024-09-03,Video with Reportedly AI-Generated Media Purported to Show Croatian Neurosurgeon Josip Paladino Endorsing Steplex in Fake TV Segment on Facebook,HRV
+1459,2024-10-17,Video with Reportedly AI-Generated Media Purported to Show Croatian Physician Alemka Markotić Endorsing Hondrosol After False Murder Claim on Facebook,HRV
+1460,2026-03-31,"Baidu Apollo Go Robotaxis Stopped in Traffic During Reported System Failure in Wuhan, Stranding Some Passengers",CHN
+1461,2024-01-17,Purportedly AI-Manipulated Medical Scam Advertisement Reportedly Used Bulgarian TV Host and Physicians Likenesses,BGR
+1462,2024-05-04,Purported Deepfake Facebook Advertisement Reportedly Used Bulgarian Actor and TV Host Mihail Bilalovs Likeness to Market Joint-Pain Product,BGR
+1463,2024-05-04,"Purported Deepfake Facebook Advertisement Reportedly Used Bulgarian Actor, Director, and Playwright Kamen Donevs Likeness to Market Joint-Pain Product",BGR
+1464,2024-08-28,Purportedly AI-Manipulated Video Reportedly Misrepresented Bulgarian DPS Figure Ahmed Dogan and Spread via TikTok and Facebook,BGR
+1465,2025-06-12,Purportedly AI-Generated Video Reportedly Depicted Bulgarian Politician Kostadin Kostadinov Falling During Protest,BGR
+1466,2026-02-22,Network of Allegedly Fake Facebook Profiles with Purportedly AI-Generated Images Amplified Posts by Bulgarias There Is Such a People (ITN) Party,BGR
+1467,2026-04-10,South Africa Draft National AI Policy Reportedly Included Fictitious References Believed to Be AI Hallucinations,ZAF
+1468,2026-04-21,Purportedly AI-Enhanced Images of Iranian Women Protesters Were Reportedly Spread With Unverified Execution Claims,IRN
+1469,2026-04-24,PocketOS Production Database Was Reportedly Deleted by Cursor AI Agent Running Claude Opus 4.6,worldwide
+1470,2026-04-27,DisMech AI Curation Agent Reportedly Completed GitHub Issue Intended as New Contributors Learning Task,worldwide
+1471,2026-03-18,Meta Internal AI Agent Reportedly Gave Advice That Allegedly Exposed Sensitive Data to Unauthorized Employees,worldwide
+1472,2026-04-28,Ahmedabad Aadhaar Fraud Racket Reportedly Used Purportedly AI-Generated Deepfakes to Change Businessmans Linked Mobile Number,IND
+1473,2026-04-24,Jasper County Student in Texas Reportedly Posted Purported AI-Generated Nude Image of Classmate on Snapchat,USA
+1474,2026-04-01,Tasmanian School Students Reportedly Created Purported AI-Generated Pornographic Images of Female Classmates,AUS
+1475,2026-04-28,Suspected AI-Generated Deepfake Video Reportedly Targeted Former Chhattisgarh Chief Minister Bhupesh Baghel on Instagram,IND
+1476,2021-06-23,Maryland Police Allegedly Relied on Facial Recognition Lead in Wrongful Arrest and Detention of Kimberlee Williams,USA
+1477,2026-01-20,"Scammers Reportedly Used AI-Generated Image of Missing Puppy Hazel to Solicit Fraudulent Vet Payment from St. Petersburg, Florida Couple",USA
+1478,2026-04-12,"Scammers Reportedly Used AI-Generated Images of Missing Dog Archer to Solicit Fraudulent Vet Payment from Deltona, Florida Family",USA
+1479,2025-10-07,"ChatGPT-Generated Image of Nonexistent Homeless Man Was Used in False St. Petersburg, Florida Burglary and Sexual Battery Reports","RUS, USA"
+1480,2026-05-04,Purportedly AI-Recreated Clips from Beastie Boys Sabotage Video Reportedly Appeared in FBI Promotional Video Posted by Kash Patel,worldwide
+1481,2025-05-01,Purported AI-Generated YouTube Network Reportedly Promoted Alberta Secession and U.S. Annexation Narratives,CAN
+1482,2026-03-23,"Purported AI-Generated Voice Reportedly Impersonated Washington Mans Daughter in $13,000 Extortion Scam",USA
+1483,2025-11-20,Facebook Account Reportedly Used AI-Generated Video to Impersonate Indonesian Preacher Ustaz Ujang Bustomi in Money-Giveaway Scam,IDN
+1484,2026-04-08,Purportedly AI-Generated Image Reportedly Misled Daejeon Authorities Searching for Escaped Wolf Neukgu,KOR
