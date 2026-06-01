@@ -20,26 +20,8 @@
   const tooltip = document.getElementById('tooltip');
 
   const WORLD_PATH = '../data/world-countries.geojson';
-  const CLASSIFICATIONS_PATH = '../data/classifications_CSETv1.csv';
-  const COUNTRIES_PATH = '../data/incident-countries.json';
+  const CLASSIFICATIONS_PATH = '../data/victim_locations.csv';
 
-  // ---- ISO-2 → ISO-3 (covers everything in CSETv1) -------------------
-  const ISO2_TO_ISO3 = {
-    AR:'ARG', AU:'AUS', BR:'BRA', CA:'CAN', CH:'CHE', CN:'CHN',
-    DE:'DEU', ES:'ESP', FR:'FRA', GB:'GBR', GR:'GRC', ID:'IDN',
-    IE:'IRL', IL:'ISR', IN:'IND', IT:'ITA', JP:'JPN', KR:'KOR',
-    LY:'LBY', MX:'MEX', NL:'NLD', NZ:'NZL', PS:'PSE', RS:'SRB',
-    RU:'RUS', SE:'SWE', US:'USA', VN:'VNM', UA:'UKR', PL:'POL',
-    TR:'TUR', SA:'SAU', AE:'ARE', EG:'EGY', NG:'NGA', ZA:'ZAF',
-    KE:'KEN', ET:'ETH', GH:'GHA', PH:'PHL', TH:'THA', MY:'MYS',
-    SG:'SGP', PK:'PAK', BD:'BGD', LK:'LKA', NP:'NPL', IR:'IRN',
-    AT:'AUT', BE:'BEL', BG:'BGR', HR:'HRV', CZ:'CZE', DK:'DNK',
-    FI:'FIN', HU:'HUN', NO:'NOR', PT:'PRT', RO:'ROU', SK:'SVK',
-    SI:'SVN', TW:'TWN', HK:'HKG', VE:'VEN', CO:'COL', CL:'CHL',
-    PE:'PER', EC:'ECU', BO:'BOL', UY:'URY', CR:'CRI', CU:'CUB',
-    GT:'GTM', JM:'JAM', HT:'HTI', PR:'PRI',
-  };
-  const iso2to3 = code => (code ? ISO2_TO_ISO3[code.toUpperCase()] : null) || null;
 
   // ---- Company → ISO-3 country --------------------------------------
   // Hand-curated for the most frequently named deployers/developers.
@@ -108,11 +90,79 @@
   const companyToCountry = name =>
     (name ? COMPANY_COUNTRY[name.toLowerCase()] : null) || null;
 
+  // ---- Harmed-party slug → ISO-3 country ---------------------------
+  const SLUG_COUNTRY_KEYWORDS = {
+    'american':'USA','us-':'USA','united-states':'USA','u.s.':'USA',
+    'british':'GBR','uk-':'GBR','united-kingdom':'GBR',
+    'chinese':'CHN','china-':'CHN',
+    'french':'FRA','france-':'FRA',
+    'german':'DEU','germany-':'DEU',
+    'australian':'AUS','australia-':'AUS',
+    'canadian':'CAN','canada-':'CAN',
+    'indian':'IND','india-':'IND',
+    'korean':'KOR','korea-':'KOR',
+    'japanese':'JPN','japan-':'JPN',
+    'russian':'RUS','russia-':'RUS',
+    'dutch':'NLD','netherlands-':'NLD',
+    'italian':'ITA','italy-':'ITA',
+    'spanish':'ESP','spain-':'ESP',
+    'swedish':'SWE','sweden-':'SWE',
+    'israeli':'ISR','israel-':'ISR',
+    'iranian':'IRN','iran-':'IRN',
+    'brazilian':'BRA','brazil-':'BRA',
+    'mexican':'MEX','mexico-':'MEX',
+    'argentinian':'ARG','argentina-':'ARG',
+    'nigerian':'NGA','nigeria-':'NGA',
+    'south-african':'ZAF',
+    'kenyan':'KEN','kenya-':'KEN',
+    'new-zealand':'NZL',
+    'saudi':'SAU','saudi-arabia':'SAU',
+    'emirati':'ARE','uae-':'ARE',
+    'pakistani':'PAK','pakistan-':'PAK',
+    'turkish':'TUR','turkey-':'TUR',
+    'ukrainian':'UKR','ukraine-':'UKR',
+    'polish':'POL','poland-':'POL',
+    'swiss':'CHE','switzerland-':'CHE',
+    'belgian':'BEL','belgium-':'BEL',
+    'norwegian':'NOR','norway-':'NOR',
+    'danish':'DNK','denmark-':'DNK',
+    'finnish':'FIN','finland-':'FIN',
+    'greek':'GRC','greece-':'GRC',
+    'portuguese':'PRT','portugal-':'PRT',
+    'czech':'CZE',
+    'hungarian':'HUN','hungary-':'HUN',
+    'romanian':'ROU','romania-':'ROU',
+    'vietnamese':'VNM','vietnam-':'VNM',
+    'thai':'THA','thailand-':'THA',
+    'philippine':'PHL','filipino':'PHL',
+    'indonesian':'IDN','indonesia-':'IDN',
+    'singaporean':'SGP','singapore-':'SGP',
+    'malaysian':'MYS','malaysia-':'MYS',
+    'bangladeshi':'BGD','bangladesh-':'BGD',
+    'sri-lankan':'LKA',
+    'nepalese':'NPL','nepal-':'NPL',
+    'taiwanese':'TWN','taiwan-':'TWN',
+    'hong-kong':'HKG',
+    'colombian':'COL','colombia-':'COL',
+    'peruvian':'PER','peru-':'PER',
+    'chilean':'CHL','chile-':'CHL',
+    'venezuelan':'VEN','venezuela-':'VEN',
+    'cuban':'CUB','cuba-':'CUB',
+  };
+
+  const slugToCountry = slug => {
+    if (!slug) return null;
+    const s = slug.toLowerCase();
+    for (const [keyword, iso3] of Object.entries(SLUG_COUNTRY_KEYWORDS)) {
+      if (s.includes(keyword)) return iso3;
+    }
+    return null;
+  };
+
   // ---- Module state -------------------------------------------------
   let MAP_MODE = 'affected';                 // local, not on DataLoader
   let WORLD_GJ = null;                       // GeoJSON FeatureCollection
-  let AFFECTED_BY_ID = new Map();            // incident_id → ISO3 (affected)
-  let DEVELOPER_BY_ID = new Map();           // incident_id → ISO3 (developer)
+  let AFFECTED_BY_ID = new Map();            // incident_id → ISO3
   let DATA_REF = null;                       // cached incidents array
 
   // ---- Color ramps per mode ----------------------------------------
@@ -121,19 +171,56 @@
     developer: ['#f4efe4', '#a4c0d8', '#3d6b8a', '#1a3a52'],
   };
 
+  // Jenks helper function
+  function jenks(data, nClasses) {
+    const sorted = [...data].sort((a, b) => a - b);
+    const mat1 = Array.from({length: sorted.length + 1}, () => new Array(nClasses + 1).fill(0));
+    const mat2 = Array.from({length: sorted.length + 1}, () => new Array(nClasses + 1).fill(Infinity));
+    for (let i = 1; i <= nClasses; i++) { mat1[1][i] = 1; mat2[1][i] = 0; }
+    for (let l = 2; l <= sorted.length; l++) {
+      let s1 = 0, s2 = 0, w = 0;
+      for (let m = 1; m <= l; m++) {
+        const i3 = l - m + 1;
+        const val = sorted[i3 - 1];
+        s2 += val * val; s1 += val; w++;
+        const v = s2 - (s1 * s1) / w;
+        if (i3 !== 1) {
+          for (let j = 2; j <= nClasses; j++) {
+            if (mat2[l][j] >= v + mat2[i3 - 1][j - 1]) {
+              mat1[l][j] = i3; mat2[l][j] = v + mat2[i3 - 1][j - 1];
+            }
+          }
+        }
+      }
+      mat1[l][1] = 1; mat2[l][1] = s2 - (s1 * s1) / w;
+    }
+    const n = sorted.length;
+    const breaks = new Array(nClasses);
+    breaks[nClasses - 1] = sorted[n - 1];
+    let k = n;
+    for (let j = nClasses; j >= 2; j--) {
+      k = mat1[k][j] - 2;
+      breaks[j - 2] = sorted[k];
+    }
+    return breaks;
+  }
+
   // ---- Render -------------------------------------------------------
   function render() {
     if (!DATA_REF || !WORLD_GJ) return;
     container.innerHTML = '';
 
     const filtered = window.DataLoader.applyFilters(DATA_REF);
-
+    if (!filtered.length) {
+      container.innerHTML = '';
+      return;
+    }
     // Build country → count
     const counts = new Map();
     filtered.forEach(d => {
       const code = MAP_MODE === 'affected'
         ? AFFECTED_BY_ID.get(String(d.incident_id))
-        : DEVELOPER_BY_ID.get(String(d.incident_id));
+        : pickDeveloperCountry(d);
       if (code) counts.set(code, (counts.get(code) || 0) + 1);
     });
 
@@ -163,7 +250,7 @@
     toggle.querySelectorAll('.map-toggle__btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const m = btn.dataset.mode;
-        if (m !== MAP_MODE) { MAP_MODE = m; render(); }
+        if (m !== MAP_MODE) { MAP_MODE = m; window._harmBreaks = null; render(); }
       });
     });
 
@@ -171,7 +258,21 @@
     const projection = d3.geoNaturalEarth1().fitSize([W - 20, H - 60], WORLD_GJ);
     const path = d3.geoPath(projection);
     const ramp = RAMP[MAP_MODE];
-    const color = d3.scaleSqrt().domain([0, maxCount]).range([ramp[0], ramp[3]]);
+    if (!window._harmBreaks) {
+      const allCounts = new Map();
+      DATA_REF.forEach(d => {
+        const code = MAP_MODE === 'affected'
+          ? AFFECTED_BY_ID.get(String(d.incident_id))
+          : pickDeveloperCountry(d);
+        if (code) allCounts.set(code, (allCounts.get(code) || 0) + 1);
+      });
+      const vals = [...allCounts.values()];
+      window._harmBreaks = vals.length >= 4 ? jenks(vals, 4) : [1, 2, 3, 4];
+    }
+    const breaks = window._harmBreaks;
+    const color = d3.scaleThreshold()
+      .domain(breaks)
+      .range(['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06']);
 
     // ---- Draw countries --------------------------------------------
     const g = svg.append('g').attr('transform', 'translate(10,15)');
@@ -183,7 +284,7 @@
       .attr('d', path)
       .attr('fill', d => {
         const c = counts.get(d.id) || 0;
-        return c === 0 ? '#ebe5d4' : color(c);
+        return color(c);
       })
       .attr('stroke', '#cbc4ad')
       .attr('stroke-width', 0.45)
@@ -210,35 +311,66 @@
     const legendW = 180, legendH = 8;
     const legend = svg.append('g')
       .attr('transform', `translate(${W - legendW - 20},${H - 32})`);
-    const gradId = 'map-grad-' + MAP_MODE;
-    const defs = svg.append('defs');
-    const grad = defs.append('linearGradient').attr('id', gradId);
-    [0, 0.33, 0.66, 1].forEach((t, i) => {
-      grad.append('stop')
-        .attr('offset', `${t * 100}%`)
-        .attr('stop-color', ramp[i]);
+
+    const binColors = ['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06'];
+    const binLabels = [
+      '0',
+      `1–${breaks[0]}`,
+      `${breaks[0]+1}–${breaks[1]}`,
+      `${breaks[1]+1}–${breaks[2]}`,
+      `${breaks[2]+1}+`
+    ];
+    const binW = legendW / binColors.length;
+
+    binColors.forEach((col, i) => {
+      legend.append('rect')
+        .attr('x', i * binW).attr('y', 0)
+        .attr('width', binW).attr('height', legendH)
+        .attr('fill', col)
+        .attr('stroke', '#cbc4ad').attr('stroke-width', 0.3);
+      legend.append('text')
+        .attr('x', i * binW).attr('y', legendH + 10)
+        .style('font-family', 'JetBrains Mono, monospace')
+        .style('font-size', '9px').style('fill', '#8a877c')
+        .text(binLabels[i]);
     });
-    legend.append('rect')
-      .attr('width', legendW).attr('height', legendH)
-      .attr('fill', `url(#${gradId})`)
-      .attr('stroke', '#cbc4ad').attr('stroke-width', 0.5);
+
     legend.append('text')
       .attr('x', 0).attr('y', -6)
       .style('font-family', 'JetBrains Mono, monospace')
       .style('font-size', '10px').style('text-transform', 'uppercase')
       .style('letter-spacing', '0.08em').style('fill', '#5a574e')
       .text(MAP_MODE === 'affected' ? 'Incidents — affected' : 'Incidents — developer');
-    legend.append('text')
-      .attr('x', 0).attr('y', legendH + 14)
-      .style('font-family', 'JetBrains Mono, monospace')
-      .style('font-size', '10px').style('fill', '#8a877c').text('0');
-    legend.append('text')
-      .attr('x', legendW).attr('y', legendH + 14)
-      .style('font-family', 'JetBrains Mono, monospace')
-      .style('font-size', '10px').style('fill', '#8a877c')
-      .style('text-anchor', 'end').text(maxCount);
 
-    if (totalCoded === 0) {
+    // ---- Global incidents counter ------------------------------------
+    if (MAP_MODE === 'affected') {
+      const worldwideCount = filtered.filter(d => {
+        const val = AFFECTED_BY_ID.get(String(d.incident_id));
+        return val === undefined; // unmapped = worldwide or unknown
+      }).length;
+
+      const box = svg.append('g')
+        .attr('transform', `translate(${W - 220}, 10)`)
+      box.append('rect')
+        .attr('width', 200).attr('height', 36)
+        .attr('rx', 4)
+        .attr('fill', '#f4efe4')
+        .attr('stroke', '#cbc4ad')
+        .attr('stroke-width', 0.5);
+      box.append('text')
+        .attr('x', 10).attr('y', 13)
+        .style('font-family', 'JetBrains Mono, monospace')
+        .style('font-size', '9px').style('text-transform', 'uppercase')
+        .style('letter-spacing', '0.08em').style('fill', '#8a877c')
+        .text('Incidents impacting everyone');
+      box.append('text')
+        .attr('x', 10).attr('y', 28)
+        .style('font-family', 'Fraunces, serif')
+        .style('font-size', '14px').style('fill', '#1c1b18')
+        .text(worldwideCount);
+    }
+
+    if (filtered.length === 0) {
       svg.append('text')
         .attr('x', W / 2).attr('y', H / 2)
         .attr('text-anchor', 'middle')
@@ -258,53 +390,22 @@
     return null;
   }
 
-  // ---- Bootstrap: world geometry + country labels, then hook up ------
-  // Preferred source: data/incident-countries.json (richer, ~55% affected
-  // coverage from scripts/geo-label-incidents.py). Falls back to the CSET
-  // CSV + in-JS company map if that file is missing, so the map never
-  // breaks regardless of which data is committed.
+  // ---- Bootstrap: world + classifications, then hook up --------------
   Promise.all([
     d3.json(WORLD_PATH),
-    d3.json(COUNTRIES_PATH).catch(() => null),
     d3.csv(CLASSIFICATIONS_PATH).catch(() => []),
   ])
-    .then(([world, countries, classifications]) => {
+    .then(([world, classifications]) => {
       WORLD_GJ = world;
-
-      if (countries) {
-        // Rich pre-computed labels: { incident_id: {affected, developer} }
-        Object.keys(countries).forEach(id => {
-          const rec = countries[id] || {};
-          if (rec.affected)  AFFECTED_BY_ID.set(String(id), rec.affected);
-          if (rec.developer) DEVELOPER_BY_ID.set(String(id), rec.developer);
-        });
-        console.log(`[viz-harms] loaded country labels: ` +
-          `${AFFECTED_BY_ID.size} affected · ${DEVELOPER_BY_ID.size} developer`);
-      } else {
-        // Fallback path — CSET CSV for affected, company map for developer.
-        classifications.forEach(row => {
-          const id = row['Incident ID'];
-          const iso2 = (row['Location Country (two letters)'] || '').trim();
-          if (id && iso2 && iso2.length === 2) {
-            const iso3 = iso2to3(iso2);
-            if (iso3) AFFECTED_BY_ID.set(String(id), iso3);
-          }
-        });
-        // developer fallback is computed per-incident in render via the map
-        DEVELOPER_BY_ID = null;
-        console.warn('[viz-harms] incident-countries.json missing — using CSET fallback');
-      }
-
+      classifications.forEach(row => {
+        const id = row['incident_id'];
+        const val = (row['victim_country'] || '').trim();
+        if (!val || val === 'worldwide' || val === 'other') return;
+        const countries = val.split(',').filter(Boolean);
+        if (countries.length) AFFECTED_BY_ID.set(String(id), countries[0]);
+      });
       window.DataLoader.onReady(data => {
         DATA_REF = data;
-        // If developer labels weren't pre-computed, derive them now.
-        if (DEVELOPER_BY_ID === null) {
-          DEVELOPER_BY_ID = new Map();
-          data.forEach(d => {
-            const c = pickDeveloperCountry(d);
-            if (c) DEVELOPER_BY_ID.set(String(d.incident_id), c);
-          });
-        }
         render();
       });
       window.DataLoader.onFilterChange(() => render());

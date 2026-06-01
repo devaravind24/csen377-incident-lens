@@ -918,3 +918,21 @@ button { font: inherit; cursor: pointer; }
 .nav__mark { width: 40px !important; height: 40px !important; }
 .nav__brand { gap: 0.8rem; }
 .nav__brand span { font-size: 1.05rem; }
+
+/* === Logo + wordmark final sizing (Marcellus, big) === */
+.nav__mark { width: 144px !important; height: 144px !important; }
+.nav__brand { gap: 1.4rem; }
+.nav__brand span {
+  font-family: 'Marcellus', serif !important;
+  font-size: 88px !important;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+/* === Big nav scrolls away with the page (no longer sticky) === */
+.nav { position: static !important; top: auto !important; }
+.filterbar { top: 0 !important; }
+
+/* === Nothing sticky — everything scrolls normally === */
+.nav { position: static !important; }
+.filterbar { position: static !important; }
