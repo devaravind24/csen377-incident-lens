@@ -936,3 +936,12 @@ button { font: inherit; cursor: pointer; }
 /* === Nothing sticky — everything scrolls normally === */
 .nav { position: static !important; }
 .filterbar { position: static !important; }
+
+/* === Tara: viz subtitle style === */
+.viz__subtitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0.5rem 0 0;
+}
