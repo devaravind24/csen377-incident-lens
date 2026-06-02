@@ -569,6 +569,13 @@ button { font: inherit; cursor: pointer; }
   margin: 0;
   line-height: 1.15;
 }
+/* .viz__subtitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0.5rem 0 0;
+} */
 .viz__meta {
   font-family: var(--font-mono);
   font-size: 0.74rem;
@@ -942,6 +949,6 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--font-display);
   font-size: 1.05rem;
   line-height: 1.4;
-  color: var(--ink-soft);
+  color: var(--accent-deep);
   margin: 0.5rem 0 0;
 }
