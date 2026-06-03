@@ -317,22 +317,21 @@
     const vals = [...counts.values()];
     let breaks;
     if (MAP_MODE === 'developer') {
-      if (vals.length >= 4) {
-        const sorted = vals.slice().sort((a, b) => a - b);
-        const q1 = d3.quantileSorted(sorted, 0.25);
-        const q2 = d3.quantileSorted(sorted, 0.5);
-        const q3 = d3.quantileSorted(sorted, 0.75);
-        const maxv = d3.max(sorted) || 1;
-        // Round to integers and ensure strictly increasing thresholds.
-        let b0 = Math.max(1, Math.floor(q1) || 1);
-        let b1 = Math.max(b0 + 1, Math.floor(q2) || (b0 + 1));
-        let b2 = Math.max(b1 + 1, Math.floor(q3) || (b1 + 1));
-        let b3 = Math.max(b2 + 1, Math.floor(maxv) || (b2 + 1));
-        breaks = [b0, b1, b2, b3];
-      } else {
-        // Fallback small deterministic buckets when too few values exist.
-        const m = d3.max(vals) || 1;
+      // Hybrid: transform counts with log1p, run Jenks on transformed values,
+      // then map thresholds back to original scale. This preserves Jenks'
+      // clustering behavior while stabilizing heavy tails.
+      const posVals = vals.filter(v => v >= 0);
+      if (posVals.length >= 4) {
+        const transformed = posVals.map(v => Math.log1p(v));
+        const tBreaks = jenks(transformed, 4);
+        // map back and round
+        breaks = tBreaks.map(b => Math.max(1, Math.floor(Math.expm1(b))));
+      } else if (posVals.length > 0) {
+        // Fallback: small sample deterministic buckets
+        const m = d3.max(posVals) || 1;
         breaks = [1, Math.max(1, Math.floor(m / 3) || 1), Math.max(2, Math.floor((2 * m) / 3) || 2), Math.max(3, m)];
+      } else {
+        breaks = [1, 1, 1, 1];
       }
     } else {
       // 'affected' mode: use Jenks when there are enough values, otherwise
@@ -359,8 +358,13 @@
     } catch (e) {
       /* ignore */
     }
+    // Build a threshold domain that matches the legend's inclusive labels.
+    // We want bins: 0, 1..breaks[0], (breaks[0]+1)..breaks[1], etc. d3.scaleThreshold
+    // treats domain values as exclusive upper bounds (x < domain[i]). To make
+    // the inclusive ranges match, we set domain to [1, breaks[0]+1, breaks[1]+1, breaks[2]+1].
+    const domainForScale = [1, (breaks[0] || 1) + 1, (breaks[1] || 1) + 1, (breaks[2] || 1) + 1];
     const color = d3.scaleThreshold()
-      .domain(breaks)
+      .domain(domainForScale)
       .range(['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06']);
 
     // ---- Draw countries --------------------------------------------
@@ -380,6 +384,31 @@
             console.log('[viz-harms] PHL debug -> count:', c, 'colorFromScale:', col);
           } catch (e) {}
         }
+
+        // Sanity check: ensure the color returned by the scale matches the
+        // legend bin we compute from `breaks`. If not, log a concise warning
+        // to help trace misalignments (only when a positive count exists).
+        try {
+          if (c > 0) {
+            const ranges = ['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06'];
+            const actualIndex = ranges.indexOf(col);
+            let expectedIndex = 0;
+            if (c === 0) expectedIndex = 0;
+            else if (c <= (breaks[0] || 1)) expectedIndex = 1;
+            else if (c <= (breaks[1] || 1)) expectedIndex = 2;
+            else if (c <= (breaks[2] || 1)) expectedIndex = 3;
+            else expectedIndex = 4;
+            if (actualIndex !== expectedIndex) {
+              console.warn('[viz-harms] color/bin mismatch', {
+                id: d.id, count: c, breaks: breaks.slice(), domainForScale, colorFromScale: col,
+                expectedIndex, actualIndex
+              });
+            }
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
         // keep zero mapped to the neutral color, but ensure any positive count
         // is visually distinct: if jenks produced thresholds that leave small
         // positive counts in the neutral bin, bump them up to ramp[1].
@@ -444,6 +473,43 @@
       .style('font-size', '10px').style('text-transform', 'uppercase')
       .style('letter-spacing', '0.08em').style('fill', '#5a574e')
       .text(MAP_MODE === 'affected' ? 'Incidents — affected' : 'Incidents — developer');
+
+    // ---- Debug panel (diagnostic) ---------------------------------
+    // Render a small table listing top countries by count and their color
+    // assignments so we can visually inspect mismatches when they occur.
+    // This is a non-invasive DOM node we can remove later.
+    // try {
+    //   const debugContainerId = 'viz-harms-debug';
+    //   let debugEl = document.getElementById(debugContainerId);
+    //   if (!debugEl) {
+    //     debugEl = document.createElement('div');
+    //     debugEl.id = debugContainerId;
+    //     debugEl.style.fontFamily = 'JetBrains Mono, monospace';
+    //     debugEl.style.fontSize = '11px';
+    //     debugEl.style.color = '#333';
+    //     debugEl.style.marginTop = '8px';
+    //     debugEl.style.maxHeight = '140px';
+    //     debugEl.style.overflow = 'auto';
+    //     container.appendChild(debugEl);
+    //   }
+    //   // build top list
+    //   const entries = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+    //   const rows = entries.map(([id, c]) => {
+    //     const col = color(c);
+    //     let expected = '0';
+    //     if (c === 0) expected = '0';
+    //     else if (c <= breaks[0]) expected = `1–${breaks[0]}`;
+    //     else if (c <= breaks[1]) expected = `${breaks[0]+1}–${breaks[1]}`;
+    //     else if (c <= breaks[2]) expected = `${breaks[1]+1}–${breaks[2]}`;
+    //     else expected = `${breaks[2]+1}+`;
+    //     const actual = (col === '#ebe5d4') ? '0' : (col === ramp[1] ? '1' : (col === ramp[2] ? '2' : (col === ramp[3] ? '3' : '4')));
+    //     const mismatch = (actual !== expected ? 'background:#ffe6e6;border-left:3px solid #d9534f;padding:2px 6px' : '');
+    //     return `<div style="display:flex;justify-content:space-between;align-items:center;${mismatch}"><span style="width:70px">${id}</span><span style="width:40px;text-align:right">${c}</span><span style="width:90px;text-align:center;background:${col};color:#fff;border-radius:3px;padding:2px 6px">${col}</span><span style="width:110px;text-align:right">${expected}</span></div>`;
+    //   }).join('');
+    //   debugEl.innerHTML = `<div style="display:flex;justify-content:space-between;font-weight:600;padding-bottom:4px"><span style="width:70px">Country</span><span style="width:40px;text-align:right">Cnt</span><span style="width:90px;text-align:center">Color</span><span style="width:110px;text-align:right">Expected</span></div>${rows}`;
+    // } catch (e) {
+    //   /* ignore */
+    // }
 
     // ---- Global incidents counter ------------------------------------
     if (MAP_MODE === 'affected') {
