@@ -21,6 +21,7 @@
 
   const WORLD_PATH = '../data/world-countries.geojson';
   const CLASSIFICATIONS_PATH = '../data/victim_locations.csv';
+  const DEV_DEPLOY_COUNTRIES_PATH = '../data/deployer_developer_locations.csv';
 
 
   // ---- Company → ISO-3 country --------------------------------------
@@ -163,7 +164,20 @@
   let MAP_MODE = 'affected';                 // local, not on DataLoader
   let WORLD_GJ = null;                       // GeoJSON FeatureCollection
   let AFFECTED_BY_ID = new Map();            // incident_id → ISO3
+  let DEV_BY_ID = new Map();                 // incident_id → ISO3 (developer/deployer)
   let DATA_REF = null;                       // cached incidents array
+
+  // Robust map lookup: try string and numeric keys
+  function getMappedCountries(map, d) {
+    if (!d) return null;
+    const keysToTry = [String(d.incident_id), d.incident_id, Number(d.incident_id)];
+    for (const k of keysToTry) {
+      if (k === undefined || k === null || Number.isNaN(k)) continue;
+      const v = map.get(String(k));
+      if (v) return v;
+    }
+    return null;
+  }
 
   // ---- Color ramps per mode ----------------------------------------
   const RAMP = {
@@ -215,14 +229,51 @@
       container.innerHTML = '';
       return;
     }
-    // Build country → count
+    // Build country → count (merge multiple countries per incident)
     const counts = new Map();
     filtered.forEach(d => {
-      const code = MAP_MODE === 'affected'
-        ? AFFECTED_BY_ID.get(String(d.incident_id))
-        : pickDeveloperCountry(d);
-      if (code) counts.set(code, (counts.get(code) || 0) + 1);
+      const codes = MAP_MODE === 'affected'
+        ? (getMappedCountries(AFFECTED_BY_ID, d) || [])
+        : (getMappedCountries(DEV_BY_ID, d) || []);
+      if (!codes || !codes.length) {
+        // fallback to per-row company heuristics for developer mode
+        if (MAP_MODE === 'developer') {
+          const c = pickDeveloperCountry(d);
+          if (c) counts.set(c, (counts.get(c) || 0) + 1);
+        }
+        return;
+      }
+      codes.forEach(code => counts.set(code, (counts.get(code) || 0) + 1));
     });
+    
+      // Diagnostics: print jenks breaks and a couple of country counts so we can
+      // debug mismatch between tooltip counts and choropleth fill. These logs are
+      // intentionally minimal and non-invasive; remove when debugging is complete.
+      try {
+        const valsDiag = [...counts.values()];
+        // Only call jenks when there are at least 4 values (jenks requires
+        // enough data to compute meaningful breaks). Use a small fallback
+        // otherwise to keep diagnostics stable.
+        const breaksDiag = valsDiag.length >= 4 ? jenks(valsDiag, 4) : [0, 0, 0, 0];
+        console.log('[viz-harms] jenks breaks:', breaksDiag);
+        console.log('[viz-harms] count USA:', counts.get('USA') || 0);
+        console.log('[viz-harms] count RUS:', counts.get('RUS') || 0);
+      
+        // For a known incident (27 = Nuclear False Alarm, 1983) show mapped
+        // countries and picked developer country so we can trace why it may be
+        // missing from the choropleth.
+        const sampleId = '27';
+        const sampleAffected = getMappedCountries(AFFECTED_BY_ID, {incident_id: sampleId});
+        const sampleDev = getMappedCountries(DEV_BY_ID, {incident_id: sampleId});
+        const samplePick = (function(){
+          try { return pickDeveloperCountry({incident_id: sampleId}); } catch(e){ return 'error:'+e.message }
+        })();
+        console.log('[viz-harms] incident 27 affected countries ->', sampleAffected);
+        console.log('[viz-harms] incident 27 dev countries ->', sampleDev);
+        console.log('[viz-harms] incident 27 pickDeveloperCountry ->', samplePick);
+      } catch (e) {
+        console.warn('[viz-harms] diagnostics failed', e);
+      }
 
     const totalCoded = d3.sum(counts.values());
     const maxCount = d3.max(counts.values()) || 1;
@@ -258,18 +309,56 @@
     const projection = d3.geoNaturalEarth1().fitSize([W - 20, H - 60], WORLD_GJ);
     const path = d3.geoPath(projection);
     const ramp = RAMP[MAP_MODE];
-    if (!window._harmBreaks) {
-      const allCounts = new Map();
-      DATA_REF.forEach(d => {
-        const code = MAP_MODE === 'affected'
-          ? AFFECTED_BY_ID.get(String(d.incident_id))
-          : pickDeveloperCountry(d);
-        if (code) allCounts.set(code, (allCounts.get(code) || 0) + 1);
-      });
-      const vals = [...allCounts.values()];
-      window._harmBreaks = vals.length >= 4 ? jenks(vals, 4) : [1, 2, 3, 4];
+    // Compute classification breaks from the currently filtered counts so
+    // legend and colors reflect the active timeline/filters. Use Jenks for
+    // 'affected' since it's typically spatially distributed; use a
+    // quantile-based classifier for 'developer' which tends to be sparse and
+    // skewed (this avoids odd undefined ranges).
+    const vals = [...counts.values()];
+    let breaks;
+    if (MAP_MODE === 'developer') {
+      if (vals.length >= 4) {
+        const sorted = vals.slice().sort((a, b) => a - b);
+        const q1 = d3.quantileSorted(sorted, 0.25);
+        const q2 = d3.quantileSorted(sorted, 0.5);
+        const q3 = d3.quantileSorted(sorted, 0.75);
+        const maxv = d3.max(sorted) || 1;
+        // Round to integers and ensure strictly increasing thresholds.
+        let b0 = Math.max(1, Math.floor(q1) || 1);
+        let b1 = Math.max(b0 + 1, Math.floor(q2) || (b0 + 1));
+        let b2 = Math.max(b1 + 1, Math.floor(q3) || (b1 + 1));
+        let b3 = Math.max(b2 + 1, Math.floor(maxv) || (b2 + 1));
+        breaks = [b0, b1, b2, b3];
+      } else {
+        // Fallback small deterministic buckets when too few values exist.
+        const m = d3.max(vals) || 1;
+        breaks = [1, Math.max(1, Math.floor(m / 3) || 1), Math.max(2, Math.floor((2 * m) / 3) || 2), Math.max(3, m)];
+      }
+    } else {
+      // 'affected' mode: use Jenks when there are enough values, otherwise
+      // fall back to simple buckets.
+      breaks = vals.length >= 4 ? jenks(vals, 4) : [1, 2, 3, Math.max(4, d3.max(vals) || 4)];
     }
-    const breaks = window._harmBreaks;
+
+    // Ensure breaks are integers and strictly increasing to avoid legend
+    // label glitches like "2-1". This enforces breaks[i] >= breaks[i-1]+1.
+    (function normalizeBreaks(b) {
+      for (let i = 0; i < b.length; i++) {
+        // coerce to integer and at least 1
+        b[i] = Math.max(1, Math.floor(Number(b[i]) || 0));
+        if (i > 0) b[i] = Math.max(b[i], b[i - 1] + 1);
+      }
+    })(breaks);
+
+    // Focused diagnostics for 'affected' mode: log the breaks used for the
+    // color scale and the specific count/color decision for the Philippines
+    // so we can debug why a positive count might still render neutral.
+    try {
+      console.log('[viz-harms] render mode:', MAP_MODE, 'render breaks:', breaks);
+      console.log('[viz-harms] render count PHL:', counts.get('PHL') || 0);
+    } catch (e) {
+      /* ignore */
+    }
     const color = d3.scaleThreshold()
       .domain(breaks)
       .range(['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06']);
@@ -284,7 +373,21 @@
       .attr('d', path)
       .attr('fill', d => {
         const c = counts.get(d.id) || 0;
-        return color(c);
+        const col = color(c);
+        // Focused log for Philippines only to keep console output small.
+        if (d.id === 'PHL') {
+          try {
+            console.log('[viz-harms] PHL debug -> count:', c, 'colorFromScale:', col);
+          } catch (e) {}
+        }
+        // keep zero mapped to the neutral color, but ensure any positive count
+        // is visually distinct: if jenks produced thresholds that leave small
+        // positive counts in the neutral bin, bump them up to ramp[1].
+        if (c > 0 && col === '#ebe5d4') {
+          if (d.id === 'PHL') console.log('[viz-harms] PHL override applied ->', ramp[1]);
+          return ramp[1];
+        }
+        return col;
       })
       .attr('stroke', '#cbc4ad')
       .attr('stroke-width', 0.45)
@@ -346,7 +449,7 @@
     if (MAP_MODE === 'affected') {
       const worldwideCount = filtered.filter(d => {
         const val = AFFECTED_BY_ID.get(String(d.incident_id));
-        return val === undefined; // unmapped = worldwide or unknown
+        return !val || (Array.isArray(val) && val.length === 0);
       }).length;
 
       const box = svg.append('g')
@@ -381,6 +484,10 @@
   }
 
   function pickDeveloperCountry(d) {
+    // Prefer explicit mapping from deployer_developer_locations.csv
+    const mapped = getMappedCountries(DEV_BY_ID, d);
+    if (mapped && mapped.length) return mapped[0];
+    // Fallback to company name heuristics from incident row
     const list = (d['Alleged deployer of AI system'] || [])
       .concat(d['Alleged developer of AI system'] || []);
     for (const name of list) {
@@ -394,15 +501,24 @@
   Promise.all([
     d3.json(WORLD_PATH),
     d3.csv(CLASSIFICATIONS_PATH).catch(() => []),
+    d3.csv(DEV_DEPLOY_COUNTRIES_PATH).catch(() => []),
   ])
-    .then(([world, classifications]) => {
+    .then(([world, classifications, devmap]) => {
       WORLD_GJ = world;
       classifications.forEach(row => {
         const id = row['incident_id'];
         const val = (row['victim_country'] || '').trim();
         if (!val || val === 'worldwide' || val === 'other') return;
-        const countries = val.split(',').filter(Boolean);
-        if (countries.length) AFFECTED_BY_ID.set(String(id), countries[0]);
+        const countries = val.split(',').map(s => s.trim()).filter(Boolean);
+        if (countries.length) AFFECTED_BY_ID.set(String(id), countries);
+      });
+      // build incident -> developer/deployer country map from CSV
+      devmap.forEach(row => {
+        const id = row['incident_id'];
+        const val = (row['deployer_developer_countries'] || '').trim();
+        if (!val || val === 'Unknown' || val === 'unknown' || val === 'Other') return;
+        const countries = val.split(',').map(s => s.trim()).filter(Boolean);
+        if (countries.length) DEV_BY_ID.set(String(id), countries);
       });
       window.DataLoader.onReady(data => {
         DATA_REF = data;
