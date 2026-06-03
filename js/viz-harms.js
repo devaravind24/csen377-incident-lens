@@ -21,6 +21,7 @@
 
   const WORLD_PATH = '../data/world-countries.geojson';
   const CLASSIFICATIONS_PATH = '../data/victim_locations.csv';
+  const DEV_DEPLOY_COUNTRIES_PATH = '../data/deployer_developer_locations.csv';
 
 
   // ---- Company → ISO-3 country --------------------------------------
@@ -163,7 +164,20 @@
   let MAP_MODE = 'affected';                 // local, not on DataLoader
   let WORLD_GJ = null;                       // GeoJSON FeatureCollection
   let AFFECTED_BY_ID = new Map();            // incident_id → ISO3
+  let DEV_BY_ID = new Map();                 // incident_id → ISO3 (developer/deployer)
   let DATA_REF = null;                       // cached incidents array
+
+  // Robust map lookup: try string and numeric keys
+  function getMappedCountries(map, d) {
+    if (!d) return null;
+    const keysToTry = [String(d.incident_id), d.incident_id, Number(d.incident_id)];
+    for (const k of keysToTry) {
+      if (k === undefined || k === null || Number.isNaN(k)) continue;
+      const v = map.get(String(k));
+      if (v) return v;
+    }
+    return null;
+  }
 
   // ---- Color ramps per mode ----------------------------------------
   const RAMP = {
@@ -215,14 +229,51 @@
       container.innerHTML = '';
       return;
     }
-    // Build country → count
+    // Build country → count (merge multiple countries per incident)
     const counts = new Map();
     filtered.forEach(d => {
-      const code = MAP_MODE === 'affected'
-        ? AFFECTED_BY_ID.get(String(d.incident_id))
-        : pickDeveloperCountry(d);
-      if (code) counts.set(code, (counts.get(code) || 0) + 1);
+      const codes = MAP_MODE === 'affected'
+        ? (getMappedCountries(AFFECTED_BY_ID, d) || [])
+        : (getMappedCountries(DEV_BY_ID, d) || []);
+      if (!codes || !codes.length) {
+        // fallback to per-row company heuristics for developer mode
+        if (MAP_MODE === 'developer') {
+          const c = pickDeveloperCountry(d);
+          if (c) counts.set(c, (counts.get(c) || 0) + 1);
+        }
+        return;
+      }
+      codes.forEach(code => counts.set(code, (counts.get(code) || 0) + 1));
     });
+    
+      // Diagnostics: print jenks breaks and a couple of country counts so we can
+      // debug mismatch between tooltip counts and choropleth fill. These logs are
+      // intentionally minimal and non-invasive; remove when debugging is complete.
+      try {
+        const valsDiag = [...counts.values()];
+        // Only call jenks when there are at least 4 values (jenks requires
+        // enough data to compute meaningful breaks). Use a small fallback
+        // otherwise to keep diagnostics stable.
+        const breaksDiag = valsDiag.length >= 4 ? jenks(valsDiag, 4) : [0, 0, 0, 0];
+        console.log('[viz-harms] jenks breaks:', breaksDiag);
+        console.log('[viz-harms] count USA:', counts.get('USA') || 0);
+        console.log('[viz-harms] count RUS:', counts.get('RUS') || 0);
+      
+        // For a known incident (27 = Nuclear False Alarm, 1983) show mapped
+        // countries and picked developer country so we can trace why it may be
+        // missing from the choropleth.
+        const sampleId = '27';
+        const sampleAffected = getMappedCountries(AFFECTED_BY_ID, {incident_id: sampleId});
+        const sampleDev = getMappedCountries(DEV_BY_ID, {incident_id: sampleId});
+        const samplePick = (function(){
+          try { return pickDeveloperCountry({incident_id: sampleId}); } catch(e){ return 'error:'+e.message }
+        })();
+        console.log('[viz-harms] incident 27 affected countries ->', sampleAffected);
+        console.log('[viz-harms] incident 27 dev countries ->', sampleDev);
+        console.log('[viz-harms] incident 27 pickDeveloperCountry ->', samplePick);
+      } catch (e) {
+        console.warn('[viz-harms] diagnostics failed', e);
+      }
 
     const totalCoded = d3.sum(counts.values());
     const maxCount = d3.max(counts.values()) || 1;
@@ -258,20 +309,62 @@
     const projection = d3.geoNaturalEarth1().fitSize([W - 20, H - 60], WORLD_GJ);
     const path = d3.geoPath(projection);
     const ramp = RAMP[MAP_MODE];
-    if (!window._harmBreaks) {
-      const allCounts = new Map();
-      DATA_REF.forEach(d => {
-        const code = MAP_MODE === 'affected'
-          ? AFFECTED_BY_ID.get(String(d.incident_id))
-          : pickDeveloperCountry(d);
-        if (code) allCounts.set(code, (allCounts.get(code) || 0) + 1);
-      });
-      const vals = [...allCounts.values()];
-      window._harmBreaks = vals.length >= 4 ? jenks(vals, 4) : [1, 2, 3, 4];
+    // Compute classification breaks from the currently filtered counts so
+    // legend and colors reflect the active timeline/filters. Use Jenks for
+    // 'affected' since it's typically spatially distributed; use a
+    // quantile-based classifier for 'developer' which tends to be sparse and
+    // skewed (this avoids odd undefined ranges).
+    const vals = [...counts.values()];
+    let breaks;
+    if (MAP_MODE === 'developer') {
+      // Hybrid: transform counts with log1p, run Jenks on transformed values,
+      // then map thresholds back to original scale. This preserves Jenks'
+      // clustering behavior while stabilizing heavy tails.
+      const posVals = vals.filter(v => v >= 0);
+      if (posVals.length >= 4) {
+        const transformed = posVals.map(v => Math.log1p(v));
+        const tBreaks = jenks(transformed, 4);
+        // map back and round
+        breaks = tBreaks.map(b => Math.max(1, Math.floor(Math.expm1(b))));
+      } else if (posVals.length > 0) {
+        // Fallback: small sample deterministic buckets
+        const m = d3.max(posVals) || 1;
+        breaks = [1, Math.max(1, Math.floor(m / 3) || 1), Math.max(2, Math.floor((2 * m) / 3) || 2), Math.max(3, m)];
+      } else {
+        breaks = [1, 1, 1, 1];
+      }
+    } else {
+      // 'affected' mode: use Jenks when there are enough values, otherwise
+      // fall back to simple buckets.
+      breaks = vals.length >= 4 ? jenks(vals, 4) : [1, 2, 3, Math.max(4, d3.max(vals) || 4)];
     }
-    const breaks = window._harmBreaks;
+
+    // Ensure breaks are integers and strictly increasing to avoid legend
+    // label glitches like "2-1". This enforces breaks[i] >= breaks[i-1]+1.
+    (function normalizeBreaks(b) {
+      for (let i = 0; i < b.length; i++) {
+        // coerce to integer and at least 1
+        b[i] = Math.max(1, Math.floor(Number(b[i]) || 0));
+        if (i > 0) b[i] = Math.max(b[i], b[i - 1] + 1);
+      }
+    })(breaks);
+
+    // Focused diagnostics for 'affected' mode: log the breaks used for the
+    // color scale and the specific count/color decision for the Philippines
+    // so we can debug why a positive count might still render neutral.
+    try {
+      console.log('[viz-harms] render mode:', MAP_MODE, 'render breaks:', breaks);
+      console.log('[viz-harms] render count PHL:', counts.get('PHL') || 0);
+    } catch (e) {
+      /* ignore */
+    }
+    // Build a threshold domain that matches the legend's inclusive labels.
+    // We want bins: 0, 1..breaks[0], (breaks[0]+1)..breaks[1], etc. d3.scaleThreshold
+    // treats domain values as exclusive upper bounds (x < domain[i]). To make
+    // the inclusive ranges match, we set domain to [1, breaks[0]+1, breaks[1]+1, breaks[2]+1].
+    const domainForScale = [1, (breaks[0] || 1) + 1, (breaks[1] || 1) + 1, (breaks[2] || 1) + 1];
     const color = d3.scaleThreshold()
-      .domain(breaks)
+      .domain(domainForScale)
       .range(['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06']);
 
     // ---- Draw countries --------------------------------------------
@@ -284,7 +377,46 @@
       .attr('d', path)
       .attr('fill', d => {
         const c = counts.get(d.id) || 0;
-        return color(c);
+        const col = color(c);
+        // Focused log for Philippines only to keep console output small.
+        if (d.id === 'PHL') {
+          try {
+            console.log('[viz-harms] PHL debug -> count:', c, 'colorFromScale:', col);
+          } catch (e) {}
+        }
+
+        // Sanity check: ensure the color returned by the scale matches the
+        // legend bin we compute from `breaks`. If not, log a concise warning
+        // to help trace misalignments (only when a positive count exists).
+        try {
+          if (c > 0) {
+            const ranges = ['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06'];
+            const actualIndex = ranges.indexOf(col);
+            let expectedIndex = 0;
+            if (c === 0) expectedIndex = 0;
+            else if (c <= (breaks[0] || 1)) expectedIndex = 1;
+            else if (c <= (breaks[1] || 1)) expectedIndex = 2;
+            else if (c <= (breaks[2] || 1)) expectedIndex = 3;
+            else expectedIndex = 4;
+            if (actualIndex !== expectedIndex) {
+              console.warn('[viz-harms] color/bin mismatch', {
+                id: d.id, count: c, breaks: breaks.slice(), domainForScale, colorFromScale: col,
+                expectedIndex, actualIndex
+              });
+            }
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
+        // keep zero mapped to the neutral color, but ensure any positive count
+        // is visually distinct: if jenks produced thresholds that leave small
+        // positive counts in the neutral bin, bump them up to ramp[1].
+        if (c > 0 && col === '#ebe5d4') {
+          if (d.id === 'PHL') console.log('[viz-harms] PHL override applied ->', ramp[1]);
+          return ramp[1];
+        }
+        return col;
       })
       .attr('stroke', '#cbc4ad')
       .attr('stroke-width', 0.45)
@@ -342,11 +474,48 @@
       .style('letter-spacing', '0.08em').style('fill', '#5a574e')
       .text(MAP_MODE === 'affected' ? 'Incidents — affected' : 'Incidents — developer');
 
+    // ---- Debug panel (diagnostic) ---------------------------------
+    // Render a small table listing top countries by count and their color
+    // assignments so we can visually inspect mismatches when they occur.
+    // This is a non-invasive DOM node we can remove later.
+    // try {
+    //   const debugContainerId = 'viz-harms-debug';
+    //   let debugEl = document.getElementById(debugContainerId);
+    //   if (!debugEl) {
+    //     debugEl = document.createElement('div');
+    //     debugEl.id = debugContainerId;
+    //     debugEl.style.fontFamily = 'JetBrains Mono, monospace';
+    //     debugEl.style.fontSize = '11px';
+    //     debugEl.style.color = '#333';
+    //     debugEl.style.marginTop = '8px';
+    //     debugEl.style.maxHeight = '140px';
+    //     debugEl.style.overflow = 'auto';
+    //     container.appendChild(debugEl);
+    //   }
+    //   // build top list
+    //   const entries = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+    //   const rows = entries.map(([id, c]) => {
+    //     const col = color(c);
+    //     let expected = '0';
+    //     if (c === 0) expected = '0';
+    //     else if (c <= breaks[0]) expected = `1–${breaks[0]}`;
+    //     else if (c <= breaks[1]) expected = `${breaks[0]+1}–${breaks[1]}`;
+    //     else if (c <= breaks[2]) expected = `${breaks[1]+1}–${breaks[2]}`;
+    //     else expected = `${breaks[2]+1}+`;
+    //     const actual = (col === '#ebe5d4') ? '0' : (col === ramp[1] ? '1' : (col === ramp[2] ? '2' : (col === ramp[3] ? '3' : '4')));
+    //     const mismatch = (actual !== expected ? 'background:#ffe6e6;border-left:3px solid #d9534f;padding:2px 6px' : '');
+    //     return `<div style="display:flex;justify-content:space-between;align-items:center;${mismatch}"><span style="width:70px">${id}</span><span style="width:40px;text-align:right">${c}</span><span style="width:90px;text-align:center;background:${col};color:#fff;border-radius:3px;padding:2px 6px">${col}</span><span style="width:110px;text-align:right">${expected}</span></div>`;
+    //   }).join('');
+    //   debugEl.innerHTML = `<div style="display:flex;justify-content:space-between;font-weight:600;padding-bottom:4px"><span style="width:70px">Country</span><span style="width:40px;text-align:right">Cnt</span><span style="width:90px;text-align:center">Color</span><span style="width:110px;text-align:right">Expected</span></div>${rows}`;
+    // } catch (e) {
+    //   /* ignore */
+    // }
+
     // ---- Global incidents counter ------------------------------------
     if (MAP_MODE === 'affected') {
       const worldwideCount = filtered.filter(d => {
         const val = AFFECTED_BY_ID.get(String(d.incident_id));
-        return val === undefined; // unmapped = worldwide or unknown
+        return !val || (Array.isArray(val) && val.length === 0);
       }).length;
 
       const box = svg.append('g')
@@ -381,6 +550,10 @@
   }
 
   function pickDeveloperCountry(d) {
+    // Prefer explicit mapping from deployer_developer_locations.csv
+    const mapped = getMappedCountries(DEV_BY_ID, d);
+    if (mapped && mapped.length) return mapped[0];
+    // Fallback to company name heuristics from incident row
     const list = (d['Alleged deployer of AI system'] || [])
       .concat(d['Alleged developer of AI system'] || []);
     for (const name of list) {
@@ -394,15 +567,24 @@
   Promise.all([
     d3.json(WORLD_PATH),
     d3.csv(CLASSIFICATIONS_PATH).catch(() => []),
+    d3.csv(DEV_DEPLOY_COUNTRIES_PATH).catch(() => []),
   ])
-    .then(([world, classifications]) => {
+    .then(([world, classifications, devmap]) => {
       WORLD_GJ = world;
       classifications.forEach(row => {
         const id = row['incident_id'];
         const val = (row['victim_country'] || '').trim();
         if (!val || val === 'worldwide' || val === 'other') return;
-        const countries = val.split(',').filter(Boolean);
-        if (countries.length) AFFECTED_BY_ID.set(String(id), countries[0]);
+        const countries = val.split(',').map(s => s.trim()).filter(Boolean);
+        if (countries.length) AFFECTED_BY_ID.set(String(id), countries);
+      });
+      // build incident -> developer/deployer country map from CSV
+      devmap.forEach(row => {
+        const id = row['incident_id'];
+        const val = (row['deployer_developer_countries'] || '').trim();
+        if (!val || val === 'Unknown' || val === 'unknown' || val === 'Other') return;
+        const countries = val.split(',').map(s => s.trim()).filter(Boolean);
+        if (countries.length) DEV_BY_ID.set(String(id), countries);
       });
       window.DataLoader.onReady(data => {
         DATA_REF = data;
