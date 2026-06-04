@@ -461,20 +461,25 @@
           const total = Array.from(catMap.values()).reduce((s, v) => s + v, 0) || c;
           // Header
           let html = `<strong>${label}</strong>`;
-          // Per-category lines
+          // Per-category lines: gather rows, sort by descending percentage,
+          // then render so the highest-percentage harms appear first.
+          const rows = [];
           catOrder.forEach(catId => {
             const cnt = catMap.get(catId) || 0;
-            const pct = total > 0 ? ((cnt / total) * 100).toFixed(1) : '0.0';
-            const color = window.IncidentCategories.getColor(catId) || '#999';
-            // show only categories with a nonzero count to keep tooltip compact
             if (cnt > 0) {
-              html += `<div class="tooltip__row" style="display:flex;align-items:center;gap:8px;">` +
-                `<span style="width:10px;height:10px;border-radius:50%;display:inline-block;background:${color}"></span>` +
-                `<span style="flex:1">${window.IncidentCategories.getTooltipLabel(catId)}</span>` +
-                `<span style="width:48px;text-align:right">${cnt}</span>` +
-                `<span style="width:56px;text-align:right;color:#8a877c">${pct}%</span>` +
-                `</div>`;
+              const pct = total > 0 ? ((cnt / total) * 100) : 0;
+              const color = window.IncidentCategories.getColor(catId) || '#999';
+              rows.push({ catId, cnt, pct, color });
             }
+          });
+          rows.sort((a, b) => b.pct - a.pct);
+          rows.forEach(r => {
+            html += `<div class="tooltip__row" style="display:flex;align-items:center;gap:8px;">` +
+              `<span style="width:10px;height:10px;border-radius:50%;display:inline-block;background:${r.color}"></span>` +
+              `<span style="flex:1">${window.IncidentCategories.getTooltipLabel(r.catId)}</span>` +
+              `<span style="width:48px;text-align:right">${r.cnt}</span>` +
+              `<span style="width:56px;text-align:right;color:#8a877c">${r.pct.toFixed(1)}%</span>` +
+              `</div>`;
           });
           // Total at bottom
           html += `<div style="border-top:1px solid #e6e2d6;margin-top:6px;padding-top:6px;display:flex;justify-content:space-between;font-weight:600">` +
