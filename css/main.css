@@ -854,7 +854,7 @@ button { font: inherit; cursor: pointer; }
    =================================================================== */
 @media (max-width: 720px) {
   .nav__links { gap: 1.25rem; font-size: 0.7rem; }
-  .filterbar { top: 56px; }
+  .filterbar { top: 0; }
 }
 
 /* ===================================================================
@@ -938,11 +938,9 @@ button { font: inherit; cursor: pointer; }
 
 /* === Big nav scrolls away with the page (no longer sticky) === */
 .nav { position: static !important; top: auto !important; }
-.filterbar { top: 0 !important; }
 
-/* === Nothing sticky — everything scrolls normally === */
-.nav { position: static !important; }
-.filterbar { position: static !important; }
+/* === Filterbar stays pinned so filters are reachable while scrolling === */
+.filterbar { position: sticky !important; top: 0 !important; }
 
 /* === Tara: viz subtitle style === */
 .viz__subtitle {
