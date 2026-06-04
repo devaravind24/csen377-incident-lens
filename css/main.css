@@ -926,12 +926,12 @@ button { font: inherit; cursor: pointer; }
 .nav__brand { gap: 0.8rem; }
 .nav__brand span { font-size: 1.05rem; }
 
-/* === Logo + wordmark final sizing (Marcellus, big) === */
-.nav__mark { width: 144px !important; height: 144px !important; }
-.nav__brand { gap: 1.4rem; }
+/* === Logo + wordmark sizing (half of previous) === */
+.nav__mark { width: 72px !important; height: 72px !important; }
+.nav__brand { gap: 0.8rem; }
 .nav__brand span {
   font-family: 'Marcellus', serif !important;
-  font-size: 88px !important;
+  font-size: 44px !important;
   letter-spacing: 0.06em;
   line-height: 1;
 }
