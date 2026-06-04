@@ -363,9 +363,10 @@
     // treats domain values as exclusive upper bounds (x < domain[i]). To make
     // the inclusive ranges match, we set domain to [1, breaks[0]+1, breaks[1]+1, breaks[2]+1].
     const domainForScale = [1, (breaks[0] || 1) + 1, (breaks[1] || 1) + 1, (breaks[2] || 1) + 1];
+    const topColor = MAP_MODE === 'affected' ? '#2a0a06' : '#061a2b';
     const color = d3.scaleThreshold()
       .domain(domainForScale)
-      .range(['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06']);
+      .range(['#ebe5d4', ramp[1], ramp[2], ramp[3], topColor]);
 
     // ---- Draw countries --------------------------------------------
     const g = svg.append('g').attr('transform', 'translate(10,15)');
@@ -444,7 +445,7 @@
     const legend = svg.append('g')
       .attr('transform', `translate(${W - legendW - 20},${H - 32})`);
 
-    const binColors = ['#ebe5d4', ramp[1], ramp[2], ramp[3], '#2a0a06'];
+  const binColors = ['#ebe5d4', ramp[1], ramp[2], ramp[3], topColor];
     const binLabels = [
       '0',
       `1–${breaks[0]}`,
