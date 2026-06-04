@@ -245,6 +245,30 @@
       }
       codes.forEach(code => counts.set(code, (counts.get(code) || 0) + 1));
     });
+
+    // Build country → category → count mapping for tooltip breakdowns.
+    const countryCategoryCounts = new Map();
+    filtered.forEach(d => {
+      const codes = MAP_MODE === 'affected'
+        ? (getMappedCountries(AFFECTED_BY_ID, d) || [])
+        : (getMappedCountries(DEV_BY_ID, d) || []);
+      if (!codes || !codes.length) {
+        if (MAP_MODE === 'developer') {
+          const c = pickDeveloperCountry(d);
+          if (c) {
+            if (!countryCategoryCounts.has(c)) countryCategoryCounts.set(c, new Map());
+            const m = countryCategoryCounts.get(c);
+            m.set(d.category, (m.get(d.category) || 0) + 1);
+          }
+        }
+        return;
+      }
+      codes.forEach(code => {
+        if (!countryCategoryCounts.has(code)) countryCategoryCounts.set(code, new Map());
+        const m = countryCategoryCounts.get(code);
+        m.set(d.category, (m.get(d.category) || 0) + 1);
+      });
+    });
     
       // Diagnostics: print jenks breaks and a couple of country counts so we can
       // debug mismatch between tooltip counts and choropleth fill. These logs are
@@ -426,11 +450,38 @@
         const c = counts.get(d.id) || 0;
         const label = (d.properties && d.properties.name) || d.id;
         tooltip.classList.add('is-visible');
-        tooltip.innerHTML = `<strong>${label}</strong>` +
-          (c === 0
-            ? `<em>No incidents recorded</em>`
-            : `<div class="tooltip__row"><span>Incidents</span><span>${c}</span></div>` +
-              (totalCoded > 0 ? `<em>${((c / totalCoded) * 100).toFixed(1)}% of mapped</em>` : ''));
+
+        if (c === 0) {
+          tooltip.innerHTML = `<strong>${label}</strong><div><em>No incidents recorded</em></div>`;
+        } else {
+          // Build per-category rows for this country using the selected
+          // categories (DataLoader.getStackCategories respects filters).
+          const catOrder = window.DataLoader.getStackCategories();
+          const catMap = countryCategoryCounts.get(d.id) || new Map();
+          const total = Array.from(catMap.values()).reduce((s, v) => s + v, 0) || c;
+          // Header
+          let html = `<strong>${label}</strong>`;
+          // Per-category lines
+          catOrder.forEach(catId => {
+            const cnt = catMap.get(catId) || 0;
+            const pct = total > 0 ? ((cnt / total) * 100).toFixed(1) : '0.0';
+            const color = window.IncidentCategories.getColor(catId) || '#999';
+            // show only categories with a nonzero count to keep tooltip compact
+            if (cnt > 0) {
+              html += `<div class="tooltip__row" style="display:flex;align-items:center;gap:8px;">` +
+                `<span style="width:10px;height:10px;border-radius:50%;display:inline-block;background:${color}"></span>` +
+                `<span style="flex:1">${window.IncidentCategories.getTooltipLabel(catId)}</span>` +
+                `<span style="width:48px;text-align:right">${cnt}</span>` +
+                `<span style="width:56px;text-align:right;color:#8a877c">${pct}%</span>` +
+                `</div>`;
+            }
+          });
+          // Total at bottom
+          html += `<div style="border-top:1px solid #e6e2d6;margin-top:6px;padding-top:6px;display:flex;justify-content:space-between;font-weight:600">` +
+            `<span>Total</span><span>${total}</span></div>`;
+          tooltip.innerHTML = html;
+        }
+
         tooltip.style.left = (event.pageX + 14) + 'px';
         tooltip.style.top = (event.pageY - 28) + 'px';
         d3.select(this).attr('stroke', '#1c1b18').attr('stroke-width', 0.9);
